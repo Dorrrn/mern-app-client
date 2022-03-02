@@ -1,4 +1,4 @@
 
 export default function HomePage() {
-  return <div className="HomePage">HomePage</div>;
+  return <div className="HomePage">Tandem App</div>;
 }
