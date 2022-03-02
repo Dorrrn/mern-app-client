@@ -4,6 +4,7 @@ import axios from "axios";
 
 function SignupPage(props) {
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [errorMessage, setErrorMessage] = useState(undefined);
@@ -11,6 +12,7 @@ function SignupPage(props) {
   const navigate = useNavigate();
 
   const handleUsername = (e) => setUsername(e.target.value);
+  const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
   const handleSignupSubmit = (e) => {
@@ -18,13 +20,14 @@ function SignupPage(props) {
 
     const userDetails = {
       username,
+      email,
       password,
     };
 
     axios
       .post(`${process.env.REACT_APP_API_URL}/auth/signup`, userDetails)
       .then(() => {
-        navigate("/login"); 
+        navigate("/login");
       })
       .catch((error) => {
         const msg = error.response.data.errorMessage;
@@ -47,6 +50,16 @@ function SignupPage(props) {
             name="username"
             value={username}
             onChange={handleUsername}
+          />
+        </label>
+
+        <label>
+          Email:
+          <input
+            type="text"
+            name="email"
+            value={email}
+            onChange={handleEmail}
           />
         </label>
 
