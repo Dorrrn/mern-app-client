@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
 import AddFriend from "./components/AddFriend";
+import AddSkillToLearn from "./components/AddSkillToLearn";
 
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -17,6 +18,7 @@ import UserProfile from "./pages/UserProfilePage";
 import UpdateSkills from "./pages/UpdateSkills";
 import UsersPage from "./pages/UsersPage";
 import UserProfilePage from "./pages/UserProfilePage";
+
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -32,8 +34,8 @@ function App() {
 
     axios
       .get(
-        `${process.env.REACT_APP_API_URL}/users`
-        // { headers: { Authorization: `Bearer ${storedToken}` }}
+        `${process.env.REACT_APP_API_URL}/users`,
+         { headers: { Authorization: `Bearer ${storedToken}` }},
       )
       .then((response) => {
         setUsers(response.data);
@@ -73,10 +75,19 @@ function App() {
         />
 
         <Route
-          path="/users/:userId/friend"
+          path="/users/:friendId/addfriend"
           element={
             <IsPrivate>
-              <AddFriend users={users} />
+              <AddFriend updateUsers={fetchUsers}/>
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/skills/:skillId/wantstolearn"
+          element={
+            <IsPrivate>
+              <AddSkillToLearn />
             </IsPrivate>
           }
         />

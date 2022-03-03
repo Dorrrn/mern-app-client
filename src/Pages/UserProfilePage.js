@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import AddFriend from "../components/AddFriend";
 
 export default function UserProfilePage(props) {
 
@@ -21,6 +22,9 @@ export default function UserProfilePage(props) {
         {elm.friends?.map((friend) => {
           return <li>{friend}</li>;
         })}
+        
+        <AddFriend />
+
       </div>
     );
   };
