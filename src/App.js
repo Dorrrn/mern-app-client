@@ -2,19 +2,24 @@ import "./App.css";
 import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "./context/auth.context";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
+import AddFriend from "./components/AddFriend";
 
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
-import UserProfile from "./pages/UserProfile";
-import { AuthContext } from "./context/auth.context";
+import UserProfile from "./pages/UserProfilePage";
+import UpdateSkills from "./pages/UpdateSkills";
+import UsersPage from "./pages/UsersPage";
+import UserProfilePage from "./pages/UserProfilePage";
 
 function App() {
-  const [profiles, setProfiles] = useState([]);
+  const [users, setUsers] = useState([]);
 
   const { getToken, isLoggedIn } = useContext(AuthContext);
 
@@ -26,11 +31,12 @@ function App() {
     const storedToken = getToken();
 
     axios
-      .get(`${process.env.REACT_APP_API_URL}/users`, {
-        headers: { Authorization: `Bearer ${storedToken}` },
-      })
+      .get(
+        `${process.env.REACT_APP_API_URL}/users`
+        // { headers: { Authorization: `Bearer ${storedToken}` }}
+      )
       .then((response) => {
-        setProfiles(response.data);
+        setUsers(response.data);
       })
       .catch((e) => console.log("error getting list of users...", e));
   };
@@ -38,8 +44,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <h1>Tandem App</h1>
-
       <Routes>
         <Route path="/" element={<HomePage />} />
 
@@ -61,11 +65,36 @@ function App() {
           }
         />
 
+        <Route path="/users" element={<UsersPage users={users} />} />
+
+        <Route
+          path="/users/:userId"
+          element={<UserProfilePage users={users} />}
+        />
+
+        <Route
+          path="/users/:userId/friend"
+          element={
+            <IsPrivate>
+              <AddFriend users={users} />
+            </IsPrivate>
+          }
+        />
+
         <Route
           path="/profile"
           element={
             <IsPrivate>
               <UserProfile />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/profile/update"
+          element={
+            <IsPrivate>
+              <UpdateSkills />
             </IsPrivate>
           }
         />

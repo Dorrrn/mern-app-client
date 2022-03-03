@@ -7,19 +7,23 @@ export default function Navbar() {
 
   return (
     <div className="Navbar">
-      <NavLink to="/">Home</NavLink> <br />
+      <NavLink to="/">Home</NavLink> <br /> <br />
       {isLoggedIn && (
         <>
           <NavLink to="/profile">My profile</NavLink> <br />
-          <NavLink to="/users">All users</NavLink> <br />
+          <NavLink to="/profile/update">Update profile</NavLink> <br /> <br />
+          <NavLink to="/users">All users</NavLink> <br /> <br />
           <button onClick={logOutUser}>Logout</button>
-          <span>{user && user.username}</span>
+          <span>{user && user.email}</span>
+          <hr />
         </>
       )}
       {!isLoggedIn && (
         <>
           <NavLink to="/signup">Signup</NavLink> <br />
-          <NavLink to="/login">Login</NavLink>
+          <NavLink to="/login">Login</NavLink> <br /> <br />
+          <NavLink to="/users">All users</NavLink>
+          <hr />
         </>
       )}
     </div>

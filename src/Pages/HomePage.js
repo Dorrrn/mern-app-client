@@ -1,4 +1,5 @@
 
 export default function HomePage() {
-  return <div className="HomePage">Tandem App</div>;
+  
+return <div className="HomePage">Homepage</div>;
 }
