@@ -11,7 +11,7 @@ export default function Navbar() {
       {isLoggedIn && (
         <>
           <NavLink to="/profile">My profile</NavLink> <br />
-          <NavLink to="/profile/update">Update profile</NavLink> <br /> <br />
+          <NavLink to="/users/updateskills">Update my skills</NavLink> <br /> <br />
           <NavLink to="/users">All users</NavLink> <br /> <br />
           <button onClick={logOutUser}>Logout</button>
           <span>{user && user.email}</span>

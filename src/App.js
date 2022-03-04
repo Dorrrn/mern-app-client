@@ -9,38 +9,53 @@ import Footer from "./components/Footer";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
 import AddFriend from "./components/AddFriend";
-import AddSkillToLearn from "./components/AddSkillToLearn";
+import AddWantsToLearn from "./components/AddWantsToLearn";
 
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
-import UserProfile from "./pages/UserProfilePage";
-import UpdateSkills from "./pages/UpdateSkills";
+import MyProfilePage from "./pages/MyProfilePage";
+import UpdateSkills from "./pages/SkillsPage";
 import UsersPage from "./pages/UsersPage";
 import UserProfilePage from "./pages/UserProfilePage";
-
+import SkillsPage from "./pages/SkillsPage";
+import UpdateMySkills from "./components/UpdateMySkills";
 
 function App() {
   const [users, setUsers] = useState([]);
+  const [skills, setSkills] = useState([]);
 
   const { getToken, isLoggedIn } = useContext(AuthContext);
 
   useEffect(() => {
     fetchUsers();
+    fetchSkills();
   }, [isLoggedIn]);
 
   const fetchUsers = () => {
     const storedToken = getToken();
 
     axios
-      .get(
-        `${process.env.REACT_APP_API_URL}/users`,
-         { headers: { Authorization: `Bearer ${storedToken}` }},
-      )
+      .get(`${process.env.REACT_APP_API_URL}/users`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
       .then((response) => {
         setUsers(response.data);
       })
       .catch((e) => console.log("error getting list of users...", e));
+  };
+
+  const fetchSkills = () => {
+    const storedToken = getToken();
+
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/skills`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then((response) => {
+        setSkills(response.data);
+      })
+      .catch((e) => console.log("error getting list of skills...", e));
   };
 
   return (
@@ -78,7 +93,7 @@ function App() {
           path="/users/:friendId/addfriend"
           element={
             <IsPrivate>
-              <AddFriend updateUsers={fetchUsers}/>
+              <AddFriend updateUsers={fetchUsers} />
             </IsPrivate>
           }
         />
@@ -87,7 +102,25 @@ function App() {
           path="/skills/:skillId/wantstolearn"
           element={
             <IsPrivate>
-              <AddSkillToLearn />
+              <AddWantsToLearn />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/skillspage"
+          element={
+            <IsPrivate>
+              <SkillsPage skills={skills} />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/users/updateskills"
+          element={
+            <IsPrivate>
+              <UpdateMySkills updateUsers={fetchUsers} />
             </IsPrivate>
           }
         />
@@ -96,7 +129,7 @@ function App() {
           path="/profile"
           element={
             <IsPrivate>
-              <UserProfile />
+              <MyProfilePage users={users} />
             </IsPrivate>
           }
         />

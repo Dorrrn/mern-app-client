@@ -1,13 +1,13 @@
-import { Link, useParams } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context";
 
-export default function UserProfilePage(props) {
-  const { userId } = useParams();
+export default function MyProfilePage(props) {
 
-  let user;
+const { user } = useContext(AuthContext);
 
   if (props.users) {
     user = props.users.find((elm) => {
-      return elm._id === userId;
+      return elm._id === user._id;
     });
   }
 
@@ -18,19 +18,18 @@ export default function UserProfilePage(props) {
           <h3>Name: {elm.username}</h3>
           <p>E-Mail: {elm.email}</p>
 
-          <p>Friends:</p>
+          <p>My friends:</p>
           {elm.friends?.map((friend) => {
             return <li>{friend.username}</li>;
           })}
-          <Link to={`/users/${elm._id}/addfriend`}>Add as friend</Link>
         </div>
       </>
     );
   };
 
   return (
-    <div className="UserProfilePage">
-      <h2>User profile</h2>
+    <div className="MyProfilePage">
+      <h2>My profile</h2>
       {user ? renderProfileDetails(user) : <p>Sorry no user found...</p>}
     </div>
   );

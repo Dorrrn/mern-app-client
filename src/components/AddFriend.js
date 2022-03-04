@@ -14,7 +14,6 @@ export default function AddFriend(props) {
     axios
       .put(`${process.env.REACT_APP_API_URL}/users/${friendId}/addFriend`, {},
       { headers: { Authorization: `Bearer ${storedToken}` }})
-
       .then(() => {
         props.updateUsers();
         navigate("/users");
