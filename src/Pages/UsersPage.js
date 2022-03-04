@@ -4,13 +4,19 @@ export default function Users(props) {
   const renderUserProfiles = (list) => {
     return props.users.map((elm) => {
       return (
-        <li className="profile-card" key={elm._id}>
-          <h2>Name: {elm.username}</h2>
-          <p>Email: {elm.email}</p>
-          <p>Friends: {elm.friends?.join("")}</p>
-          <Link to={`/users/${elm._id}`}>Go to profile</Link>
-          <hr />
-        </li>
+        <>
+          <li className="profile-card" key={elm._id}>
+            <h2>Name: {elm.username}</h2>
+            <p>Email: {elm.email}</p>
+
+            <p>Friends:</p>
+            {elm.friends?.map((friend) => {
+              return <p>{friend.username}</p>;
+            })}
+            <Link to={`/users/${elm._id}`}>Go to profile</Link>
+            <hr />
+          </li>
+        </>
       );
     });
   };

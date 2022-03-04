@@ -1,23 +1,23 @@
 import axios from "axios";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
 export default function AddFriend(props) {
   const { friendId } = useParams();
   const navigate = useNavigate();
-  const { user } = useContext(AuthContext);
+  const { getToken } = useContext(AuthContext);
+ 
+  const addNewFriend = () => {
+    const storedToken = getToken();
 
-  //console.log(user);
-
-  const addFriend = () => {
-    const friend = { friends: friendId };
     axios
-      .patch(`${process.env.REACT_APP_API_URL}/users/${user._id}`, friend)
-      .then((response) => {
-        console.log(response.data);
+      .put(`${process.env.REACT_APP_API_URL}/users/${friendId}/addFriend`, {},
+      { headers: { Authorization: `Bearer ${storedToken}` }})
+
+      .then(() => {
         props.updateUsers();
-        navigate("/");
+        navigate("/users");
       })
       .catch((err) => {
         console.log("error adding friend...", err);
@@ -26,7 +26,7 @@ export default function AddFriend(props) {
 
   return (
     <div className="AddFriend">
-      <button onClick={addFriend}>Add friend</button>
+      {addNewFriend()}
     </div>
   );
 }
