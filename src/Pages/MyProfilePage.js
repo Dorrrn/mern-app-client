@@ -2,14 +2,13 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
 export default function MyProfilePage(props) {
+  const { user } = useContext(AuthContext);
 
-const { user } = useContext(AuthContext);
-
-  if (props.users) {
-    user = props.users.find((elm) => {
-      return elm._id === user._id;
-    });
-  }
+  //   if (props.users) {
+  //     user = props.users.find((elm) => {
+  //       return elm._id === user._id;
+  //     });
+  //   }
 
   const renderProfileDetails = (elm) => {
     return (
