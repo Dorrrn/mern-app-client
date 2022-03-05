@@ -8,7 +8,7 @@ function SignupPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
-  
+
   const navigate = useNavigate();
 
   const handleUsername = (e) => setUsername(e.target.value);
@@ -46,7 +46,6 @@ function SignupPage(props) {
             <div class="left-box">
               <h1 className="form-headline">Sign Up</h1>
               <br /> <br /> <br />
-              
               <input
                 type="text"
                 name="username"
@@ -76,7 +75,7 @@ function SignupPage(props) {
             <div class="right-box">
               <span class="signinwith">Already have an account? </span>
               <button class="button-form-sec" action="/login">
-                Login
+                Login <i class="bi bi-arrow-right-square"></i>
               </button>
             </div>
           </div>

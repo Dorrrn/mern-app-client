@@ -7,7 +7,7 @@ pink: # F87270
 brown: #A4614A
 */
 
-.UserLogin, .SignupPage {
+.LoginPage, .SignupPage {
   padding: 7rem 5rem;
 }
 
@@ -66,25 +66,27 @@ input {
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
   text-align: center; 
-  background-image: url("../../public/images/tandem-signup.png");
+  background-image: url("../../public/images/tandem-login.png");
   background-color: #fdf5d4;
 }
 
-.right-box-login{
+.right-box-login {
   position: absolute;
   top: 0;
   right: 0;
   padding: 60px;
   width: 18vw;
   height: 50vh;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
+  background-position:bottom;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
   text-align: center; 
-  background-image: url(https://images.pexels.com/photos/5566303/pexels-photo-5566303.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-image: url("../../public/images/tandem-signup.png");
+  background-color: #fdf5d4;
 }
-
 
 .right-box .signinwith, .right-box-login .signinwith{
   display: flex;
@@ -120,5 +122,5 @@ input {
   text-transform: uppercase;
   letter-spacing: 2px;
   border-radius: 10px;
-  border: #C7A099 2px solid;
+  border:none
 }

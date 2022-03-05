@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
+import "./SignUpLogin.css"
 
 function LoginPage(props) {
   const [email, setEmail] = useState("");
@@ -39,38 +40,44 @@ function LoginPage(props) {
 
   return (
     <div className="LoginPage">
-      <h1>Login</h1>
-
       {errorMessage && <p className="error">{errorMessage}</p>}
 
       <form onSubmit={handleLoginSubmit}>
-        <label>
-          E-Mail:
-          <input
-            type="text"
-            name="email"
-            required={true}
-            value={email}
-            onChange={handleEmail}
-          />
-        </label>
+        <div class="container">
+          <div class="form-box row justify-content-md-center">
+            <div class="left-box">
+              <h1 className="form-headline">Login</h1>
+              <br /> <br /> <br />
+              <input
+                type="text"
+                name="email"
+                required={true}
+                value={email}
+                onChange={handleEmail}
+                placeholder="e-mail"
+              />
+              <input
+                type="password"
+                name="password"
+                required={true}
+                value={password}
+                onChange={handlePassword}
+                placeholder="password"
+              />
+              <button type="submit" class="button-form">
+                Login
+              </button>
+            </div>
 
-        <label>
-          Password:
-          <input
-            type="password"
-            name="password"
-            required={true}
-            value={password}
-            onChange={handlePassword}
-          />
-        </label>
-
-        <button type="submit">Login</button>
+            <div class="right-box-login">
+              <span class="signinwith">Not registered yet? </span>
+              <button class="button-form-sec" action="/signup">
+                Sign up now <i class="bi bi-arrow-right-square"></i>
+              </button>
+            </div>
+          </div>
+        </div>
       </form>
-
-      <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
     </div>
   );
 }
