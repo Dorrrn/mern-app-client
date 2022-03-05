@@ -1,36 +1,19 @@
-import { Link } from "react-router-dom";
+import UserCards from "../components/UserCards";
 
 export default function Users(props) {
-  const renderUserProfiles = (list) => {
-    return props.users.map((elm) => {
-      return (
-        <>
-          <li className="profile-card" key={elm._id}>
-            <h2>Name: {elm.username}</h2>
-            <p>Email: {elm.email}</p>
-
-            <p>Friends:</p>
-            {elm.friends?.map((friend) => {
-              return <p>{friend.username}</p>;
-            })}
-            <Link to={`/users/${elm._id}`}>Go to profile</Link>
-            <hr />
-          </li>
-        </>
-      );
-    });
-  };
 
   return (
     <div className="Users">
       <h3>All users</h3>
-      <ul>
-        {props.users.length > 0 ? (
-          renderUserProfiles(props.users)
-        ) : (
-          <p>No users found....</p>
-        )}
-      </ul>
+      <div className="container">
+        <div className="row justify-content-center">
+          {props.users.length > 0 ? (
+            <UserCards users={props.users} sliceStart="0" sliceEnd={props.users.length} />
+          ) : (
+            <p>No users found....</p>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

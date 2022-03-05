@@ -65,15 +65,6 @@ function App() {
       
       <Route path="/" element={<HomePage users={users}/>} />
 
-        {/* <Route
-          path="/"
-          element={
-            <HomePage>
-              <UserCards users={users} />
-            </HomePage>
-          }
-        /> */}
-
         <Route
           path="/signup"
           element={
