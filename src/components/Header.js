@@ -22,6 +22,11 @@ export default function Header() {
                 <NavLink to="/users/updateskills" className="header-link">
                   update skills
                 </NavLink>
+
+                <NavLink to="/updateprofile" className="header-link">
+                  update profile
+                </NavLink>
+                
               </div>
               <div className="nav-link-right">
                 <span>{user && user.email}</span>

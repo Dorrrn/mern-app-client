@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
 import "./UserCards.css";
 
 export default function UserCards(props) {
-
 
   const renderUserProfiles = (list) => {
     return props.users.slice(props.sliceStart, props.sliceEnd).map((elm) => {
@@ -14,7 +12,7 @@ export default function UserCards(props) {
                 {elm.img ? (
                   <img src={elm.img} alt={elm.username} />
                 ) : (
-                  <img src="https://via.placeholder.com/100" alt="user-image" />
+                  <img src="https://via.placeholder.com/100" alt="userimage"/>
                 )}
               </div>
               <h4 className="username">{elm.username}</h4>

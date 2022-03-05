@@ -11,6 +11,7 @@ import IsAnon from "./components/IsAnon";
 import AddFriend from "./components/AddFriend";
 import AddWantsToLearn from "./components/AddWantsToLearn";
 import UserCards from "./components/UserCards";
+import Search from "./components/Search";
 
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -20,6 +21,8 @@ import UsersPage from "./pages/UsersPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import SkillsPage from "./pages/SkillsPage";
 import UpdateMySkills from "./components/UpdateMySkills";
+import UpdateMySkillsTest from "./components/UpdateMySkills copy";
+import UpdateProfilePage from "./pages/UpdateProfilePage";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -62,8 +65,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-      
-      <Route path="/" element={<HomePage users={users}/>} />
+        <Route path="/" element={<HomePage users={users} />} />
 
         <Route
           path="/signup"
@@ -83,7 +85,7 @@ function App() {
           }
         />
 
-        <Route path="/users" element={<UsersPage users={users} />} />
+        <Route path="/users" element={<UsersPage users={users} fetchUsers={fetchUsers} />} />
 
         <Route
           path="/users/:userId"
@@ -127,6 +129,24 @@ function App() {
         />
 
         <Route
+          path="/users/updateskillstest"
+          element={
+            <IsPrivate>
+              <UpdateMySkillsTest updateUsers={fetchUsers} />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/updateprofile"
+          element={
+            <IsPrivate>
+              <UpdateProfilePage fetchUsers={fetchUsers} />
+            </IsPrivate>
+          }
+        />
+
+        <Route
           path="/profile"
           element={
             <IsPrivate>
@@ -134,7 +154,11 @@ function App() {
             </IsPrivate>
           }
         />
+
+      <Route path="/search" element={<Search />} />
+
       </Routes>
+
 
       <Footer />
     </div>

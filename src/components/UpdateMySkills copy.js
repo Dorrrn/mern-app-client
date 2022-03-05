@@ -3,8 +3,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
-
-export default function UpdateMySkills(props) {
+export default function UpdateMySkillsTest(props) {
   const [inputs, setInputs] = useState({
     title: "",
     category: "",
@@ -52,7 +51,6 @@ export default function UpdateMySkills(props) {
 
       <h4>I want to learn: </h4>
       <form onSubmit={handleSubmit}>
-     
         <select
           value={inputs.category}
           onChange={handleInputChange}
@@ -82,6 +80,37 @@ export default function UpdateMySkills(props) {
             onChange={handleInputChange}
           />
         </label>
+        <hr />
+        <select
+          value={inputs.category}
+          onChange={handleInputChange}
+          name="category"
+        >
+          <option>Choose category</option>
+          <option type="text" value="language">
+            Language
+          </option>
+          <option type="text" value="sports">
+            Sports
+          </option>
+          <option type="text" value="instrument">
+            Instrument
+          </option>
+          <option type="text" value="coding language">
+            Coding language
+          </option>
+        </select>
+
+        <label>
+          Title
+          <input
+            type="text"
+            name="title"
+            value={inputs.title}
+            onChange={handleInputChange}
+          />
+        </label>
+
         <button type="submit">add skill</button>
       </form>
     </div>
