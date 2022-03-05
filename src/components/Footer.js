@@ -1,8 +1,11 @@
+import "./Header.css";
 
 export default function Footer() {
   return (
-  <div className="Footer">
-  <h3>Footer</h3>
-  </div>
-  )
+    <div className="Footer">
+      <p>
+        <i className="bi bi-bookmark-heart-fill"></i>  tandem 2022
+      </p>
+    </div>
+  );
 }

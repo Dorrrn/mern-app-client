@@ -1,0 +1,136 @@
+/* colors
+ivory: #FFFCF0
+green: #808661
+blush: #C7A099
+black: #323232
+pink: # F87270
+brown: #A4614A
+*/
+
+.header-top {
+  height: 600px;
+  /* background-image: url("../../public/images/tandem-header.png");
+  background-size: cover;
+  background-repeat: no-repeat; */
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 7rem;
+  background-color: #fffcf0;
+  box-shadow: 0 2px 5px rgba(91, 91, 91, 0.1);
+}
+
+.header-visual {
+  height: 300px;
+}
+
+.headline {
+  padding: 3rem 0 1rem 0;
+  font-weight: 800;
+}
+
+.header-top-button {
+  color: white;
+  background-color: #c7a099;
+  vertical-align: middle;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 2rem;
+}
+
+.card-height {
+  height: 500px;
+}
+
+.card-img-height {
+  height: 300px;
+}
+
+.homepage-button {
+  color: white;
+  background-color: #768bad;
+  vertical-align: middle;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  border: none;
+}
+
+.homepage-button-sec {
+  color: #768bad;
+  background-color: transparent;
+  vertical-align: middle;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  border: 1px solid #768bad;
+}
+
+/* user cards */
+.users-summary {
+  padding: 5rem 0;
+}
+
+.user-card {
+  position: relative;
+  height: 500px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.user-card-img img {
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.username {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(219, 217, 217);
+}
+
+.user-card-button {
+  color: #c7a099;
+  background-color: transparent;
+  vertical-align: middle;
+  text-decoration: none;
+  font-weight: 1000;
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  border: 2px solid #c7a099;
+}
+
+.see-more-link {
+  color: #c7a099;
+  background-color: transparent;
+  vertical-align: middle;
+  text-decoration: none;
+  font-weight: 1000;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}

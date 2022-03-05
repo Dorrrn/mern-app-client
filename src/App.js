@@ -10,12 +10,12 @@ import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
 import AddFriend from "./components/AddFriend";
 import AddWantsToLearn from "./components/AddWantsToLearn";
+import UserCards from "./components/UserCards";
 
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import MyProfilePage from "./pages/MyProfilePage";
-import UpdateSkills from "./pages/SkillsPage";
 import UsersPage from "./pages/UsersPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import SkillsPage from "./pages/SkillsPage";
@@ -62,7 +62,17 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+      
+      <Route path="/" element={<HomePage users={users}/>} />
+
+        {/* <Route
+          path="/"
+          element={
+            <HomePage>
+              <UserCards users={users} />
+            </HomePage>
+          }
+        /> */}
 
         <Route
           path="/signup"
@@ -130,15 +140,6 @@ function App() {
           element={
             <IsPrivate>
               <MyProfilePage users={users} />
-            </IsPrivate>
-          }
-        />
-
-        <Route
-          path="/profile/update"
-          element={
-            <IsPrivate>
-              <UpdateSkills />
             </IsPrivate>
           }
         />

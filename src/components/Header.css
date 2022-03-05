@@ -1,0 +1,58 @@
+/* colors
+ivory: #FFFCF0
+green: #808661
+blush: #C7A099
+black: #323232
+pink: # F87270
+brown: #A4614A
+*/
+
+.Header {
+  background-color: #d1cdaf;
+  padding: 1rem 5rem;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+}
+
+.nav-link-left a {
+  color: #808661;
+  
+}
+
+.header-link {
+  color: #808661;
+  vertical-align: middle;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.header-button {
+  color: white;
+  background-color: #808661;
+  vertical-align: middle;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  border: none;
+}
+
+.Footer {
+  background-color: #808661;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  padding: 1rem 4rem;
+  text-align: left;
+}
