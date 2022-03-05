@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./SignUpLogin.css";
 
 function SignupPage(props) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [errorMessage, setErrorMessage] = useState(undefined);
-
+  
   const navigate = useNavigate();
 
   const handleUsername = (e) => setUsername(e.target.value);
@@ -38,46 +38,50 @@ function SignupPage(props) {
 
   return (
     <div className="SignupPage">
-      <h1>Sign Up</h1>
-
       {errorMessage && <p className="error">{errorMessage}</p>}
 
       <form onSubmit={handleSignupSubmit}>
-        <label>
-          Username:
-          <input
-            type="text"
-            name="username"
-            value={username}
-            onChange={handleUsername}
-          />
-        </label>
+        <div class="container">
+          <div class="form-box row justify-content-md-center">
+            <div class="left-box">
+              <h1 className="form-headline">Sign Up</h1>
+              <br /> <br /> <br />
+              
+              <input
+                type="text"
+                name="username"
+                value={username}
+                onChange={handleUsername}
+                placeholder="username"
+              />
+              <input
+                type="text"
+                name="email"
+                value={email}
+                onChange={handleEmail}
+                placeholder="e-mail"
+              />
+              <input
+                type="password"
+                name="password"
+                value={password}
+                onChange={handlePassword}
+                placeholder="set password (min. 8 characters)"
+              />
+              <button type="submit" class="button-form">
+                Register
+              </button>
+            </div>
 
-        <label>
-          Email:
-          <input
-            type="text"
-            name="email"
-            value={email}
-            onChange={handleEmail}
-          />
-        </label>
-
-        <label>
-          Password:
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handlePassword}
-          />
-        </label>
-
-        <button type="submit">Register</button>
+            <div class="right-box">
+              <span class="signinwith">Already have an account? </span>
+              <button class="button-form-sec" action="/login">
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
       </form>
-
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
     </div>
   );
 }

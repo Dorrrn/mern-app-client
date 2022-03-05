@@ -1,0 +1,124 @@
+/* colors
+ivory: #FFFCF0
+green: #808661
+blush: #C7A099
+black: #323232
+pink: # F87270
+brown: #A4614A
+*/
+
+.UserLogin, .SignupPage {
+  padding: 7rem 5rem;
+}
+
+.form-box {
+  position: relative;
+  margin: 5vh auto;
+  height: 50vh;
+  width: 40vw;
+  background: #fff;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.left-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 50px;
+ 
+
+}
+
+.form-headline {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 2rem;
+  float:left;
+
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 2vh;
+  padding: 4px;
+  width: 15vw;
+  height: 5vh;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #aaa;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.right-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 60px;
+  width: 18vw;
+  height: 50vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position:bottom;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center; 
+  background-image: url("../../public/images/tandem-signup.png");
+  background-color: #fdf5d4;
+}
+
+.right-box-login{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 60px;
+  width: 18vw;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center; 
+  background-image: url(https://images.pexels.com/photos/5566303/pexels-photo-5566303.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+}
+
+
+.right-box .signinwith, .right-box-login .signinwith{
+  display: flex;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #9a7169;
+  text-align: center;
+}
+
+.button-form {
+  color: white;
+  background-color: #C7A099;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin: 0 auto;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  border: none;
+  float: left;
+}
+
+.button-form-sec {
+  color: #C7A099;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin: 0 auto;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  border: #C7A099 2px solid;
+}

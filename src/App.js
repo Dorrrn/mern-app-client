@@ -25,12 +25,12 @@ function App() {
   const [users, setUsers] = useState([]);
   const [skills, setSkills] = useState([]);
 
-  const { getToken, isLoggedIn } = useContext(AuthContext);
+  const { getToken, isLoggedIn, isLoggedOut } = useContext(AuthContext);
 
   useEffect(() => {
     fetchUsers();
     fetchSkills();
-  }, [isLoggedIn]);
+  }, [isLoggedIn, isLoggedOut]);
 
   const fetchUsers = () => {
     const storedToken = getToken();

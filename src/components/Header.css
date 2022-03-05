@@ -13,6 +13,7 @@ brown: #A4614A
   position: fixed;
   width: 100vw;
   top: 0;
+  z-index: 10;
 }
 
 .nav-link-left a {
@@ -55,4 +56,5 @@ brown: #A4614A
   width: 100vw;
   padding: 1rem 4rem;
   text-align: left;
+  z-index: 9;
 }
