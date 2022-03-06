@@ -32,11 +32,11 @@ export default function EditProfilePage(props) {
     const storedToken = getToken();
 
     axios
-      .put(`${process.env.REACT_APP_API_URL}/users/profile/edit`, userDetails, {
+      .put(`${process.env.REACT_APP_API_URL}/auth/profile/update`, userDetails, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then(() => {
-        props.fetchUsers();
+       props.fetchUsers();
         navigate("/profile");
       })
       .catch((error) => {
@@ -96,7 +96,7 @@ export default function EditProfilePage(props) {
 
             <div className="col-6 d-flex align-items-center flex-column justify-content-evenly">
               <label>
-               what's your motiviation?
+                what's your motiviation?
                 <textarea
                   type="text"
                   name="bio"

@@ -48,11 +48,12 @@ export default function CreateSkill(props) {
 
   return (
     <div className="CreateSkill">
-      <h2>What do you want to learn?</h2>
-
       {errorMessage && <p className="error">{errorMessage}</p>}
 
       <form onSubmit={handleSubmit} className="create-skill-form">
+        <h3>What do you want to learn?</h3>
+        <br />
+        <br />
         <select
           value={inputs.category}
           onChange={handleInputChange}

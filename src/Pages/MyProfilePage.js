@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
+import "./MyProfilePage.css";
+import { Link } from "react-router-dom";
 
 export default function MyProfilePage(props) {
   const { user } = useContext(AuthContext);
@@ -11,31 +13,93 @@ export default function MyProfilePage(props) {
       return elm._id === currentUser;
     });
   }
+  // console.log(currentUser)
 
   const renderProfileDetails = (elm) => {
     return (
       <>
-        <div className="profileDetails" key={elm._id}>
-          <h3>Name: {elm.username}</h3>
-          <p>E-Mail: {elm.email}</p>
-          <p>Motivation: {elm.bio}</p>
+        <div className="container">
+          <div
+            className="profile-details row justify-content-center"
+            key={elm._id}
+          >
+            <div className="col-8">
+              <div className="container">
+                <div className="row border-bottom">
+                  <h3>Hi {elm.username}</h3>
+                  <div className="col-4">
+                    <img src={elm.img} alt={elm.username} />
+                  </div>
+                  <div className="col-8">
+                    <p className="user-quote">
+                      <i class="bi bi-chat-right-quote"> {elm.bio}</i>
+                    </p>
+                    <p>{elm.email}</p>
 
-          <img src={elm.img} alt={elm.username} />
+                    <Link to="/profile/update">edit</Link>
+                  </div>
+                </div>
+              </div>
 
-          <p>My friends:</p>
-          {elm.friends?.map((friend) => {
-            return <li>{friend.username}</li>;
-          })}
+              <div className="skills-summary">
+                <div className="border-bottom">
+                  <h5>
+                    <i class="bi bi-bookmark-heart"></i> I want to learn ...
+                  </h5>
+                  <ul>
+                    {elm.wantsToLearn?.map((skill) => {
+                      return <li>{skill.title}</li>;
+                    })}
+                  </ul>
+                </div>
+              </div>
+              <div className="skills-summary">
+                <h5>
+                  <i className="bi bi-bookmark-check"></i> I can teach ...
+                </h5>
+                <ul>
+                  {elm.wantsToTeach?.map((skill) => {
+                    return <li>{skill.title}</li>;
+                  })}
+                </ul>
+              </div>
 
-          <p>Wants to learn:</p>
-          {elm.wantsToLearn?.map((skill) => {
-            return <li>{skill.title}</li>;
-          })}
+              <Link to="/skills" className="profile-button">
+                Add skills
+              </Link>
+            </div>
 
-          <p>Can teach:</p>
-          {elm.wantsToTeach?.map((skill) => {
-            return <li>{skill.title}</li>;
-          })}
+            <div className="col-4 my-friends">
+              <h5>My friends</h5>
+              <ul>
+                {elm.friends?.map((friend) => {
+                  return (
+                    <li className="friend-summary border-bottom">
+                      <div className="row">
+                        <div className="col-5">
+                          <img src={friend.img} alt={friend.username} />
+                        </div>
+
+                        <div className="col-7">
+                          <p>{friend.username}</p>
+                          <a
+                            href={`/users/${friend._id}`}
+                            className="link-to-profile"
+                          >
+                            <p>
+                              {" "}
+                              <i class="bi bi-arrow-right-square"> </i>
+                              profile
+                            </p>
+                          </a>
+                        </div>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
         </div>
       </>
     );
@@ -43,7 +107,6 @@ export default function MyProfilePage(props) {
 
   return (
     <div className="MyProfilePage">
-      <h2>My profile</h2>
       {currentUser ? (
         renderProfileDetails(currentUser)
       ) : (

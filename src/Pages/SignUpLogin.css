@@ -7,7 +7,8 @@ pink: # F87270
 brown: #A4614A
 */
 
-.LoginPage, .SignupPage {
+.LoginPage,
+.SignupPage {
   padding: 7rem 5rem;
 }
 
@@ -26,17 +27,17 @@ brown: #A4614A
   top: 0;
   left: 0;
   padding: 50px;
-
 }
 
 .form-headline {
   margin: 0 0 20px 0;
   font-weight: 300;
   font-size: 2rem;
-  float:left;
+  float: left;
 }
 
-.LoginPage input, .SignupPage input {
+.LoginPage input,
+.SignupPage input {
   display: block;
   box-sizing: border-box;
   margin-bottom: 2vh;
@@ -61,10 +62,10 @@ brown: #A4614A
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-position:bottom;
+  background-position: bottom;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
-  text-align: center; 
+  text-align: center;
   background-image: url("../../public/images/tandem-login.png");
   background-color: #fdf5d4;
 }
@@ -79,15 +80,16 @@ brown: #A4614A
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-position:bottom;
+  background-position: bottom;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
-  text-align: center; 
+  text-align: center;
   background-image: url("../../public/images/tandem-signup.png");
   background-color: #fdf5d4;
 }
 
-.right-box .signinwith, .right-box-login .signinwith{
+.right-box .signinwith,
+.right-box-login .signinwith {
   display: flex;
   margin-bottom: 40px;
   font-size: 2rem;
@@ -97,7 +99,7 @@ brown: #A4614A
 
 .button-form {
   color: white;
-  background-color: #C7A099;
+  background-color: #c7a099;
   text-decoration: none;
   font-weight: 600;
   padding: 10px 20px;
@@ -111,7 +113,7 @@ brown: #A4614A
 }
 
 .button-form-sec {
-  color: #C7A099;
+  color: #c7a099;
   background-color: transparent;
   text-decoration: none;
   font-weight: 600;
@@ -121,5 +123,5 @@ brown: #A4614A
   text-transform: uppercase;
   letter-spacing: 2px;
   border-radius: 10px;
-  border:none
+  border: none;
 }

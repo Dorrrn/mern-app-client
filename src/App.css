@@ -18,7 +18,8 @@ brown: #A4614A
 }
 
 a, a:hover {
-  color: #F87270;
+  color: #508663;
+  text-decoration: none;
 }
 
 .button {

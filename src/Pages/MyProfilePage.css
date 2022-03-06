@@ -1,0 +1,78 @@
+/* colors
+ivory: #FFFCF0
+green: #808661
+blush: #C7A099
+black: #323232
+pink: # F87270
+brown: #A4614A
+*/
+
+.MyProfilePage {
+  padding: 7rem;
+}
+
+.profile-details {
+  background: #fff;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 80%;
+  margin: 5vh auto;
+  text-align: left;
+  padding: 3rem;
+}
+
+.profile-details img {
+  border-radius: 50%;
+  width: 150px;
+}
+
+.user-quote {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-bottom: 1rem;
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgb(203, 199, 199);
+  padding-bottom: 1.5rem;
+}
+
+.skills-summary {
+  padding: 1rem 2rem;
+}
+
+.skills-summary ul {
+  padding-left: 5;
+}
+
+.MyProfilePage li {
+  list-style: none;
+}
+
+.skills-summary ul li:before {
+  content: "- ";
+}
+
+.my-friends {
+  padding: 2rem 3rem;
+}
+
+.my-friends img {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.profile-button {
+ color: #C7A099;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  border: 1px solid #C7A099;
+  margin-left: 2rem;
+}
+
