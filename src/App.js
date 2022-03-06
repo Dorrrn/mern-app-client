@@ -23,6 +23,7 @@ import SkillsPage from "./pages/SkillsPage";
 import UpdateMySkills from "./components/UpdateMySkills";
 import UpdateMySkillsTest from "./components/UpdateMySkills copy";
 import UpdateProfilePage from "./pages/UpdateProfilePage";
+import AddWantsToTeach from "./components/AddWantsToTeach";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -85,7 +86,10 @@ function App() {
           }
         />
 
-        <Route path="/users" element={<UsersPage users={users} fetchUsers={fetchUsers} />} />
+        <Route
+          path="/users"
+          element={<UsersPage users={users} fetchUsers={fetchUsers} />}
+        />
 
         <Route
           path="/users/:userId"
@@ -106,6 +110,15 @@ function App() {
           element={
             <IsPrivate>
               <AddWantsToLearn />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/skills/:skillId/wantstoteach"
+          element={
+            <IsPrivate>
+              <AddWantsToTeach />
             </IsPrivate>
           }
         />
@@ -155,10 +168,8 @@ function App() {
           }
         />
 
-      <Route path="/search" element={<Search />} />
-
+        <Route path="/search" element={<Search />} />
       </Routes>
-
 
       <Footer />
     </div>

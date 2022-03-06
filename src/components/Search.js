@@ -13,11 +13,11 @@ export default function Search(props) {
   };
 
   return (
-    <div className="Search">
+    <div className="Search" style={{padding: "0 5rem"}}>
       <form>
         <input
           type="text"
-          placeholder="search for users"
+          placeholder="search ... "
           value={searchInput}
           onChange={handleInputChange}
         />

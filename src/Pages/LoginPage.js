@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
-import "./SignUpLogin.css"
+import "./SignUpLogin.css";
 
 function LoginPage(props) {
   const [email, setEmail] = useState("");
@@ -43,9 +43,9 @@ function LoginPage(props) {
       {errorMessage && <p className="error">{errorMessage}</p>}
 
       <form onSubmit={handleLoginSubmit}>
-        <div class="container">
-          <div class="form-box row justify-content-md-center">
-            <div class="left-box">
+        <div className="container">
+          <div className="form-box row justify-content-md-center">
+            <div className="left-box">
               <h1 className="form-headline">Login</h1>
               <br /> <br /> <br />
               <input
@@ -64,15 +64,15 @@ function LoginPage(props) {
                 onChange={handlePassword}
                 placeholder="password"
               />
-              <button type="submit" class="button-form">
+              <button type="submit" className="button-form">
                 Login
               </button>
             </div>
 
-            <div class="right-box-login">
-              <span class="signinwith">Not registered yet? </span>
-              <button class="button-form-sec" action="/signup">
-                Sign up now <i class="bi bi-arrow-right-square"></i>
+            <div className="right-box-login">
+              <span className="signinwith">Not registered yet? </span>
+              <button className="button-form-sec" action="/signup">
+                Sign up now <i className="bi bi-arrow-right-square"></i>
               </button>
             </div>
           </div>

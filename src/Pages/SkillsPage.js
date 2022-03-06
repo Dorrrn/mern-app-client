@@ -1,32 +1,64 @@
 import { Link } from "react-router-dom";
+import "./SkillsPage.css"
 
 export default function SkillsPage(props) {
-
-  const renderLanguageSkills = (list) => {
+  const renderSkillsToLearn = (list) => {
     return props.skills.map((elm) => {
-
       return (
         <div className="links-skills">
-          <Link to={`/skills/${elm._id}/wantstolearn`}>Add skill: {elm.title}</Link>
+          <Link to={`/skills/${elm._id}/wantstolearn`}>{elm.title}</Link>
         </div>
       );
-    })
+    });
   };
 
-  let skill;
+  let skillsToLearn;
   if (props.skills) {
-    skill = props.skills.find((elm) => {
-      return elm.title === skill;
+    skillsToLearn = props.skills.find((elm) => {
+      return elm.title === skillsToLearn;
+    });
+  }
+
+  const renderSkillsToTeach = (list) => {
+    return props.skills.map((elm) => {
+      return (
+        <div className="links-skills">
+          <Link to={`/skills/${elm._id}/wantstoteach`}> {elm.title}</Link>
+        </div>
+      );
+    });
+  };
+
+  let skillsToTeach;
+  if (props.skills) {
+    skillsToTeach = props.skills.find((elm) => {
+      return elm.title === skillsToTeach;
     });
   }
 
   return (
-    <div className="UpdateSkillsPage">
-      <section className="language-skills">
-        <h4>What do you want to learn?</h4>
-{props.skills? renderLanguageSkills(props.skill) : <p>no skills found...</p>}
+    <div className="SkillsPage">
+      <div className="container">
+        <div className="row">
+          <div className="col-6 skillsToLearn">
+            <h4>Wanna learn:</h4>
+            {props.skills ? (
+              renderSkillsToLearn(props.skillsToLearn)
+            ) : (
+              <p>no skills found...</p>
+            )}
+          </div>
 
-      </section>
+          <div className="col-6 skillsToLearn">
+            <h4>Can teach:</h4>
+            {props.skills ? (
+              renderSkillsToTeach(props.skillsToTeach)
+            ) : (
+              <p>no skills found...</p>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

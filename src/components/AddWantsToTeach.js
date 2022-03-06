@@ -3,16 +3,16 @@ import { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
-export default function AddWantsToLearn(props) {
+export default function AddWantsToTeach(props) {
   const { skillId } = useParams();
   const navigate = useNavigate();
   const { user, getToken } = useContext(AuthContext);
  
-  const addWantsToLearn = () => {
+  const addWantsToTeach = () => {
     const storedToken = getToken();
 
     axios
-      .put(`${process.env.REACT_APP_API_URL}/skills/${skillId}/wantstolearn`, {},
+      .put(`${process.env.REACT_APP_API_URL}/skills/${skillId}/wantstoteach`, {},
       { headers: { Authorization: `Bearer ${storedToken}` }})
 
       .then(() => {
@@ -24,13 +24,13 @@ export default function AddWantsToLearn(props) {
       });
   };
 
-  return <div className="AddWantsToLearn">
+  return <div className="AddWantsToTeach">
 
   <label>
     <input 
       type="checkbox" value=""
     />
   </label>
-  {addWantsToLearn()}
+  {addWantsToTeach()}
   </div>;
 }

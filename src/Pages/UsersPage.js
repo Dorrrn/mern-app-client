@@ -1,10 +1,12 @@
 import UserCards from "../components/UserCards";
 import "./UsersPage.css";
 import Search from "../components/Search";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../context/auth.context";
 
 export default function Users(props) {
   const [searchResults, setSearchResults] = useState([]);
+  const { user } = useContext(AuthContext);
 
   const filterUsers = (searchTerm) => {
     if (searchTerm !== "") {
@@ -20,16 +22,35 @@ export default function Users(props) {
     }
   };
 
+  // if (props.users) {
+  //   user = props.users.find((elm) => {
+  //     return elm._id === user._id;
+  //   });
+  // }
+
+  // console.log("current user", user)
+
+  // const filterMatches = () => {
+  //   const matchList = props.users.filter((elm) => {
+  //     return (elm.wantsToTeach[0]._id = user.wantsToLearn._id);
+  //   });
+  //   props.setUsers(matchList)
+  // };
+
+  // console.log("user 0:", props.users[0].wantsToLearn.toString().join(""))
+
   return (
     <div className="UsersPage">
-      <h3>All users</h3>
+      <h3>See all users</h3>
       <div className="searchbar">
         <Search filterUsers={filterUsers} />
       </div>
 
+      {/* <button onClick={ () => filterMatches() } className="btn-top">See matches
+     </button> */}
+
       <div className="container">
         <div className="row justify-content-center">
-
           {searchResults.length ? (
             <UserCards
               users={searchResults}
@@ -43,7 +64,6 @@ export default function Users(props) {
               sliceEnd={props.users.length}
             />
           )}
-
         </div>
       </div>
     </div>

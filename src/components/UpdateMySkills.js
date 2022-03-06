@@ -21,6 +21,7 @@ export default function UpdateMySkills(props) {
       title: inputs.title,
       category: inputs.category,
     };
+
     const storedToken = getToken();
 
     axios
@@ -29,7 +30,7 @@ export default function UpdateMySkills(props) {
       })
       .then(() => {
         props.updateUsers();
-        //navigate(`/users/${user._id}`);
+        navigate("/");
       })
       .catch((error) => {
         const msg = error.response.data.errorMessage;

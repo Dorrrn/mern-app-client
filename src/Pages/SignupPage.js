@@ -41,9 +41,9 @@ function SignupPage(props) {
       {errorMessage && <p className="error">{errorMessage}</p>}
 
       <form onSubmit={handleSignupSubmit}>
-        <div class="container">
-          <div class="form-box row justify-content-md-center">
-            <div class="left-box">
+        <div className="container">
+          <div className="form-box row justify-content-md-center">
+            <div className="left-box">
               <h1 className="form-headline">Sign Up</h1>
               <br /> <br /> <br />
               <input
@@ -67,15 +67,15 @@ function SignupPage(props) {
                 onChange={handlePassword}
                 placeholder="set password (min. 8 characters)"
               />
-              <button type="submit" class="button-form">
+              <button type="submit" className="button-form">
                 Register
               </button>
             </div>
 
-            <div class="right-box">
-              <span class="signinwith">Already have an account? </span>
-              <button class="button-form-sec" action="/login">
-                Login <i class="bi bi-arrow-right-square"></i>
+            <div className="right-box">
+              <span className="signinwith">Already have an account? </span>
+              <button className="button-form-sec" action="/login">
+                Login <i className="bi bi-arrow-right-square"></i>
               </button>
             </div>
           </div>
