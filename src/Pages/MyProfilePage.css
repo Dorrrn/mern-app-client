@@ -23,7 +23,7 @@ brown: #A4614A
 
 .profile-details img {
   border-radius: 50%;
-  width: 150px;
+  width: 100%;
 }
 
 .user-quote {
@@ -34,7 +34,7 @@ brown: #A4614A
 
 .border-bottom {
   border-bottom: 1px solid rgb(203, 199, 199);
-  padding-bottom: 1.5rem;
+  padding: 1rem 0;
 }
 
 .skills-summary {

@@ -34,60 +34,60 @@ function App() {
   useEffect(() => {
     fetchUsers();
     fetchSkills();
-  }, [isLoggedIn]);
+  }, [isLoggedIn, isLoggedOut]);
 
-  const fetchUsers = async () => {
-    try {
-      const storedToken = getToken();
-      let allUsers = await axios.get(`${process.env.REACT_APP_API_URL}/users`, {
+  // const fetchUsers = async () => {
+  //   try {
+  //     const storedToken = getToken();
+  //     let allUsers = await axios.get(`${process.env.REACT_APP_API_URL}/users`, {
+  //       headers: { Authorization: `Bearer ${storedToken}` },
+  //     });
+  //     setUsers(allUsers.data);
+  //   } catch (err) {
+  //     throw new Error("Failed to get all users", err);
+  //   }
+  // };
+
+  // const fetchSkills = async () => {
+  //   try {
+  //     const storedToken = getToken();
+  //     let allSkills = await axios.get(
+  //       `${process.env.REACT_APP_API_URL}/skills`,
+  //       {
+  //         headers: { Authorization: `Bearer ${storedToken}` },
+  //       }
+  //     );
+  //     setSkills(allSkills.data);
+  //   } catch (err) {
+  //     throw new Error("Failed to get all skills", err);
+  //   }
+  // };
+
+  const fetchUsers = () => {
+    const storedToken = getToken();
+
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/users`, {
         headers: { Authorization: `Bearer ${storedToken}` },
-      });
-      setUsers(allUsers.data);
-    } catch (err) {
-      throw new Error("Failed to get all users", err);
-    }
+      })
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((e) => console.log("error getting list of users...", e));
   };
 
-  const fetchSkills = async () => {
-    try {
-      const storedToken = getToken();
-      let allSkills = await axios.get(
-        `${process.env.REACT_APP_API_URL}/skills`,
-        {
-          headers: { Authorization: `Bearer ${storedToken}` },
-        }
-      );
-      setSkills(allSkills.data);
-    } catch (err) {
-      throw new Error("Failed to get all skills", err);
-    }
+  const fetchSkills = () => {
+    const storedToken = getToken();
+
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/skills`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then((response) => {
+        setSkills(response.data);
+      })
+      .catch((e) => console.log("error getting list of skills...", e));
   };
-
-  // const fetchUsers = () => {
-  //   const storedToken = getToken();
-
-  //   axios
-  //     .get(`${process.env.REACT_APP_API_URL}/users`, {
-  //       headers: { Authorization: `Bearer ${storedToken}` },
-  //     })
-  //     .then((response) => {
-  //       setUsers(response.data);
-  //     })
-  //     .catch((e) => console.log("error getting list of users...", e));
-  // };
-
-  // const fetchSkills = () => {
-  //   const storedToken = getToken();
-
-  //   axios
-  //     .get(`${process.env.REACT_APP_API_URL}/skills`, {
-  //       headers: { Authorization: `Bearer ${storedToken}` },
-  //     })
-  //     .then((response) => {
-  //       setSkills(response.data);
-  //     })
-  //     .catch((e) => console.log("error getting list of skills...", e));
-  // };
 
   return (
     <div className="App">

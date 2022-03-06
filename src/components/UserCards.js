@@ -18,18 +18,18 @@ export default function UserCards(props) {
               <div className="row">
                 <div className="col-6">
                   <p>
-                    <i className="bi bi-bookmark-check"></i> Can teach:
+                    <i className="bi bi-bookmark-check"></i> teach
                   </p>
-                  {elm.wantsToTeach?.slice(0, 3).map((skill) => {
+                  {elm.wantsToTeach?.slice(0, 2).map((skill) => {
                     return <p>{skill.title}</p>;
                   })}
                 </div>
 
                 <div className="col-6">
                   <p>
-                    <i className="bi bi-bookmark-x"></i> Wants to learn:
+                    <i className="bi bi-bookmark-x"></i> learn
                   </p>
-                  {elm.wantsToLearn?.slice(0, 3).map((skill) => {
+                  {elm.wantsToLearn?.slice(0, 2).map((skill) => {
                     return <p>{skill.title}</p>;
                   })}
                 </div>

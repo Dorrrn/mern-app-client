@@ -87,7 +87,6 @@ export default function MyProfilePage(props) {
                             className="link-to-profile"
                           >
                             <p>
-                              {" "}
                               <i class="bi bi-arrow-right-square"> </i>
                               profile
                             </p>
