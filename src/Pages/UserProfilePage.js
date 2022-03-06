@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import "./UserProfilePage.css"
+import "./UserProfilePage.css";
 
 export default function UserProfilePage(props) {
   const { userId } = useParams();
@@ -21,13 +21,11 @@ export default function UserProfilePage(props) {
             <div className="col-7">
               <h3 className="border-bottom">Hi, I am {elm.username}</h3>
               <img src={elm.img} alt={elm.username} />
-
               <p className="users-quote">{elm.bio}</p>
-
               <br />
-              <button to="/" className="users-details-button">
-                Contact
-              </button>
+              <a href={`mailto:${elm.email}`} className="users-details-button">
+                email
+              </a>
               <br />
               <br />
               <a
@@ -49,7 +47,7 @@ export default function UserProfilePage(props) {
                         return <li>{skill.title}</li>;
                       })
                     ) : (
-                      <p>... </p>
+                      <p> ... </p>
                     )}
                   </ul>
                 </div>
@@ -61,11 +59,11 @@ export default function UserProfilePage(props) {
                 </h5>
                 <ul>
                   {elm.wantsToTeach.length > 0 ? (
-                    elm.wantsToLearn.map((skill) => {
+                    elm.wantsToTeach.map((skill) => {
                       return <li>{skill.title}</li>;
                     })
                   ) : (
-                    <p>...</p>
+                    <p> ...</p>
                   )}
                 </ul>
               </div>
