@@ -20,7 +20,7 @@ import MyProfilePage from "./pages/MyProfilePage";
 import UsersPage from "./pages/UsersPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import SkillsPage from "./pages/SkillsPage";
-import UpdateMySkills from "./components/UpdateMySkills";
+import CreateSkill from "./components/CreateSkill";
 import UpdateMySkillsTest from "./components/UpdateMySkills copy";
 import UpdateProfilePage from "./pages/UpdateProfilePage";
 import AddWantsToTeach from "./components/AddWantsToTeach";
@@ -100,7 +100,7 @@ function App() {
           path="/users/:friendId/addfriend"
           element={
             <IsPrivate>
-              <AddFriend updateUsers={fetchUsers} />
+              <AddFriend fetchUsers={fetchUsers} />
             </IsPrivate>
           }
         />
@@ -133,10 +133,10 @@ function App() {
         />
 
         <Route
-          path="/users/updateskills"
+          path="/createskill"
           element={
             <IsPrivate>
-              <UpdateMySkills updateUsers={fetchUsers} />
+              <CreateSkill fetchUsers={fetchUsers} />
             </IsPrivate>
           }
         />

@@ -1,16 +1,16 @@
 import axios from "axios";
+import "./CreateSkill.css";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
-
-export default function UpdateMySkills(props) {
+export default function CreateSkill(props) {
   const [inputs, setInputs] = useState({
     title: "",
     category: "",
   });
 
-  const { user, getToken } = useContext(AuthContext);
+  const { getToken } = useContext(AuthContext);
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(undefined);
 
@@ -25,12 +25,12 @@ export default function UpdateMySkills(props) {
     const storedToken = getToken();
 
     axios
-      .post(`${process.env.REACT_APP_API_URL}/users/updateskills`, skill, {
+      .post(`${process.env.REACT_APP_API_URL}/skills/createskill`, skill, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then(() => {
-        props.updateUsers();
-        navigate("/");
+        props.fetchUsers();
+        navigate("/profile");
       })
       .catch((error) => {
         const msg = error.response.data.errorMessage;
@@ -47,13 +47,12 @@ export default function UpdateMySkills(props) {
   };
 
   return (
-    <div className="AddSkillToLearn">
-      <h2>Add your skills</h2>
+    <div className="CreateSkill">
+      <h2>What do you want to learn?</h2>
+
       {errorMessage && <p className="error">{errorMessage}</p>}
 
-      <h4>I want to learn: </h4>
-      <form onSubmit={handleSubmit}>
-     
+      <form onSubmit={handleSubmit} className="create-skill-form">
         <select
           value={inputs.category}
           onChange={handleInputChange}
@@ -75,15 +74,18 @@ export default function UpdateMySkills(props) {
         </select>
 
         <label>
-          Title
+          Skill to learn
           <input
             type="text"
             name="title"
             value={inputs.title}
             onChange={handleInputChange}
+            placeholder="e.g. piano"
           />
         </label>
-        <button type="submit">add skill</button>
+        <button type="submit" className="button-create ">
+          add skill
+        </button>
       </form>
     </div>
   );

@@ -15,7 +15,7 @@ export default function AddFriend(props) {
       .put(`${process.env.REACT_APP_API_URL}/users/${friendId}/addFriend`, {},
       { headers: { Authorization: `Bearer ${storedToken}` }})
       .then(() => {
-        props.updateUsers();
+        props.fetchUsers();
         navigate("/users");
       })
       .catch((err) => {
