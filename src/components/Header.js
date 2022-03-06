@@ -19,14 +19,13 @@ export default function Header() {
                 <NavLink to="/users" className="header-link">
                   all users
                 </NavLink>
-                <NavLink to="/createskill" className="header-link">
+                <NavLink to="/skills/create" className="header-link">
                   create skill
                 </NavLink>
 
                 <NavLink to="/updateprofile" className="header-link">
                   update profile
                 </NavLink>
-
               </div>
               <div className="nav-link-right">
                 <span>{user && user.email}</span>

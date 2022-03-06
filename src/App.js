@@ -124,7 +124,7 @@ function App() {
         />
 
         <Route
-          path="/skillspage"
+          path="/skills"
           element={
             <IsPrivate>
               <SkillsPage skills={skills} />
@@ -133,7 +133,7 @@ function App() {
         />
 
         <Route
-          path="/createskill"
+          path="/skills/create"
           element={
             <IsPrivate>
               <CreateSkill fetchUsers={fetchUsers} />

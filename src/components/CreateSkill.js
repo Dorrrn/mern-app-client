@@ -25,7 +25,7 @@ export default function CreateSkill(props) {
     const storedToken = getToken();
 
     axios
-      .post(`${process.env.REACT_APP_API_URL}/skills/createskill`, skill, {
+      .post(`${process.env.REACT_APP_API_URL}/skills/create`, skill, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then(() => {
