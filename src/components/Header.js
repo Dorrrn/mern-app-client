@@ -23,7 +23,7 @@ export default function Header() {
                   create skill
                 </NavLink>
 
-                <NavLink to="/updateprofile" className="header-link">
+                <NavLink to="/profile/edit" className="header-link">
                   update profile
                 </NavLink>
               </div>

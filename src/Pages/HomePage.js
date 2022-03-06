@@ -1,14 +1,28 @@
 import "./HomePage.css";
 import { Link } from "react-router-dom";
 import UserCards from "../components/UserCards";
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context";
 
 export default function HomePage(props) {
+  const { isLoggedIn } = useContext(AuthContext);
+
   return (
     <div className="HomePage">
       <header className="header-top">
         <h1 className="headline">languages, sports, music or coding</h1>
         <h4>learn and teach from each other with tandem</h4>
-        <button className="header-top-button">Sign up now</button>
+
+        {isLoggedIn && (
+          <Link to="/users" className="header-top-button">
+            See all users
+          </Link>
+        )}
+        {!isLoggedIn && (
+          <Link to="/signup" className="header-top-button">
+            Sign up now
+          </Link>
+        )}
         <img
           src="/images/tandem-visual.png"
           alt="tandem-visual"
@@ -20,7 +34,6 @@ export default function HomePage(props) {
         <h2>Find tandems to share your skills</h2>
         <div className="container">
           <div className="row justify-content-center">
-
             {props.users.length > 0 ? (
               <UserCards users={props.users} sliceStart="0" sliceEnd="3" />
             ) : (

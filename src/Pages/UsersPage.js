@@ -43,6 +43,8 @@ export default function Users(props) {
     <div className="UsersPage">
       <h3>See all users</h3>
       <div className="searchbar">
+
+      <p>Searchbar</p>
         <Search filterUsers={filterUsers} />
       </div>
 

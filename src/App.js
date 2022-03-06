@@ -17,12 +17,12 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import MyProfilePage from "./pages/MyProfilePage";
+import EditProfilePage from "./pages/EditProfilePage"
 import UsersPage from "./pages/UsersPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import SkillsPage from "./pages/SkillsPage";
 import CreateSkill from "./components/CreateSkill";
-import UpdateMySkillsTest from "./components/UpdateMySkills copy";
-import UpdateProfilePage from "./pages/UpdateProfilePage";
+import UpdateProfilePage from "./pages/UpdateProfilePage-test";
 import AddWantsToTeach from "./components/AddWantsToTeach";
 
 function App() {
@@ -106,6 +106,24 @@ function App() {
         />
 
         <Route
+          path="/profile"
+          element={
+            <IsPrivate>
+              <MyProfilePage users={users} />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/profile/edit"
+          element={
+            <IsPrivate>
+              <EditProfilePage fetchUsers={fetchUsers} />
+            </IsPrivate>
+          }
+        />
+
+        <Route
           path="/skills/:skillId/wantstolearn"
           element={
             <IsPrivate>
@@ -142,28 +160,10 @@ function App() {
         />
 
         <Route
-          path="/users/updateskillstest"
-          element={
-            <IsPrivate>
-              <UpdateMySkillsTest updateUsers={fetchUsers} />
-            </IsPrivate>
-          }
-        />
-
-        <Route
           path="/updateprofile"
           element={
             <IsPrivate>
               <UpdateProfilePage fetchUsers={fetchUsers} />
-            </IsPrivate>
-          }
-        />
-
-        <Route
-          path="/profile"
-          element={
-            <IsPrivate>
-              <MyProfilePage users={users} />
             </IsPrivate>
           }
         />

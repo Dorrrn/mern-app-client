@@ -1,4 +1,8 @@
 .UsersPage {
-    padding: 7rem;
+  padding: 7rem;
 }
 
+.searchbar {
+  text-align: left;
+  padding: 2rem 5rem;
+}

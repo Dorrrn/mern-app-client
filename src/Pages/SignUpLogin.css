@@ -26,6 +26,7 @@ brown: #A4614A
   top: 0;
   left: 0;
   padding: 50px;
+
 }
 
 .form-headline {
@@ -35,7 +36,7 @@ brown: #A4614A
   float:left;
 }
 
-input {
+.LoginPage input, .SignupPage input {
   display: block;
   box-sizing: border-box;
   margin-bottom: 2vh;
@@ -47,6 +48,7 @@ input {
   border-bottom: 1px solid #aaa;
   font-weight: 400;
   font-size: 0.8rem;
+  text-align: left;
 }
 
 .right-box {

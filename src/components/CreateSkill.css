@@ -14,7 +14,7 @@
   flex-direction: column;
 }
 
-select {
+.CreateSkill select {
   margin-bottom: 2vh;
   padding: 4px;
   height: 5vh;
@@ -27,13 +27,13 @@ select {
   text-align: center;
 }
 
-label {
+.CreateSkill label {
   display: inline-block;
   padding-top: 2rem;
   width: 100%;
 }
 
-input {
+.CreateSkill input {
   width: 100%;
   text-align: center;
 }

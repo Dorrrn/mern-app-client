@@ -13,7 +13,7 @@ export default function Search(props) {
   };
 
   return (
-    <div className="Search" style={{padding: "0 5rem"}}>
+    <div className="Search">
       <form>
         <input
           type="text"

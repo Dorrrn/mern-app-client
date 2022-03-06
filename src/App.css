@@ -24,3 +24,11 @@ a, a:hover {
 .button {
   border: none;
 }
+
+input {
+  border: none;
+  border-bottom: 1px solid rgb(188, 188, 188);
+  padding: 0.4rem;
+  background-color: #FFFCF0;
+
+}
