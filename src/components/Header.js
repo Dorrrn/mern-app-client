@@ -32,7 +32,7 @@ export default function Header() {
                 <NavLink to="/profile" className="header-button">
                   My profile
                 </NavLink>
-                <button onClick={logOutUser} className="header-button">
+                <button onClick={logOutUser} className="header-button-sec">
                   Logout
                 </button>
               </div>
