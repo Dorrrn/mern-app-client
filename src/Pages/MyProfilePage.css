@@ -23,11 +23,16 @@ brown: #A4614A
 
 .profile-details img {
   border-radius: 50%;
-  width: 100%;
+  width: 90%;
+
+}
+
+.circle img {
+    border: 2px solid #F87270;
 }
 
 .user-quote {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   padding-bottom: 1rem;
 }

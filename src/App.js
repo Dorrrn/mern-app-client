@@ -12,6 +12,7 @@ import AddFriend from "./components/AddFriend";
 import AddWantsToLearn from "./components/AddWantsToLearn";
 import UserCards from "./components/UserCards";
 import Search from "./components/Search";
+import FilterControls from "./components/FilterControls";
 
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -196,6 +197,17 @@ function App() {
         />
 
         <Route path="/search" element={<Search />} />
+
+        <Route
+          path="/controls"
+          element={
+            <IsPrivate>
+              <FilterControls users={users} />
+            </IsPrivate>
+          }
+        />
+
+        
       </Routes>
 
       <Footer />

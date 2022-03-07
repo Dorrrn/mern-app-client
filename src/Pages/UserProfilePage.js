@@ -39,7 +39,7 @@ export default function UserProfilePage(props) {
               <div className="skills-summary">
                 <div className="border-bottom">
                   <h5>
-                    <i class="bi bi-bookmark-heart"></i> I want to learn ...
+                    <i className="bi bi-bookmark-heart"></i> I want to learn ...
                   </h5>
                   <ul>
                     {elm.wantsToLearn.length > 0 ? (

@@ -7,11 +7,11 @@ pink: # F87270
 brown: #A4614A
 */
 
-@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
 .App {
   text-align: center;
-  font-family: Nunito, Verdana, Geneva, sans-serif; 
+  font-family: "Open Sans", Verdana, Geneva, sans-serif; 
   background-color: white;
   height: 100vh;
   color: #323232;

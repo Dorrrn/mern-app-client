@@ -22,14 +22,15 @@ export default function Users(props) {
     }
   };
 
-  // if (props.users) {
-  //   user = props.users.find((elm) => {
-  //     return elm._id === user._id;
-  //   });
-  // }
+    // let currentUser = user._id;
 
-  // console.log("current user", user)
+    // if (props.users) {
+    //   currentUser = props.users.find((elm) => {
+    //     return elm._id === currentUser;
+    //   });
+    // }
 
+  
   // const filterMatches = () => {
   //   const matchList = props.users.filter((elm) => {
   //     return (elm.wantsToTeach[0]._id = user.wantsToLearn._id);

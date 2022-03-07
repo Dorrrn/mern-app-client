@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 export default function MyProfilePage(props) {
   const { user } = useContext(AuthContext);
 
-  let currentUser = user._id;
+  let currentUser = user._id.toString();
 
   if (props.users) {
     currentUser = props.users.find((elm) => {
-      return elm._id === currentUser;
+      return elm._id.toString() === currentUser;
     });
   }
-  // console.log(currentUser)
+  console.log(currentUser);
 
   const renderProfileDetails = (elm) => {
     return (
@@ -26,13 +26,13 @@ export default function MyProfilePage(props) {
             <div className="col-8">
               <div className="container">
                 <div className="row border-bottom">
-                  <h3>Hi {elm.username}</h3>
-                  <div className="col-4">
-                    <img src={elm.img} alt={elm.username} />
+                  <h3 className="border-bottom">Hi {elm.username}</h3>
+                  <div className="col-4 circle">
+                    <img src={elm.img} alt={elm.username}/>
                   </div>
                   <div className="col-8">
                     <p className="user-quote">
-                      <i class="bi bi-chat-right-quote"> {elm.bio}</i>
+                      <i className="bi bi-chat-right-quote"> {elm.bio}</i>
                     </p>
                     <p>{elm.email}</p>
 
@@ -44,7 +44,7 @@ export default function MyProfilePage(props) {
               <div className="skills-summary">
                 <div className="border-bottom">
                   <h5>
-                    <i class="bi bi-bookmark-heart"></i> I want to learn ...
+                    <i className="bi bi-bookmark-heart"></i> I want to learn ...
                   </h5>
                   <ul>
                     {elm.wantsToLearn?.map((skill) => {
@@ -87,7 +87,7 @@ export default function MyProfilePage(props) {
                             className="link-to-profile"
                           >
                             <p>
-                              <i class="bi bi-arrow-right-square"> </i>
+                              <i className="bi bi-arrow-right-square"> </i>
                               profile
                             </p>
                           </a>

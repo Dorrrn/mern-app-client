@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./SignUpLogin.css";
+import { AuthContext } from "../context/auth.context";
 
 function SignupPage(props) {
   const [username, setUsername] = useState("");
@@ -15,6 +16,8 @@ function SignupPage(props) {
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
+  const { storeToken, authenticateUser } = useContext(AuthContext); //extract storeToken from AuthContext
+ 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
 
@@ -26,8 +29,10 @@ function SignupPage(props) {
 
     axios
       .post(`${process.env.REACT_APP_API_URL}/auth/signup`, userDetails)
-      .then(() => {
-        navigate("/login");
+      .then((response) => {
+        storeToken(response.data.authToken);
+        authenticateUser();
+        navigate("/");
       })
       .catch((error) => {
         const msg = error.response.data.errorMessage;

@@ -10,7 +10,7 @@ export default function HomePage(props) {
   return (
     <div className="HomePage">
       <header className="header-top">
-        <h1 className="headline">languages, sports, music or coding</h1>
+        <h1 className="headline">sports, languages, music or coding</h1>
         <h4>learn and teach from each other with tandem</h4>
 
         {isLoggedIn && (
@@ -23,11 +23,11 @@ export default function HomePage(props) {
             Sign up now
           </Link>
         )}
-        <img
+        {/* <img
           src="/images/tandem-visual.png"
           alt="tandem-visual"
           className="header-visual"
-        />
+        /> */}
       </header>
 
       <section className="users-summary">
