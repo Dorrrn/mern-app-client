@@ -16,7 +16,7 @@ export default function AddFriend(props) {
       { headers: { Authorization: `Bearer ${storedToken}` }})
       .then(() => {
         props.fetchUsers();
-        navigate("/profile");
+        return navigate("/profile");
       })
       .catch((err) => {
         console.log("error adding friend...", err);
