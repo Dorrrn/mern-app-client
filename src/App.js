@@ -13,6 +13,8 @@ import AddWantsToLearn from "./components/AddWantsToLearn";
 import UserCards from "./components/UserCards";
 import Search from "./components/Search";
 import FilterControls from "./components/FilterControls";
+import AddWantsToTeach from "./components/AddWantsToTeach";
+import RemoveWantsToLearn from "./components/RemoveWantsToLearn";
 
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -24,7 +26,7 @@ import UserProfilePage from "./pages/UserProfilePage";
 import SkillsPage from "./pages/SkillsPage";
 import CreateSkill from "./components/CreateSkill";
 import UpdateProfilePage from "./pages/UpdateProfilePage-test";
-import AddWantsToTeach from "./components/AddWantsToTeach";
+import RemoveWantsToTeach from "./components/RemoveWantsToTeach";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -70,7 +72,6 @@ function App() {
           path="/"
           element={<HomePage users={users} fetchUsers={fetchUsers} />}
         />
-
         <Route
           path="/signup"
           element={
@@ -79,7 +80,6 @@ function App() {
             </IsAnon>
           }
         />
-
         <Route
           path="/login"
           element={
@@ -88,7 +88,6 @@ function App() {
             </IsAnon>
           }
         />
-
         <Route
           path="/users"
           element={<UsersPage users={users} fetchUsers={fetchUsers} />}
@@ -98,7 +97,6 @@ function App() {
           path="/users/:userId"
           element={<UserProfilePage users={users} />}
         />
-
         <Route
           path="/users/:friendId/addfriend"
           element={
@@ -107,7 +105,6 @@ function App() {
             </IsPrivate>
           }
         />
-
         <Route
           path="/profile"
           element={
@@ -116,7 +113,6 @@ function App() {
             </IsPrivate>
           }
         />
-
         <Route
           path="/profile/edit"
           element={
@@ -125,7 +121,14 @@ function App() {
             </IsPrivate>
           }
         />
-
+        <Route
+          path="/skills"
+          element={
+            <IsPrivate>
+              <SkillsPage skills={skills} users={users} />
+            </IsPrivate>
+          }
+        />
         <Route
           path="/skills/:skillId/wantstolearn"
           element={
@@ -134,21 +137,28 @@ function App() {
             </IsPrivate>
           }
         />
-
         <Route
           path="/skills/:skillId/wantstoteach"
           element={
             <IsPrivate>
-              <AddWantsToTeach fetchUsers={fetchUsers}/>
+              <AddWantsToTeach fetchUsers={fetchUsers} />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/skills/:skillId/removewantstolearn"
+          element={
+            <IsPrivate>
+              <RemoveWantsToLearn fetchUsers={fetchUsers} />
             </IsPrivate>
           }
         />
 
         <Route
-          path="/skills"
+          path="/skills/:skillId/removewantstoteach"
           element={
             <IsPrivate>
-              <SkillsPage skills={skills} />
+              <RemoveWantsToTeach fetchUsers={fetchUsers} />
             </IsPrivate>
           }
         />
@@ -177,7 +187,7 @@ function App() {
           path="/controls"
           element={
             <IsPrivate>
-              <FilterControls users={users} fetchUsers={fetchUsers}/>
+              <FilterControls users={users} fetchUsers={fetchUsers} />
             </IsPrivate>
           }
         />

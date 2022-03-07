@@ -18,7 +18,7 @@ export default function AddWantsToLearn(props) {
       )
       .then(() => {
         props.fetchUsers();
-        return navigate("/profile");
+        return navigate("/skills");
       })
       .catch((err) => {
         console.log("error adding new skill...", err);

@@ -1,3 +1,25 @@
 .SkillsPage {
-    padding: 7rem
+  padding: 7rem;
+}
+
+.skills-summary ul {
+  padding-left: 5;
+}
+
+.SkillsPage li {
+  list-style: none;
+}
+
+.skills-summary ul li:before {
+  content: "- ";
+}
+
+.my-skills {
+  background: #fff;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 3rem;
+  block-size: fit-content;
+  width: fit-content;
+  position: fixed;
 }

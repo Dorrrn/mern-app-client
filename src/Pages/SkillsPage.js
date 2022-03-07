@@ -1,59 +1,122 @@
 import { Link } from "react-router-dom";
-import "./SkillsPage.css"
-import AddWantsToLearn from "../components/AddWantsToLearn";
+import "./SkillsPage.css";
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context";
 
 export default function SkillsPage(props) {
-  const renderSkillsToLearn = (list) => {
-    return props.skills.map((elm) => {
-      return (
-        <div className="links-skills">
-          <Link to={`/skills/${elm._id}/wantstolearn`}>{elm.title}</Link>
-        </div>
-      );
-    });
-  };
+  const { user } = useContext(AuthContext);
 
-  let skillsToLearn;
-  if (props.skills) {
-    skillsToLearn = props.skills.find((elm) => {
-      return elm.title === skillsToLearn;
+  let currentUserId = user._id;
+  if (props.users) {
+    currentUserId = props.users.find((elm) => {
+      return elm._id === currentUserId;
     });
   }
 
-  const renderSkillsToTeach = (list) => {
-    return props.skills.map((elm) => {
-      return (
-        <div className="links-skills">
-          <Link to={`/skills/${elm._id}/wantstoteach`}> {elm.title}</Link>
+  const renderMySkills = (elm) => {
+    return (
+      <>
+        <div className="skills-summary">
+          <div className="border-bottom">
+            <h5>
+              <i className="bi bi-bookmark-heart"></i> I want to learn
+            </h5>
+            <ul>
+              {elm.wantsToLearn?.map((skill) => {
+                return (
+                  <li>
+                    {skill.title}
+                    <Link to={`/skills/${skill._id}/removewantstolearn`}>
+                      x
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
-      );
-    });
+        <div className="skills-summary">
+          <h5>
+            <i className="bi bi-bookmark-check"></i> I can teach
+          </h5>
+          <ul>
+            {elm.wantsToTeach?.map((skill) => {
+              return (
+                <li>
+                  {skill.title}
+                  <Link to={`/skills/${skill._id}/removewantstoteach`}> x</Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </>
+    );
   };
 
-  let skillsToTeach;
-  if (props.skills) {
-    skillsToTeach = props.skills.find((elm) => {
-      return elm.title === skillsToTeach;
+  const renderSkillsList = (category) => {
+    return props.skills.map((elm) => {
+      if (elm.category === category) {
+        return (
+          <>
+            <div className="container">
+              <div className="row">
+                <div className="col-4">{elm.title}</div>
+                <div className="col-4">
+                  <Link to={`/skills/${elm._id}/wantstolearn`}>Learn</Link>
+                </div>
+                <div className="col-4">
+                  <Link to={`/skills/${elm._id}/wantstoteach`}>Teach</Link>
+                </div>
+              </div>
+            </div>
+          </>
+        );
+      }
     });
-  }
+  };
 
   return (
     <div className="SkillsPage">
       <div className="container">
         <div className="row">
-          <div className="col-6 skillsToLearn">
-            <h4>Wanna learn:</h4>
+          <div className="col-4 ">
+            <div className="my-skills">
+              <h3>My Skills</h3>
+
+              {currentUserId ? (
+                renderMySkills(currentUserId)
+              ) : (
+                <p>no skills found...</p>
+              )}
+            </div>
+          </div>
+          <div className="col-8">
+            <h4>Language</h4>
             {props.skills ? (
-              renderSkillsToLearn(props.skillsToLearn)
+              renderSkillsList("language")
             ) : (
               <p>no skills found...</p>
             )}
-          </div>
-
-          <div className="col-6 skillsToLearn">
-            <h4>Can teach:</h4>
+            <hr />
+            <h4>Instruments</h4>
             {props.skills ? (
-              renderSkillsToTeach(props.skillsToTeach)
+              renderSkillsList("instrument")
+            ) : (
+              <p>no skills found...</p>
+            )}
+            <hr />
+            <h4>Sports</h4>
+            {props.skills ? (
+              renderSkillsList("sports")
+            ) : (
+              <p>no skills found...</p>
+            )}
+
+            <hr />
+            <h4>Coding language</h4>
+            {props.skills ? (
+              renderSkillsList("coding language")
             ) : (
               <p>no skills found...</p>
             )}

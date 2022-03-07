@@ -2,17 +2,17 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
-import "./EditProfilePage.css"
+import "./EditProfilePage.css";
 
 export default function EditProfilePage(props) {
   const { user, getToken } = useContext(AuthContext);
 
-   let currentUserId = user._id
-   if (props.users) {
-     currentUserId = props.users.find((elm) => {
-       return elm._id === currentUserId;
-     });
-   }
+  let currentUserId = user._id;
+  if (props.users) {
+    currentUserId = props.users.find((elm) => {
+      return elm._id === currentUserId;
+    });
+  }
 
   const [inputs, setInputs] = useState({
     username: user.username,
@@ -27,7 +27,7 @@ export default function EditProfilePage(props) {
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const handleSubmit = (e) => {
-     e.preventDefault();
+    e.preventDefault();
 
     const userDetails = {
       username: inputs.username,
@@ -40,12 +40,16 @@ export default function EditProfilePage(props) {
     const storedToken = getToken();
 
     axios
-      .put(`${process.env.REACT_APP_API_URL}/auth/profile/update`, userDetails, {
-        headers: { Authorization: `Bearer ${storedToken}` },
-      })
+      .put(
+        `${process.env.REACT_APP_API_URL}/auth/profile/update`,
+        userDetails,
+        {
+          headers: { Authorization: `Bearer ${storedToken}` },
+        }
+      )
       .then(() => {
-       props.fetchUsers();
-      navigate("/profile");
+        props.fetchUsers();
+        navigate("/profile");
       })
       .catch((error) => {
         const msg = error.response.data.errorMessage;
@@ -109,7 +113,7 @@ export default function EditProfilePage(props) {
                   type="text"
                   name="bio"
                   rows="5"
-                  maxlength="150"
+                  maxLength="150"
                   value={inputs.bio}
                   onChange={handleInputChange}
                 />

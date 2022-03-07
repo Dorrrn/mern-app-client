@@ -1,12 +1,12 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
 export default function RemoveWantsToLearn(props) {
   const { skillId } = useParams();
   const navigate = useNavigate();
-  const { user, getToken } = useContext(AuthContext);
+  const { getToken } = useContext(AuthContext);
  
   const removeWantsToLearn = () => {
     const storedToken = getToken();
@@ -17,23 +17,14 @@ export default function RemoveWantsToLearn(props) {
         {},
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
-
       .then(() => {
-        props.updateUsers();
-        navigate("/profile");
+        props.fetchUsers();
+        return navigate("/skills");
       })
       .catch((err) => {
-        console.log("error adding new skill...", err);
+        console.log("error removing skill...", err);
       });
   };
 
-  return <div className="AddWantsToLearn">
-
-  <label>
-    <input 
-      type="checkbox" value=""
-    />
-  </label>
-  {addWantsToLearn()}
-  </div>;
+  return <div className="RemoveWantsToLearn">{removeWantsToLearn()}</div>;
 }
