@@ -37,32 +37,6 @@ function App() {
     fetchUsers();
   }, []);
 
-  // const fetchUsers = async () => {
-  //   try {
-  //     const storedToken = getToken();
-  //     let allUsers = await axios.get(`${process.env.REACT_APP_API_URL}/users`, {
-  //       headers: { Authorization: `Bearer ${storedToken}` },
-  //     });
-  //     setUsers(allUsers.data);
-  //   } catch (err) {
-  //     throw new Error("Failed to get all users", err);
-  //   }
-  // };
-
-  // const fetchSkills = async () => {
-  //   try {
-  //     const storedToken = getToken();
-  //     let allSkills = await axios.get(
-  //       `${process.env.REACT_APP_API_URL}/skills`,
-  //       {
-  //         headers: { Authorization: `Bearer ${storedToken}` },
-  //       }
-  //     );
-  //     setSkills(allSkills.data);
-  //   } catch (err) {
-  //     throw new Error("Failed to get all skills", err);
-  //   }
-  // };
 
   const fetchUsers = () => {
     const storedToken = getToken();
@@ -142,7 +116,7 @@ function App() {
           path="/profile"
           element={
             <IsPrivate>
-              <MyProfilePage users={users} fetchUsers={fetchUsers} />
+              <MyProfilePage users={users} />
             </IsPrivate>
           }
         />

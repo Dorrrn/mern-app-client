@@ -3,10 +3,12 @@ import "./UsersPage.css";
 import Search from "../components/Search";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/auth.context";
+import Searchbar from "../components/Searchbar";
 
 export default function Users(props) {
   const [searchResults, setSearchResults] = useState([]);
   const { user } = useContext(AuthContext);
+
 
   const filterUsers = (searchTerm) => {
     if (searchTerm !== "") {
@@ -44,17 +46,20 @@ export default function Users(props) {
     <div className="UsersPage">
       <h3>See all users</h3>
       <div className="searchbar">
-
       <p>Searchbar</p>
         <Search filterUsers={filterUsers} />
       </div>
+
+      {/* <div>
+        <Searchbar users={props.users}/>
+      </div> */}
 
       {/* <button onClick={ () => filterMatches() } className="btn-top">See matches
      </button> */}
 
       <div className="container">
         <div className="row justify-content-center">
-          {searchResults.length ? (
+          {searchResults.length > 0 ? (
             <UserCards
               users={searchResults}
               sliceStart="0"

@@ -7,6 +7,8 @@ import { AuthContext } from "../context/auth.context";
 export default function HomePage(props) {
   const { isLoggedIn } = useContext(AuthContext);
 
+  // const randomIndex = Math.floor(Math.random() * (props.users.length - 3))
+
   return (
     <div className="HomePage">
       <header className="header-top">

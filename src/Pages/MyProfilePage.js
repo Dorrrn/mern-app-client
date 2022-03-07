@@ -1,17 +1,12 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import "./MyProfilePage.css";
 import { Link } from "react-router-dom";
 
 export default function MyProfilePage(props) {
-  const { user, authenticateUser } = useContext(AuthContext);
-
-  useEffect(() => {
-    props.fetchUsers();
-  },[])
+  const { user } = useContext(AuthContext);
 
   let currentUser = user._id
-
   if (props.users) {
     currentUser = props.users.find((elm) => {
       return elm._id === currentUser;
@@ -110,10 +105,10 @@ export default function MyProfilePage(props) {
   return (
 
     <div className="MyProfilePage">
-      {currentUser ? (
-        renderProfileDetails(currentUser)
-      ) : (
+      {currentUser === null ? (
         <p>Sorry no user found...</p>
+      ) : (
+        renderProfileDetails(currentUser)
       )}
     </div>
   );

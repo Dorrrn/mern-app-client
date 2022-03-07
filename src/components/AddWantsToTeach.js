@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
@@ -20,7 +20,7 @@ export default function AddWantsToTeach(props) {
 
       .then(() => {
         props.updateUsers();
-        return navigate("/skillspage");
+        return navigate("/profile");
       })
       .catch((err) => {
         console.log("error adding new skill...", err);

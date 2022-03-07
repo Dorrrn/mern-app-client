@@ -5,7 +5,7 @@ export default function Search(props) {
   const [searchInput, setSearchInput] = useState("");
   const [query, setQuery] = useSearchParams();
  
-  const handleInputChange = (e) => {
+  const filter = (e) => {
     e.preventDefault();
     setQuery({search: e.target.value});
     setSearchInput(e.target.value);
@@ -19,7 +19,7 @@ export default function Search(props) {
           type="text"
           placeholder="search ... "
           value={searchInput}
-          onChange={handleInputChange}
+          onChange={filter}
         />
       </form>
     </div>

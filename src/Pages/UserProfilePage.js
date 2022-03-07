@@ -1,17 +1,15 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./UserProfilePage.css";
 
 export default function UserProfilePage(props) {
   const { userId } = useParams();
 
   let user;
-
   if (props.users) {
     user = props.users.find((elm) => {
       return elm._id === userId;
     });
   }
-  console.log(user);
 
   const renderProfileDetails = (elm) => {
     return (
@@ -76,7 +74,8 @@ export default function UserProfilePage(props) {
 
   return (
     <div className="UserProfilePage">
-      {user ? renderProfileDetails(user) : <p>Sorry no user found...</p>}
+      {user === null ?  <p>Sorry no users found...</p> : renderProfileDetails(user) }
     </div>
   );
+
 }
