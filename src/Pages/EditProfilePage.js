@@ -7,11 +7,10 @@ import "./EditProfilePage.css"
 export default function EditProfilePage(props) {
   const { user, getToken } = useContext(AuthContext);
 
-   let currentUser = user._id
-
+   let currentUserId = user._id
    if (props.users) {
-     currentUser = props.users.find((elm) => {
-       return elm._id === currentUser;
+     currentUserId = props.users.find((elm) => {
+       return elm._id === currentUserId;
      });
    }
 
@@ -19,8 +18,8 @@ export default function EditProfilePage(props) {
     username: user.username,
     email: user.email,
     password: user.password,
-    img: currentUser.img,
-    bio: currentUser.bio,
+    img: currentUserId.img,
+    bio: currentUserId.bio,
   });
 
   const navigate = useNavigate();
@@ -46,7 +45,7 @@ export default function EditProfilePage(props) {
       })
       .then(() => {
        props.fetchUsers();
-        navigate("/profile");
+      navigate("/profile");
       })
       .catch((error) => {
         const msg = error.response.data.errorMessage;

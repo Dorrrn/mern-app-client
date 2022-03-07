@@ -1,4 +1,5 @@
 import "./UserCards.css";
+import { Link } from "react-router-dom";
 
 export default function UserCards(props) {
   const renderUserProfiles = (list) => {
@@ -34,10 +35,9 @@ export default function UserCards(props) {
                   })}
                 </div>
               </div>
-
-              <a href={`/users/${elm._id}`} className="user-card-button">
+              <Link to={`/users/${elm._id}`} className="user-card-button">
                 See profile
-              </a>
+              </Link>
             </div>
           </div>
         </>

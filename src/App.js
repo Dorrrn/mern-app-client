@@ -37,10 +37,8 @@ function App() {
     fetchUsers();
   }, []);
 
-
   const fetchUsers = () => {
     const storedToken = getToken();
-
     axios
       .get(`${process.env.REACT_APP_API_URL}/users`, {
         headers: { Authorization: `Bearer ${storedToken}` },
@@ -63,8 +61,6 @@ function App() {
       })
       .catch((e) => console.log("error getting list of skills...", e));
   };
-
-
 
   return (
     <div className="App">
@@ -181,7 +177,7 @@ function App() {
           path="/controls"
           element={
             <IsPrivate>
-              <FilterControls users={users} />
+              <FilterControls users={users} fetchUsers={fetchUsers}/>
             </IsPrivate>
           }
         />

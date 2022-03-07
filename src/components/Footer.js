@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 export default function Footer() {
@@ -6,7 +7,7 @@ export default function Footer() {
       <p>
         <i className="bi bi-bookmark-heart-fill"></i>  tandem 2022
       </p>
-      <a href="/controls">Controls</a>
+      <Link to="/controls">Controls</Link> 
     </div>
   );
 }

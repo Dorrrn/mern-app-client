@@ -57,8 +57,8 @@ function AuthProviderWrapper(props) {
 
   const storeLoginDetails = (userDetails) => {
     setIsLoggedIn(true);
-    setIsLoading(false);
     setUser(userDetails);
+    setIsLoading(false);
   };
 
   return (

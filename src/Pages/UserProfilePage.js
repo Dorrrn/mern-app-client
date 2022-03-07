@@ -1,5 +1,6 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./UserProfilePage.css";
+
 
 export default function UserProfilePage(props) {
   const { userId } = useParams();
@@ -21,17 +22,18 @@ export default function UserProfilePage(props) {
               <img src={elm.img} alt={elm.username} />
               <p className="users-quote">{elm.bio}</p>
               <br />
-              <a href={`mailto:${elm.email}`} className="users-details-button">
+              <Link to={`mailto:${elm.email}`} className="users-details-button">
                 email
-              </a>
+              </Link>
+              
               <br />
               <br />
-              <a
-                href={`/users/${elm._id}/addfriend`}
+              <Link
+                to={`/users/${elm._id}/addfriend`}
                 className="users-details-button-sec"
               >
                 Add as friend
-              </a>
+              </Link>
             </div>
             <div className="col-5">
               <div className="skills-summary">

@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 export default function MyProfilePage(props) {
   const { user } = useContext(AuthContext);
 
-  let currentUser = user._id
+  let currentUserId = user._id;
   if (props.users) {
-    currentUser = props.users.find((elm) => {
-      return elm._id === currentUser;
+    currentUserId = props.users.find((elm) => {
+      return elm._id === currentUserId;
     });
   }
- 
+
   const renderProfileDetails = (elm) => {
     return (
       <>
@@ -33,12 +33,10 @@ export default function MyProfilePage(props) {
                       <i className="bi bi-chat-right-quote"> {elm.bio}</i>
                     </p>
                     <p>{elm.email}</p>
-
                     <Link to="/profile/update">edit</Link>
                   </div>
                 </div>
               </div>
-
               <div className="skills-summary">
                 <div className="border-bottom">
                   <h5>
@@ -80,15 +78,15 @@ export default function MyProfilePage(props) {
 
                         <div className="col-7">
                           <p>{friend.username}</p>
-                          <a
-                            href={`/users/${friend._id}`}
+                          <Link
+                            to={`/users/${friend._id}`}
                             className="link-to-profile"
                           >
                             <p>
                               <i className="bi bi-arrow-right-square"> </i>
                               profile
                             </p>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </li>
@@ -103,12 +101,11 @@ export default function MyProfilePage(props) {
   };
 
   return (
-
     <div className="MyProfilePage">
-      {currentUser === null ? (
-        <p>Sorry no user found...</p>
+      {currentUserId ? (
+        renderProfileDetails(currentUserId)
       ) : (
-        renderProfileDetails(currentUser)
+        <p>Sorry no user found...</p>
       )}
     </div>
   );

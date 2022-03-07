@@ -6,7 +6,6 @@ import { AuthContext } from "../context/auth.context";
 
 export default function HomePage(props) {
   const { isLoggedIn } = useContext(AuthContext);
-
   // const randomIndex = Math.floor(Math.random() * (props.users.length - 3))
 
   return (
@@ -36,7 +35,7 @@ export default function HomePage(props) {
         <h2>Find tandems to share your skills</h2>
         <div className="container">
           <div className="row justify-content-center">
-            {props.users.length > 0 ? (
+            {props.users ? (
               <UserCards users={props.users} sliceStart="0" sliceEnd="3" />
             ) : (
               <p>No users found....</p>
