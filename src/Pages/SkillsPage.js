@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./SkillsPage.css"
+import AddWantsToLearn from "../components/AddWantsToLearn";
 
 export default function SkillsPage(props) {
   const renderSkillsToLearn = (list) => {

@@ -1,20 +1,23 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../context/auth.context";
 import "./MyProfilePage.css";
 import { Link } from "react-router-dom";
 
 export default function MyProfilePage(props) {
-  const { user } = useContext(AuthContext);
+  const { user, authenticateUser } = useContext(AuthContext);
 
-  let currentUser = user._id.toString();
+  useEffect(() => {
+    props.fetchUsers();
+  },[])
+
+  let currentUser = user._id
 
   if (props.users) {
     currentUser = props.users.find((elm) => {
-      return elm._id.toString() === currentUser;
+      return elm._id === currentUser;
     });
   }
-  console.log(currentUser);
-
+ 
   const renderProfileDetails = (elm) => {
     return (
       <>
@@ -28,7 +31,7 @@ export default function MyProfilePage(props) {
                 <div className="row border-bottom">
                   <h3 className="border-bottom">Hi {elm.username}</h3>
                   <div className="col-4 circle">
-                    <img src={elm.img} alt={elm.username}/>
+                    <img src={elm.img} alt={elm.username} />
                   </div>
                   <div className="col-8">
                     <p className="user-quote">
@@ -105,6 +108,7 @@ export default function MyProfilePage(props) {
   };
 
   return (
+
     <div className="MyProfilePage">
       {currentUser ? (
         renderProfileDetails(currentUser)

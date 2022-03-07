@@ -6,31 +6,24 @@ import { AuthContext } from "../context/auth.context";
 export default function AddWantsToLearn(props) {
   const { skillId } = useParams();
   const navigate = useNavigate();
-  const { user, getToken } = useContext(AuthContext);
- 
+  const { getToken } = useContext(AuthContext);
+
   const addWantsToLearn = () => {
     const storedToken = getToken();
-
     axios
-      .put(`${process.env.REACT_APP_API_URL}/skills/${skillId}/wantstolearn`, {},
-      { headers: { Authorization: `Bearer ${storedToken}` }})
-
+      .put(
+        `${process.env.REACT_APP_API_URL}/skills/${skillId}/wantstolearn`,
+        {},
+        { headers: { Authorization: `Bearer ${storedToken}` } }
+      )
       .then(() => {
-        props.updateUsers();
-        navigate("/skillspage");
+        props.fetchUsers();
+        return navigate("/skills");
       })
       .catch((err) => {
         console.log("error adding new skill...", err);
       });
   };
 
-  return <div className="AddWantsToLearn">
-
-  <label>
-    <input 
-      type="checkbox" value=""
-    />
-  </label>
-  {addWantsToLearn()}
-  </div>;
+  return <div className="AddWantsToLearn">{addWantsToLearn()}</div>;
 }

@@ -33,9 +33,9 @@ function App() {
   const { getToken, isLoggedIn, isLoggedOut } = useContext(AuthContext);
 
   useEffect(() => {
-    fetchUsers();
     fetchSkills();
-  }, [isLoggedIn, isLoggedOut]);
+    fetchUsers();
+  }, []);
 
   // const fetchUsers = async () => {
   //   try {
@@ -90,11 +90,16 @@ function App() {
       .catch((e) => console.log("error getting list of skills...", e));
   };
 
+
+
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<HomePage users={users} />} />
+        <Route
+          path="/"
+          element={<HomePage users={users} fetchUsers={fetchUsers} />}
+        />
 
         <Route
           path="/signup"
@@ -137,7 +142,7 @@ function App() {
           path="/profile"
           element={
             <IsPrivate>
-              <MyProfilePage users={users} />
+              <MyProfilePage users={users} fetchUsers={fetchUsers} />
             </IsPrivate>
           }
         />
@@ -146,7 +151,7 @@ function App() {
           path="/profile/edit"
           element={
             <IsPrivate>
-              <EditProfilePage fetchUsers={fetchUsers} />
+              <EditProfilePage fetchUsers={fetchUsers} users={users} />
             </IsPrivate>
           }
         />
@@ -155,7 +160,7 @@ function App() {
           path="/skills/:skillId/wantstolearn"
           element={
             <IsPrivate>
-              <AddWantsToLearn />
+              <AddWantsToLearn fetchUsers={fetchUsers} />
             </IsPrivate>
           }
         />
@@ -164,7 +169,7 @@ function App() {
           path="/skills/:skillId/wantstoteach"
           element={
             <IsPrivate>
-              <AddWantsToTeach />
+              <AddWantsToTeach fetchUsers={fetchUsers}/>
             </IsPrivate>
           }
         />
@@ -206,8 +211,6 @@ function App() {
             </IsPrivate>
           }
         />
-
-        
       </Routes>
 
       <Footer />

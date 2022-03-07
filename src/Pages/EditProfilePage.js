@@ -5,15 +5,24 @@ import { AuthContext } from "../context/auth.context";
 import "./EditProfilePage.css"
 
 export default function EditProfilePage(props) {
+  const { user, getToken } = useContext(AuthContext);
+
+   let currentUser = user._id
+
+   if (props.users) {
+     currentUser = props.users.find((elm) => {
+       return elm._id === currentUser;
+     });
+   }
+
   const [inputs, setInputs] = useState({
-    username: "",
-    email: "",
-    password: "",
-    img: "",
-    bio: "",
+    username: user.username,
+    email: user.email,
+    password: user.password,
+    img: currentUser.img,
+    bio: currentUser.bio,
   });
 
-  const { user, getToken } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [errorMessage, setErrorMessage] = useState(undefined);

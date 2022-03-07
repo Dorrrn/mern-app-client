@@ -6,31 +6,26 @@ import { AuthContext } from "../context/auth.context";
 export default function AddWantsToTeach(props) {
   const { skillId } = useParams();
   const navigate = useNavigate();
-  const { user, getToken } = useContext(AuthContext);
- 
+  const { getToken } = useContext(AuthContext);
+
   const addWantsToTeach = () => {
     const storedToken = getToken();
 
     axios
-      .put(`${process.env.REACT_APP_API_URL}/skills/${skillId}/wantstoteach`, {},
-      { headers: { Authorization: `Bearer ${storedToken}` }})
+      .put(
+        `${process.env.REACT_APP_API_URL}/skills/${skillId}/wantstoteach`,
+        {},
+        { headers: { Authorization: `Bearer ${storedToken}` } }
+      )
 
       .then(() => {
         props.updateUsers();
-        navigate("/skillspage");
+        return navigate("/skillspage");
       })
       .catch((err) => {
         console.log("error adding new skill...", err);
       });
   };
 
-  return <div className="AddWantsToTeach">
-
-  <label>
-    <input 
-      type="checkbox" value=""
-    />
-  </label>
-  {addWantsToTeach()}
-  </div>;
+  return <div className="AddWantsToTeach">{addWantsToTeach()}</div>;
 }
