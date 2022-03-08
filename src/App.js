@@ -16,16 +16,16 @@ import FilterControls from "./components/FilterControls";
 import AddWantsToTeach from "./components/AddWantsToTeach";
 import RemoveWantsToLearn from "./components/RemoveWantsToLearn";
 
-import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
-import SignupPage from "./pages/SignupPage";
-import MyProfilePage from "./pages/MyProfilePage";
-import EditProfilePage from "./pages/EditProfilePage";
-import UsersPage from "./pages/UsersPage";
-import UserProfilePage from "./pages/UserProfilePage";
-import SkillsPage from "./pages/SkillsPage";
+import HomePage from "./pagesname/HomePage";
+import LoginPage from "./pagesname/LoginPage";
+import SignupPage from "./pagesname/SignupPage";
+import MyProfilePage from "./pagesname/MyProfilePage";
+import EditProfilePage from "./pagesname/EditProfilePage";
+import UsersPage from "./pagesname/UsersPage";
+import UserProfilePage from "./pagesname/UserProfilePage";
+import SkillsPage from "./pagesname/SkillsPage";
 import CreateSkill from "./components/CreateSkill";
-import UpdateProfilePage from "./pages/UpdateProfilePage-test";
+import UpdateProfilePage from "./pagesname/UpdateProfilePage-test";
 import RemoveWantsToTeach from "./components/RemoveWantsToTeach";
 
 function App() {
