@@ -10,11 +10,11 @@ import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
 import AddFriend from "./components/AddFriend";
 import AddWantsToLearn from "./components/AddWantsToLearn";
-import UserCards from "./components/UserCards";
-import Search from "./components/Search";
 import FilterControls from "./components/FilterControls";
 import AddWantsToTeach from "./components/AddWantsToTeach";
 import RemoveWantsToLearn from "./components/RemoveWantsToLearn";
+import RemoveWantsToTeach from "./components/RemoveWantsToTeach";
+import CreateSkill from "./components/CreateSkill";
 
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -24,15 +24,13 @@ import EditProfilePage from "./pages/EditProfilePage";
 import UsersPage from "./pages/UsersPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import SkillsPage from "./pages/SkillsPage";
-import CreateSkill from "./components/CreateSkill";
 import UpdateProfilePage from "./pages/UpdateProfilePage-test";
-import RemoveWantsToTeach from "./components/RemoveWantsToTeach";
 
 function App() {
   const [users, setUsers] = useState([]);
   const [skills, setSkills] = useState([]);
 
-  const { getToken, isLoggedIn, isLoggedOut } = useContext(AuthContext);
+  const { getToken } = useContext(AuthContext);
 
   useEffect(() => {
     fetchSkills();
@@ -114,7 +112,7 @@ function App() {
           }
         />
         <Route
-          path="/profile/edit"
+          path="/profile/update"
           element={
             <IsPrivate>
               <EditProfilePage fetchUsers={fetchUsers} users={users} />
@@ -180,9 +178,6 @@ function App() {
             </IsPrivate>
           }
         />
-
-        <Route path="/search" element={<Search />} />
-
         <Route
           path="/controls"
           element={

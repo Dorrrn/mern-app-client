@@ -1,69 +1,62 @@
 import UserCards from "../components/UserCards";
 import "./UsersPage.css";
-import Search from "../components/Search";
-import { useContext, useState } from "react";
-import { AuthContext } from "../context/auth.context";
-import Searchbar from "../components/Searchbar";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 export default function Users(props) {
-  const [searchResults, setSearchResults] = useState([]);
-  const { user } = useContext(AuthContext);
+  
+  const [foundUsers, setFoundUsers] = useState(props.users);
+  const [filterUsers, setFilterUsers] = useState(undefined);
+  // const [query, setQuery] = useSearchParams();
 
+  useEffect(() => {
+    if (filterUsers) {
+      setFoundUsers(
+        props.users.filter((filteredUsers) => {
+          return filteredUsers.username
+            ?.toLowerCase()
+            .includes(filterUsers?.toLowerCase());
+        })
+      );
+    } 
+  }, [filterUsers]);
 
-  const filterUsers = (searchTerm) => {
-    if (searchTerm !== "") {
-      const filteredUsers = props.users.filter((elm) => {
-        return Object.values(elm)
-          .join("")
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
-      });
-      setSearchResults(filteredUsers);
+  const handleFilterUsers = (e) => {
+    const isNotEmpty = !!e.target.value;
+    if (isNotEmpty) {
+      e.preventDefault();
+      setFilterUsers(e.target.value);
+      // setQuery({ search: e.target.value });
     } else {
-      setSearchResults(props.users);
+      setFilterUsers(undefined);
     }
   };
-
-    // let currentUser = user._id;
-
-    // if (props.users) {
-    //   currentUser = props.users.find((elm) => {
-    //     return elm._id === currentUser;
-    //   });
-    // }
-
-  
-  // const filterMatches = () => {
-  //   const matchList = props.users.filter((elm) => {
-  //     return (elm.wantsToTeach[0]._id = user.wantsToLearn._id);
-  //   });
-  //   props.setUsers(matchList)
-  // };
-
-  // console.log("user 0:", props.users[0].wantsToLearn.toString().join(""))
 
   return (
     <div className="UsersPage">
       <h3>See all users</h3>
       <div className="searchbar">
-      <p>Searchbar</p>
-        <Search filterUsers={filterUsers} />
+        <p>Searchbar</p>
+
+        <div className="searchbar">
+          <form>
+            <input
+              type="text"
+              placeholder="search ... "
+              value={filterUsers}
+              onChange={handleFilterUsers}
+            />
+          </form>
+        </div>
       </div>
-
-      {/* <div>
-        <Searchbar users={props.users}/>
-      </div> */}
-
-      {/* <button onClick={ () => filterMatches() } className="btn-top">See matches
-     </button> */}
 
       <div className="container">
         <div className="row justify-content-center">
-          {searchResults.length > 0 ? (
+          {filterUsers ? (
             <UserCards
-              users={searchResults}
+              users={foundUsers}
               sliceStart="0"
-              sliceEnd={searchResults.length}
+              sliceEnd={foundUsers.length}
             />
           ) : (
             <UserCards
