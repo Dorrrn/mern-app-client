@@ -6,6 +6,10 @@ export default function Users(props) {
   const [foundUsers, setFoundUsers] = useState(props.users);
   const [filterUsers, setFilterUsers] = useState(undefined);
 
+    useEffect(() => {
+      setFoundUsers(props.users);
+    }, []);
+
   useEffect(() => {
     if (filterUsers) {
       setFoundUsers(
