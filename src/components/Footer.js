@@ -7,7 +7,6 @@ export default function Footer() {
       <p>
         <i className="bi bi-bookmark-heart-fill"></i>  tandem 2022
       </p>
-      <Link to="/controls">Controls</Link> 
     </div>
   );
 }
