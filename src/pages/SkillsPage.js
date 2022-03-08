@@ -108,7 +108,7 @@ export default function SkillsPage(props) {
             <hr />
             <h4>Sports</h4>
             {props.skills ? (
-              renderSkillsList("sports")
+              renderSkillsList("sport")
             ) : (
               <p>no skills found...</p>
             )}
