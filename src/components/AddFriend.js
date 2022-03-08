@@ -7,13 +7,16 @@ export default function AddFriend(props) {
   const { friendId } = useParams();
   const navigate = useNavigate();
   const { getToken } = useContext(AuthContext);
- 
+
   const addNewFriend = () => {
     const storedToken = getToken();
 
     axios
-      .put(`${process.env.REACT_APP_API_URL}/users/${friendId}/addFriend`, {},
-      { headers: { Authorization: `Bearer ${storedToken}` }})
+      .put(
+        `${process.env.REACT_APP_API_URL}/users/${friendId}/addFriend`,
+        {},
+        { headers: { Authorization: `Bearer ${storedToken}` } }
+      )
       .then(() => {
         props.fetchUsers();
         return navigate("/profile");
@@ -23,9 +26,5 @@ export default function AddFriend(props) {
       });
   };
 
-  return (
-    <div className="AddFriend">
-      {addNewFriend()}
-    </div>
-  );
+  return <div className="AddFriend">{addNewFriend()}</div>;
 }
