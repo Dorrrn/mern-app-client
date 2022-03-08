@@ -1,32 +1,40 @@
 import UserCards from "../components/UserCards";
 import "./UsersPage.css";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
 
 export default function Users(props) {
-  
   const [foundUsers, setFoundUsers] = useState(props.users);
   const [filterUsers, setFilterUsers] = useState(undefined);
-  // const [query, setQuery] = useSearchParams();
 
   useEffect(() => {
     if (filterUsers) {
       setFoundUsers(
-        props.users.filter((filteredUsers) => {
-          return filteredUsers.username
+        props.users.filter((elm) => {
+          return elm.username
             ?.toLowerCase()
             .includes(filterUsers?.toLowerCase());
         })
       );
-    } 
+    }
   }, [filterUsers]);
 
+  // useEffect(() => {
+  //   if (filterUsers) {
+  //     setFoundUsers(
+  //       props.users.filter((elm) => {
+  //          return elm.wantsToLearn?.map((skill) => {
+  //            return skill.title?.toLowerCase()
+  //            .includes(filterUsers?.toLowerCase());
+  //         })
+  //       })
+  //     );
+  //   }
+  // }, [filterUsers]);
+
   const handleFilterUsers = (e) => {
-    const isNotEmpty = !!e.target.value;
-    if (isNotEmpty) {
+    if (e.target.value) {
       e.preventDefault();
       setFilterUsers(e.target.value);
-      // setQuery({ search: e.target.value });
     } else {
       setFilterUsers(undefined);
     }
@@ -37,17 +45,14 @@ export default function Users(props) {
       <h3>See all users</h3>
       <div className="searchbar">
         <p>Searchbar</p>
-
-        <div className="searchbar">
-          <form>
-            <input
-              type="text"
-              placeholder="search ... "
-              value={filterUsers}
-              onChange={handleFilterUsers}
-            />
-          </form>
-        </div>
+        <form>
+          <input
+            type="text"
+            placeholder="search ... "
+            value={filterUsers}
+            onChange={handleFilterUsers}
+          />
+        </form>
       </div>
 
       <div className="container">
