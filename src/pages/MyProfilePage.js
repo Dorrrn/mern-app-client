@@ -21,12 +21,19 @@ export default function MyProfilePage(props) {
             className="profile-details row justify-content-center"
             key={elm._id}
           >
-            <div className="col-8">
+            <div className="col-7">
               <div className="container">
                 <div className="row border-bottom">
                   <h3 className="border-bottom">Hi {elm.username}</h3>
                   <div className="col-4 circle">
-                    <img src={elm.img} alt={elm.username} />
+                    {elm.img ? (
+                      <img src={elm.img} alt={elm.username} />
+                    ) : (
+                      <img
+                        src="https://via.placeholder.com/50"
+                        alt="userimage"
+                      />
+                    )}
                   </div>
                   <div className="col-8">
                     <p className="user-quote">
@@ -65,7 +72,7 @@ export default function MyProfilePage(props) {
               </Link>
             </div>
 
-            <div className="col-4 my-friends">
+            <div className="col-5 my-friends">
               <h5>My friends</h5>
               <ul>
                 {elm.friends?.map((friend) => {
