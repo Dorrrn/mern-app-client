@@ -18,12 +18,16 @@ brown: #A4614A
 }
 
 a, a:hover {
-  color: #508663;
+  color: #323232;
   text-decoration: none;
 }
 
 .button {
   border: none;
+}
+
+.Link, Link:active{
+  color: #323232
 }
 
 input {

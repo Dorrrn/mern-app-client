@@ -15,6 +15,7 @@ import AddWantsToTeach from "./components/AddWantsToTeach";
 import RemoveWantsToLearn from "./components/RemoveWantsToLearn";
 import RemoveWantsToTeach from "./components/RemoveWantsToTeach";
 import CreateSkill from "./components/CreateSkill";
+import Matches from "./components/Matches";
 
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -24,16 +25,12 @@ import EditProfilePage from "./pages/EditProfilePage";
 import UsersPage from "./pages/UsersPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import SkillsPage from "./pages/SkillsPage";
-import UpdateProfilePage from "./pages/UpdateProfilePage-test";
 
 function App() {
   const [users, setUsers] = useState([]);
-  const [skills, setSkills] = useState([]);
-
   const { getToken } = useContext(AuthContext);
 
   useEffect(() => {
-    fetchSkills();
     fetchUsers();
   }, []);
 
@@ -47,19 +44,6 @@ function App() {
         setUsers(response.data);
       })
       .catch((e) => console.log("error getting list of users...", e));
-  };
-
-  const fetchSkills = () => {
-    const storedToken = getToken();
-
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/skills`, {
-        headers: { Authorization: `Bearer ${storedToken}` },
-      })
-      .then((response) => {
-        setSkills(response.data);
-      })
-      .catch((e) => console.log("error getting list of skills...", e));
   };
 
   return (
@@ -123,7 +107,7 @@ function App() {
           path="/skills"
           element={
             <IsPrivate>
-              <SkillsPage skills={skills} users={users} />
+              <SkillsPage users={users} />
             </IsPrivate>
           }
         />
@@ -171,13 +155,10 @@ function App() {
         />
 
         <Route
-          path="/updateprofile"
-          element={
-            <IsPrivate>
-              <UpdateProfilePage fetchUsers={fetchUsers} />
-            </IsPrivate>
-          }
+          path="/matches"
+          element={<Matches users={users} fetchUsers={fetchUsers} />}
         />
+
         <Route
           path="/controls"
           element={

@@ -1,8 +1,25 @@
+/* colors
+ivory: #FFFCF0
+green: #808661
+blush: #C7A099
+black: #323232
+pink: # F87270
+brown: #A4614A
+*/
+
 .SkillsPage {
-  padding: 7rem;
+  padding: 7rem 0;
 }
 
-.skills-summary ul {
+.SkillsPage h5 {
+  font-weight: 800;
+}
+
+.skills-page-header{
+  margin-bottom: 3rem;
+
+}
+.my-skills-summary ul {
   padding-left: 5;
 }
 
@@ -10,16 +27,62 @@
   list-style: none;
 }
 
-.skills-summary ul li:before {
-  content: "- ";
-}
-
 .my-skills {
   background: #fff;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  padding: 3rem;
+  padding: 1.5rem;
   block-size: fit-content;
-  width: fit-content;
+  width: 25%;
   position: fixed;
+
+}
+
+.delete-x {
+  font-size: 0.8rem;
+  padding-left: 7px;
+}
+
+.skill-title {
+  text-align: right;
+  font-size: 0.8rem;
+
+}
+.button-learn {
+  color: #abb490;
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 0.5rem;
+  padding: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  border: 1px solid #abb490;
+}
+
+.button-learn:hover {
+  color: white;
+  background-color: #abb490;
+}
+
+.button-teach {
+  color: #e0cfcc;
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 0.5rem;
+  padding: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  border: 1px solid #e0cfcc;
+}
+
+.button-teach:hover {
+  color: white;
+  background-color: #c7a099;
+}
+
+.skill-category {
+  margin-bottom: 1rem;
+
 }

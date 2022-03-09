@@ -15,8 +15,8 @@ export default function HomePage(props) {
         <h4>learn and teach from each other with tandem</h4>
 
         {isLoggedIn && (
-          <Link to="/users" className="header-top-button">
-            See all users
+          <Link to="/skills" className="header-top-button">
+            Add skills
           </Link>
         )}
         {!isLoggedIn && (
@@ -24,11 +24,11 @@ export default function HomePage(props) {
             Sign up now
           </Link>
         )}
-        {/* <img
+        <img
           src="/images/tandem-visual.png"
           alt="tandem-visual"
           className="header-visual"
-        /> */}
+        />
       </header>
 
       <section className="users-summary">
