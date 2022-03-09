@@ -41,7 +41,7 @@ export default function EditProfilePage(props) {
 
     axios
       .put(
-        `${process.env.REACT_APP_API_URL}/auth/profile/update`,
+        `${process.env.REACT_APP_API_URL}/auth/update`,
         userDetails,
         {
           headers: { Authorization: `Bearer ${storedToken}` },
