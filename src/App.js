@@ -10,7 +10,6 @@ import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
 import AddFriend from "./components/AddFriend";
 import AddWantsToLearn from "./components/AddWantsToLearn";
-import FilterControls from "./components/FilterControls";
 import AddWantsToTeach from "./components/AddWantsToTeach";
 import RemoveWantsToLearn from "./components/RemoveWantsToLearn";
 import RemoveWantsToTeach from "./components/RemoveWantsToTeach";
@@ -159,14 +158,6 @@ function App() {
           element={<Matches users={users} fetchUsers={fetchUsers} />}
         />
 
-        <Route
-          path="/controls"
-          element={
-            <IsPrivate>
-              <FilterControls users={users} fetchUsers={fetchUsers} />
-            </IsPrivate>
-          }
-        />
       </Routes>
 
       <Footer />
