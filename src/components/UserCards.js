@@ -1,7 +1,9 @@
 import "./UserCards.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function UserCards(props) {
+
   const renderUserProfiles = (list) => {
     return props.users.slice(props.sliceStart, props.sliceEnd).map((elm) => {
       return (
@@ -49,7 +51,7 @@ export default function UserCards(props) {
     <div className="UserCards">
       <div className="container">
         <div className="row justify-content-center">
-          {props.users.length > 0 ? (
+          {props.users ? (
             renderUserProfiles(props.users)
           ) : (
             <p>No users found....</p>
