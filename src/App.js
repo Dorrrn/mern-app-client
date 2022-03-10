@@ -76,7 +76,11 @@ function App() {
 
         <Route
           path="/users/:userId"
-          element={<UserProfilePage users={users} />}
+          element={
+           <IsPrivate>
+           <UserProfilePage users={users} />
+           </IsPrivate>
+           }
         />
         <Route
           path="/users/:friendId/addfriend"
