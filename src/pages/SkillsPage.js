@@ -183,6 +183,10 @@ export default function SkillsPage(props) {
             ) : (
               <p>no skills found...</p>
             )}
+            <hr />
+            <Link to="/skills/create" className="create-new-link">
+              Create new skill <i className="bi bi-arrow-right-square"></i>
+            </Link>
           </div>
 
           <div className="col-5">

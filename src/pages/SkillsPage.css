@@ -84,5 +84,15 @@ brown: #A4614A
 
 .skill-category {
   margin-bottom: 1rem;
+}
 
+.create-new-link {
+  color: #F87270;
+  background-color: transparent;
+  vertical-align: middle;
+  text-decoration: none;
+  font-weight: 1000;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
