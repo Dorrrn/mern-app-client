@@ -17,7 +17,7 @@ export default function UserProfilePage(props) {
       <>
         <div className="container users-details">
           <div className="row " key={elm._id}>
-            <div className="col-7">
+            <div className="col-6">
               <h3 className="border-bottom">Hi, I am {elm.username}</h3>
               <img src={elm.img} alt={elm.username} />
               <p className="users-quote">{elm.bio}</p>
@@ -25,7 +25,7 @@ export default function UserProfilePage(props) {
               <Link to={`mailto:${elm.email}`} className="users-details-button">
                 email
               </Link>
-              
+
               <br />
               <br />
               <Link
@@ -35,7 +35,7 @@ export default function UserProfilePage(props) {
                 Add as friend
               </Link>
             </div>
-            <div className="col-5">
+            <div className="col-6">
               <div className="skills-summary">
                 <div className="border-bottom">
                   <h5>
