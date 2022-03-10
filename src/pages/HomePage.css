@@ -46,6 +46,11 @@ brown: #A4614A
   margin-top: 2rem;
 }
 
+.header-top-button:hover {
+  color: white;
+  background-color: #F87270;
+}
+
 .card-height {
   height: 500px;
 }

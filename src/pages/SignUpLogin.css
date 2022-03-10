@@ -59,14 +59,10 @@ brown: #A4614A
   padding: 60px;
   width: 18vw;
   height: 50vh;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-position: bottom;
+
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
   text-align: center;
-  background-image: url("../../public/images/tandem-login.png");
   background-color: #fdf5d4;
 }
 
@@ -77,14 +73,9 @@ brown: #A4614A
   padding: 60px;
   width: 18vw;
   height: 50vh;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-position: bottom;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
   text-align: center;
-  background-image: url("../../public/images/tandem-signup.png");
   background-color: #fdf5d4;
 }
 

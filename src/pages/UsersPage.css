@@ -1,8 +1,52 @@
+/* colors
+ivory: #FFFCF0
+green: #808661
+blush: #C7A099
+black: #323232
+pink: # F87270
+brown: #A4614A
+*/
+
 .UsersPage {
   padding: 7rem;
+  text-align: center;
 }
 
 .searchbar {
-  text-align: left;
   padding: 2rem 5rem;
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.all-users-button{
+  color: #F87270;
+  background-color: transparent;
+  vertical-align: middle;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 10px 20px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  border: 2px solid #F87270;
+  margin-right: 1rem;
+
+}
+
+.matches-button {
+  color: white;
+  background-color: #F87270;
+  vertical-align: middle;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  border: none;
+
+
 }

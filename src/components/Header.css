@@ -50,6 +50,12 @@ brown: #A4614A
   border: 2px solid #808661;
 }
 
+.header-button:hover {
+  background-color: #3f4230;
+  border: 2px solid #3f4230;
+  color: white;
+}
+
 .header-button-sec {
   color: #808661;
   background-color: transparent;
@@ -63,6 +69,13 @@ brown: #A4614A
   letter-spacing: 2px;
   border-radius: 10px;
   border: 2px solid #808661;
+}
+
+.header-button-sec:hover {
+   color: #3f4230;
+   border: 2px solid #3f4230;
+   font-weight: 800;
+
 }
 
 .Footer {

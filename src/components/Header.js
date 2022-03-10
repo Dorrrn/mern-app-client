@@ -17,7 +17,7 @@ export default function Header() {
                   tandem
                 </NavLink>
                 <NavLink to="/users" className="header-link">
-                  See all users
+                  All users
                 </NavLink>
                 <NavLink to="/skills" className="header-link">
                   Add skills

@@ -71,9 +71,9 @@ function LoginPage(props) {
 
             <div className="right-box-login">
               <span className="signinwith">Not registered yet? </span>
-              <button className="button-form-sec" action="/signup">
-                Sign up now <i className="bi bi-arrow-right-square"></i>
-              </button>
+              <Link className="button-form-sec" to="/signup">
+                Sign up <i className="bi bi-arrow-right-square"></i>
+              </Link>
             </div>
           </div>
         </div>

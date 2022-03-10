@@ -79,7 +79,7 @@ brown: #A4614A
 }
 
 .button-teach {
-  color: #e0cfcc;
+  color: #C7A099;
   background-color: transparent;
   text-decoration: none;
   font-size: 0.5rem;
@@ -87,12 +87,12 @@ brown: #A4614A
   text-transform: uppercase;
   letter-spacing: 1px;
   border-radius: 5px;
-  border: 1px solid #e0cfcc;
+  border: 1px solid #C7A099;
 }
 
 .button-teach:hover {
   color: white;
-  background-color: #c7a099;
+  background-color: #C7A099;
 }
 
 .skill-category {
