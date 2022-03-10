@@ -28,7 +28,7 @@ export default function Header() {
                 </NavLink>
               </div>
               <div className="nav-link-right">
-                <span>{user && user.username}</span>
+                <span className="user-name">Hi {user && user.username}</span>
                 <NavLink to="/profile" className="header-button">
                   My profile
                 </NavLink>

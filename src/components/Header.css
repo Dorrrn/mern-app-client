@@ -79,6 +79,11 @@ brown: #A4614A
 
 }
 
+.user-name{
+  font-size: 0.8rem;
+  color: #3f4230
+}
+
 .Footer {
   background-color: #808661;
   color: white;

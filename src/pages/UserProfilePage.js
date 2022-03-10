@@ -30,23 +30,21 @@ export default function UserProfilePage(props) {
               <p className="users-quote">{elm.bio}</p>
               <br />
 
-              <p className="users-details-button">
+              <p className="email-button">
                 <Mailto
                   email={elm.email}
                   subject={`Hey ${elm.username}`}
                   body="Let's connect!"
                 >
-                  E-Mail
+                  E-Mail <i class="bi bi-envelope"></i>
                 </Mailto>
               </p>
 
-              <br />
-              <br />
               <Link
                 to={`/users/${elm._id}/addfriend`}
-                className="users-details-button-sec"
+                className="add-friend-button"
               >
-                Add as friend
+                Add friend <i class="bi bi-person-plus-fill"></i>
               </Link>
             </div>
             <div className="col-6">

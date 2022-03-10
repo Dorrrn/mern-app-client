@@ -8,17 +8,18 @@ brown: #A4614A
 */
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
 
 .App {
   text-align: center;
-  font-family: "Open Sans", Verdana, Geneva, sans-serif; 
+  font-family: "Poppins", Verdana, Geneva, sans-serif;
   background-color: white;
   height: 100vh;
   color: #323232;
 }
 
-a, a:hover {
-  color: #F87270;
+a,
+a:hover {
   text-decoration: none;
 }
 
@@ -26,15 +27,15 @@ a, a:hover {
   border: none;
 }
 
-.Link, Link:active{
-  color: #323232
+.Link,
+Link:active {
+  color: #323232;
 }
 
 input {
   border: none;
   border-bottom: 1px solid rgb(188, 188, 188);
   padding: 0.4rem;
-  background-color: #FFFCF0;
+  background-color: #fffcf0;
   font-size: 0.8rem;
-
 }
