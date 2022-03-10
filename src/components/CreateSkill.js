@@ -70,7 +70,10 @@ export default function CreateSkill(props) {
             Instrument
           </option>
           <option type="text" value="coding language">
-            Coding language
+            Coding
+          </option>
+          <option type="text" value="others">
+            Others
           </option>
         </select>
 

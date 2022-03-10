@@ -144,7 +144,7 @@ export default function SkillsPage(props) {
         <div className="row">
           <div className="col-7">
             <h4 className="skill-category">
-              Languages <i class="bi bi-chat-dots"></i>
+              Languages <i className="bi bi-chat-dots skills-icon"></i>
             </h4>
             {foundSkills ? (
               renderSkillsList("language")
@@ -153,7 +153,8 @@ export default function SkillsPage(props) {
             )}
             <hr />
             <h4 className="skill-category">
-              Instruments <i class="bi bi-music-note-beamed"></i>
+              Instruments{" "}
+              <i className="bi bi-music-note-beamed skills-icon"></i>
             </h4>
             {foundSkills ? (
               renderSkillsList("instrument")
@@ -162,8 +163,7 @@ export default function SkillsPage(props) {
             )}
             <hr />
             <h4 className="skill-category">
-              Sports
-              <i class="bi bi-activity"></i>
+              Sports <i className="bi bi-heart-pulse skills-icon"></i>
             </h4>
             {foundSkills ? (
               renderSkillsList("sport")
@@ -173,10 +173,20 @@ export default function SkillsPage(props) {
 
             <hr />
             <h4 className="skill-category">
-              Coding <i class="bi bi-code-square"></i>
+              Coding <i className="bi bi-code-square skills-icon"></i>
             </h4>
             {foundSkills ? (
               renderSkillsList("coding language")
+            ) : (
+              <p>no skills found...</p>
+            )}
+
+            <hr />
+            <h4 className="skill-category">
+              Others <i className="bi bi-three-dots skills-icon"></i>
+            </h4>
+            {foundSkills ? (
+              renderSkillsList("others")
             ) : (
               <p>no skills found...</p>
             )}

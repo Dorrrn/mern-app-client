@@ -39,7 +39,6 @@ brown: #A4614A
   block-size: fit-content;
   width: 25%;
   position: fixed;
-
 }
 
 .delete-x {
@@ -55,8 +54,13 @@ brown: #A4614A
 .skill-title {
   text-align: right;
   font-size: 0.8rem;
-
 }
+
+.skills-icon {
+  font-size: 1rem;
+  color: #656565;
+}
+
 .button-learn {
   color: #abb490;
   background-color: transparent;
