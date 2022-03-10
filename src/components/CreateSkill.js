@@ -30,7 +30,7 @@ export default function CreateSkill(props) {
       })
       .then(() => {
         props.fetchUsers();
-        navigate("/profile");
+        navigate("/skills");
       })
       .catch((error) => {
         const msg = error.response.data.errorMessage;
@@ -63,7 +63,7 @@ export default function CreateSkill(props) {
           <option type="text" value="language">
             Language
           </option>
-          <option type="text" value="sports">
+          <option type="text" value="sport">
             Sports
           </option>
           <option type="text" value="instrument">
