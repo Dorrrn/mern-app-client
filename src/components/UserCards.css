@@ -4,38 +4,49 @@
 
 .user-card {
   position: relative;
-  height: 500px;
+  height: 430px;
   margin: 2rem auto;
-  padding: 2.5rem;
+  padding: 1.2rem;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  justify-content: center;
 }
 
 .user-card-img img {
   border-radius: 50%;
   padding: 1rem;
-  width: 200px;
+  width: 170px;
 }
 
 .username {
   padding-bottom: 1rem;
   border-bottom: 1px solid rgb(219, 217, 217);
+  text-transform: uppercase;
+}
+
+.user-skills-title {
+font-weight: 500;
+}
+
+.user-skills {
+  font-size: 0.8rem;
+  line-height: 0.6rem;
 }
 
 .user-card-button {
   color: #c7a099;
   background-color: transparent;
-  vertical-align: middle;
   text-decoration: none;
   font-weight: 1000;
   padding: 10px 20px;
-  margin-left: 10px;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 2px;
   border-radius: 10px;
   border: 2px solid #c7a099;
+  width: 40%;
+  margin: 1rem auto;
 }
 
 .see-more-link {
