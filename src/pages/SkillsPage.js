@@ -19,7 +19,7 @@ export default function SkillsPage(props) {
   useEffect(() => {
     fetchSkills();
   }, []);
-  
+
   const fetchSkills = () => {
     const storedToken = getToken();
 
@@ -34,21 +34,17 @@ export default function SkillsPage(props) {
       .catch((e) => console.log("error getting list of skills...", e));
   };
 
-
   useEffect(() => {
     if (filterSkills) {
       setFoundSkills(
         foundSkills.filter((elm) => {
-          return elm.title
-            ?.toLowerCase()
-            .includes(filterSkills?.toLowerCase());
+          return elm.title?.toLowerCase().includes(filterSkills?.toLowerCase());
         })
       );
     }
   }, [filterSkills]);
 
   const handleFilterSkills = (e) => {
-    
     if (e.target.value) {
       e.preventDefault();
       setFilterSkills(e.target.value);
@@ -60,7 +56,7 @@ export default function SkillsPage(props) {
   const renderMySkills = (elm) => {
     return (
       <>
-        <h5>Your skills</h5>
+        <h5>My skills</h5>
         <div className="my-skills-summary">
           <div>
             <h5 className="border-bottom">I want to learn</h5>
@@ -132,9 +128,10 @@ export default function SkillsPage(props) {
   return (
     <div className="SkillsPage">
       <div className="skills-page-header">
-        <h3>What do you want to learn and teach?</h3>
+        <h3>Choose skills to learn and teach</h3>
         <form>
           <input
+            className="search-skills"
             type="text"
             placeholder="search for skills"
             value={filterSkills}

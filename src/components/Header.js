@@ -17,10 +17,10 @@ export default function Header() {
                   tandem
                 </NavLink>
                 <NavLink to="/users" className="header-link">
-                  all users
+                  See all users
                 </NavLink>
-                <NavLink to="/skills/create" className="header-link">
-                  create skill
+                <NavLink to="/skills" className="header-link">
+                  Add skills
                 </NavLink>
 
                 <NavLink to="/profile/update" className="header-link">
