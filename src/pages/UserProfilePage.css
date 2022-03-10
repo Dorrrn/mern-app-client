@@ -15,42 +15,41 @@
 .users-details img {
   border-radius: 50%;
   width: 150px;
-  margin-top: 2rem
+  margin-top: 2rem;
 }
 
 .users-quote {
   font-size: 1.3rem;
   font-weight: 500;
   padding: 2rem 0;
-
 }
 
 .users-details-button {
- color: #C7A099;
+  color: #c7a099;
   background-color: transparent;
   text-decoration: none;
   font-weight: 600;
-  padding: 10px 45px;
-  margin-top: 2rem 0;
+  padding: 10px 20px;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   border-radius: 10px;
-  border: 1px solid #C7A099;
+  border: 1px solid #c7a099;
+  width: 50%;
+
 }
 
 .users-details-button-sec {
- color: white;
-  background-color: #C7A099;
+  color: white;
+  background-color: #c7a099;
   text-decoration: none;
   font-weight: 600;
   padding: 10px 20px;
-  margin-top: 2rem 0;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   border-radius: 10px;
-  border: 1px solid #C7A099;
+  border: 1px solid #c7a099;
 }
 
 .skills-summary ul {

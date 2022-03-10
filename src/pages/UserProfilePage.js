@@ -1,7 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import "./UserProfilePage.css";
 
-
 export default function UserProfilePage(props) {
   const { userId } = useParams();
 
@@ -11,6 +10,14 @@ export default function UserProfilePage(props) {
       return elm._id === userId;
     });
   }
+
+  const Mailto = ({ email, subject, body, ...props }) => {
+    return (
+      <a href={`mailto:${email}?subject=${subject || ""}&body=${body || ""}`}>
+        {props.children}
+      </a>
+    );
+  };
 
   const renderProfileDetails = (elm) => {
     return (
@@ -22,9 +29,16 @@ export default function UserProfilePage(props) {
               <img src={elm.img} alt={elm.username} />
               <p className="users-quote">{elm.bio}</p>
               <br />
-              <Link to={`mailto:${elm.email}`} className="users-details-button">
-                email
-              </Link>
+  
+              <p className="users-details-button">
+                <Mailto
+                  email={elm.email}
+                  subject={`Hi ${elm.username}`}
+                  body="Let's connect!"
+                >
+                  E-Mail
+                </Mailto>
+              </p>
 
               <br />
               <br />
@@ -76,8 +90,11 @@ export default function UserProfilePage(props) {
 
   return (
     <div className="UserProfilePage">
-      {user === null ?  <p>Sorry no users found...</p> : renderProfileDetails(user) }
+      {user === null ? (
+        <p>Sorry no users found...</p>
+      ) : (
+        renderProfileDetails(user)
+      )}
     </div>
   );
-
 }
