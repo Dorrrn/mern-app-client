@@ -6,8 +6,9 @@ import axios from "axios";
 
 export default function SkillsPage(props) {
   const { user, getToken } = useContext(AuthContext);
-  const [foundSkills, setFoundSkills] = useState("");
-  const [filterSkills, setFilterSkills] = useState(undefined);
+  const [foundSkills, setFoundSkills] = useState([]);
+  const [filterSkills, setFilterSkills] = useState("");
+  const [filteredSkillsArr, setFilteredSkillsArr] = useState([]);
 
   let currentUserId = user._id;
   if (props.users) {
@@ -22,35 +23,27 @@ export default function SkillsPage(props) {
 
   const fetchSkills = () => {
     const storedToken = getToken();
-
     axios
       .get(`${process.env.REACT_APP_API_URL}/skills`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
         setFoundSkills(response.data);
-        // setFilterSkills(response.data)
+        setFilteredSkillsArr(response.data);
       })
       .catch((e) => console.log("error getting list of skills...", e));
   };
 
   useEffect(() => {
-    if (filterSkills) {
-      setFoundSkills(
-        foundSkills.filter((elm) => {
-          return elm.title?.toLowerCase().includes(filterSkills?.toLowerCase());
-        })
-      );
-    }
+    setFilteredSkillsArr(
+      foundSkills.filter((elm) => {
+        return elm.title?.toLowerCase().includes(filterSkills?.toLowerCase());
+      })
+    );
   }, [filterSkills]);
 
   const handleFilterSkills = (e) => {
-    if (e.target.value) {
-      e.preventDefault();
-      setFilterSkills(e.target.value);
-    } else {
-      setFilterSkills();
-    }
+    setFilterSkills(e.target.value);
   };
 
   const renderMySkills = (elm) => {
@@ -94,7 +87,7 @@ export default function SkillsPage(props) {
   };
 
   const renderSkillsList = (category) => {
-    return foundSkills.map((elm) => {
+    return filteredSkillsArr.map((elm) => {
       if (elm.category === category) {
         return (
           <>
@@ -128,7 +121,7 @@ export default function SkillsPage(props) {
   return (
     <div className="SkillsPage">
       <div className="skills-page-header">
-        <h3>Choose skills to learn and teach</h3>
+        <h3>Add skills to learn and teach</h3>
         <form>
           <input
             className="search-skills"
@@ -146,7 +139,7 @@ export default function SkillsPage(props) {
             <h4 className="skill-category">
               Languages <i className="bi bi-chat-dots skills-icon"></i>
             </h4>
-            {foundSkills ? (
+            {filteredSkillsArr ? (
               renderSkillsList("language")
             ) : (
               <p>no skills found...</p>
@@ -156,7 +149,7 @@ export default function SkillsPage(props) {
               Instruments{" "}
               <i className="bi bi-music-note-beamed skills-icon"></i>
             </h4>
-            {foundSkills ? (
+            {filteredSkillsArr ? (
               renderSkillsList("instrument")
             ) : (
               <p>no skills found...</p>
@@ -165,27 +158,25 @@ export default function SkillsPage(props) {
             <h4 className="skill-category">
               Sports <i className="bi bi-heart-pulse skills-icon"></i>
             </h4>
-            {foundSkills ? (
+            {filteredSkillsArr ? (
               renderSkillsList("sport")
             ) : (
               <p>no skills found...</p>
             )}
-
             <hr />
             <h4 className="skill-category">
               Coding <i className="bi bi-code-square skills-icon"></i>
             </h4>
-            {foundSkills ? (
+            {filteredSkillsArr ? (
               renderSkillsList("coding language")
             ) : (
               <p>no skills found...</p>
             )}
-
             <hr />
             <h4 className="skill-category">
               Others <i className="bi bi-three-dots skills-icon"></i>
             </h4>
-            {foundSkills ? (
+            {filteredSkillsArr ? (
               renderSkillsList("others")
             ) : (
               <p>no skills found...</p>
