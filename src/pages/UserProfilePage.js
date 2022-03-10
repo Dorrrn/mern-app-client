@@ -29,11 +29,11 @@ export default function UserProfilePage(props) {
               <img src={elm.img} alt={elm.username} />
               <p className="users-quote">{elm.bio}</p>
               <br />
-  
+
               <p className="users-details-button">
                 <Mailto
                   email={elm.email}
-                  subject={`Hi ${elm.username}`}
+                  subject={`Hey ${elm.username}`}
                   body="Let's connect!"
                 >
                   E-Mail
@@ -66,20 +66,26 @@ export default function UserProfilePage(props) {
                   </ul>
                 </div>
               </div>
-
+              <div className="skills-summary">
+                <div className="border-bottom">
+                  <h5>
+                    <i className="bi bi-bookmark-check"></i> I can teach ...
+                  </h5>
+                  <ul>
+                    {elm.wantsToTeach.length > 0 ? (
+                      elm.wantsToTeach.map((skill) => {
+                        return <li>{skill.title}</li>;
+                      })
+                    ) : (
+                      <p> ...</p>
+                    )}
+                  </ul>
+                </div>
+              </div>
               <div className="skills-summary">
                 <h5>
-                  <i className="bi bi-bookmark-check"></i> I can teach ...
+                  <i class="bi bi-people"></i> Friends: {elm.friends?.length}
                 </h5>
-                <ul>
-                  {elm.wantsToTeach.length > 0 ? (
-                    elm.wantsToTeach.map((skill) => {
-                      return <li>{skill.title}</li>;
-                    })
-                  ) : (
-                    <p> ...</p>
-                  )}
-                </ul>
               </div>
             </div>
           </div>
