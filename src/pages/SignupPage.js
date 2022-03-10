@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./SignUpLogin.css";
 import { AuthContext } from "../context/auth.context";
@@ -76,9 +76,9 @@ function SignupPage(props) {
 
             <div className="right-box">
               <span className="signinwith">Already have an account? </span>
-              <button className="button-form-sec" action="/login">
+              <Link className="button-form-sec" to="/login">
                 Login <i className="bi bi-arrow-right-square"></i>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
