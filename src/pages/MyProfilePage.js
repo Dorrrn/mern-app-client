@@ -21,7 +21,7 @@ export default function MyProfilePage(props) {
             className="profile-details row justify-content-center"
             key={elm._id}
           >
-            <div className="col-7">
+            <div className="col-6">
               <div className="container">
                 <div className="row border-bottom">
                   <h3 className="border-bottom">Hi {elm.username}</h3>
@@ -40,7 +40,9 @@ export default function MyProfilePage(props) {
                       <i className="bi bi-chat-right-quote"> {elm.bio}</i>
                     </p>
                     <p>{elm.email}</p>
-                    <Link to="/profile/update">edit</Link>
+                    <Link to="/profile/update" className="update-button">
+                      update
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -68,11 +70,11 @@ export default function MyProfilePage(props) {
               </div>
 
               <Link to="/skills" className="profile-button">
-                Add skills
+                Edit my skills
               </Link>
             </div>
 
-            <div className="col-5 my-friends">
+            <div className="col-6 my-friends">
               <h5>My friends</h5>
               <ul>
                 {elm.friends?.map((friend) => {
