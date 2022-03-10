@@ -1,6 +1,7 @@
 /* colors
 ivory: #FFFCF0
 green: #808661
+darkgreen: #3f4230
 blush: #C7A099
 black: #323232
 pink: # F87270
@@ -20,7 +21,7 @@ brown: #A4614A
   color: #808661;
 }
 .nav-link-left a:hover {
-  color: #f87270;
+  color: #3f4230;
 }
 
 .header-link {

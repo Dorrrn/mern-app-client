@@ -26,7 +26,7 @@
 }
 
 .user-skills-title {
-font-weight: 500;
+  font-weight: 500;
 }
 
 .user-skills {
@@ -47,6 +47,11 @@ font-weight: 500;
   border: 2px solid #c7a099;
   width: 40%;
   margin: 1rem auto;
+}
+
+.user-card-button:hover {
+  color: #f87270;
+  border: 2px solid #f87270;
 }
 
 .see-more-link {

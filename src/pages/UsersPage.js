@@ -1,6 +1,6 @@
 import UserCards from "../components/UserCards";
 import "./UsersPage.css";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 
@@ -27,7 +27,6 @@ export default function Users(props) {
   return (
     <div className="UsersPage">
       <h3>Find users to share your skills</h3>
-
       {isLoggedIn && (
         <>
       <div className="searchbar">
