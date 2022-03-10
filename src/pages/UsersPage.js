@@ -6,7 +6,7 @@ import axios from "axios";
 
 export default function Users(props) {
   const [foundUsers, setFoundUsers] = useState(props.users);
-  const [filterUsers, setFilterUsers] = useState(undefined);
+  // const [filterUsers, setFilterUsers] = useState(undefined);
   const { getToken } = useContext(AuthContext);
 
   const getAllUsers = () => {
@@ -25,33 +25,33 @@ export default function Users(props) {
       .catch((e) => console.log("error getting matches...", e));
   };
 
-  useEffect(() => {
-    if (filterUsers) {
-      setFoundUsers(
-        props.users.filter((elm) => {
-          return elm.username
-            ?.toLowerCase()
-            .includes(filterUsers?.toLowerCase());
-        })
-      );
-    }
-  }, [filterUsers]);
+  // useEffect(() => {
+  //   if (filterUsers) {
+  //     setFoundUsers(
+  //       props.users.filter((elm) => {
+  //         return elm.username
+  //           ?.toLowerCase()
+  //           .includes(filterUsers?.toLowerCase());
+  //       })
+  //     );
+  //   }
+  // }, [filterUsers]);
 
-  const handleFilterUsers = (e) => {
-    if (e.target.value) {
-      e.preventDefault();
-      setFilterUsers(e.target.value);
-    } else {
-      setFilterUsers();
-    }
-  };
+  // const handleFilterUsers = (e) => {
+  //   if (e.target.value) {
+  //     e.preventDefault();
+  //     setFilterUsers(e.target.value);
+  //   } else {
+  //     setFilterUsers();
+  //   }
+  // };
 
 
   return (
     <div className="UsersPage">
-      <h3>See all users</h3>
+      <h3>Find users to share your skills</h3>
       <div className="searchbar">
-        <p>Search by name</p>
+        {/* <p>Search by name</p>
         <form>
           <input
             type="text"
@@ -59,11 +59,14 @@ export default function Users(props) {
             value={filterUsers}
             onChange={handleFilterUsers}
           />
-        </form>
-      <button onClick={getAllUsers}>All users</button>
-      <button onClick={getMatches}>See matches</button>
+        </form> */}
+        <button onClick={getAllUsers} className="all-users-button">
+          See all users
+        </button>
+        <button onClick={getMatches} className="matches-button">
+          See matches
+        </button>
       </div>
-
 
       <div className="container">
         <div className="row justify-content-center">
