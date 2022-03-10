@@ -11,8 +11,8 @@ export default function HomePage(props) {
   return (
     <div className="HomePage">
       <header className="header-top">
-        <h1 className="headline">sports, languages, music or coding</h1>
-        <h4>learn and teach from each other with tandem</h4>
+        <h1 className="headline">sports, languages, music, coding ...</h1>
+        <h4>learn and teach skills from each other with tandem</h4>
 
         {isLoggedIn && (
           <Link to="/skills" className="header-top-button">
