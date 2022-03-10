@@ -1,17 +1,11 @@
 import "./UserCards.css";
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
 export default function UserCards(props) {
   const { user } = useContext(AuthContext);
   let currentUserId = user?._id;
-
-  // if (props.users) {
-  //   currentUser = props.users.find((elm) => {
-  //     return elm._id === currentUser;
-  //   });
-  // }
 
   const renderUserProfiles = (list) => {
     return (

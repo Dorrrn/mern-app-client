@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./SignUpLogin.css";
 import { AuthContext } from "../context/auth.context";
@@ -9,18 +9,15 @@ function SignupPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
-
   const navigate = useNavigate();
+  const { storeToken, authenticateUser } = useContext(AuthContext); //extract storeToken from AuthContext
 
   const handleUsername = (e) => setUsername(e.target.value);
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
-  const { storeToken, authenticateUser } = useContext(AuthContext); //extract storeToken from AuthContext
- 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
-
     const userDetails = {
       username,
       email,

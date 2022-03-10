@@ -8,9 +8,7 @@ function LoginPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
-
   const navigate = useNavigate();
-
   const { storeToken, authenticateUser } = useContext(AuthContext); //extract storeToken from AuthContext
 
   const handleEmail = (e) => setEmail(e.target.value);
@@ -18,7 +16,6 @@ function LoginPage(props) {
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-
     const userDetails = {
       email,
       password,

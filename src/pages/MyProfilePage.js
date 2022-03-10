@@ -6,10 +6,11 @@ import { Link } from "react-router-dom";
 export default function MyProfilePage(props) {
   const { user } = useContext(AuthContext);
 
-  let currentUserId = user._id;
+  let currentUser = user?._id;
+
   if (props.users) {
-    currentUserId = props.users.find((elm) => {
-      return elm._id === currentUserId;
+    currentUser = props.users.find((elm) => {
+      return elm._id === currentUser;
     });
   }
 
@@ -111,8 +112,8 @@ export default function MyProfilePage(props) {
 
   return (
     <div className="MyProfilePage">
-      {currentUserId ? (
-        renderProfileDetails(currentUserId)
+      {currentUser ? (
+        renderProfileDetails(currentUser)
       ) : (
         <p>Sorry no user found...</p>
       )}
