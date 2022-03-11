@@ -3,12 +3,16 @@ ivory: #FFFCF0
 green: #808661
 blush: #C7A099
 black: #323232
-pink: # F87270
+pink: #F87270
 brown: #A4614A
 */
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=Poppins");
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+}
 
 .App {
   text-align: center;
@@ -23,10 +27,6 @@ a:hover {
   text-decoration: none;
 }
 
-.button {
-  border: none;
-}
-
 .Link,
 Link:active {
   color: #323232;
@@ -39,3 +39,49 @@ input {
   background-color: #fffcf0;
   font-size: 0.8rem;
 }
+
+.button-prim {
+  color: white;
+  border: 1px solid #c7a099;
+  background-color: #c7a099;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.button-prim a, .button-prim:active {
+  color: white;
+}
+
+.button-prim:hover {
+  background-color: #9a756e;
+  border: 1px solid #9a756e;
+}
+
+
+.button-sec {
+  color: #c7a099;
+  border: 1px solid #c7a099;
+  background-color: transparent;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.button-sec a {
+  color: #c7a099;
+}
+
+.button-sec:hover {
+  color: #9a756e;
+  border: 1px solid #9a756e;
+}
+

@@ -22,15 +22,14 @@ export default function UserProfilePage(props) {
   const renderProfileDetails = (elm) => {
     return (
       <>
-        <div className="container users-details">
-          <div className="row " key={elm._id}>
-            <div className="col-6">
+        <div className="container">
+          <div className="row users-details" key={elm._id}>
+            <div className="col-btn col-sm-12 text-sm-center col-md-6 text-md-left">
               <h3 className="border-bottom">Hi, I am {elm.username}</h3>
               <img src={elm.img} alt={elm.username} />
               <p className="users-quote">{elm.bio}</p>
               <br />
-
-              <p className="email-button">
+              <p className="button-sec">
                 <Mailto
                   email={elm.email}
                   subject={`Hey ${elm.username}`}
@@ -40,14 +39,13 @@ export default function UserProfilePage(props) {
                 </Mailto>
               </p>
 
-              <Link
-                to={`/users/${elm._id}/addfriend`}
-                className="add-friend-button"
-              >
-                Add friend <i class="bi bi-person-plus-fill"></i>
-              </Link>
+              <p className="button-prim btn-sm-block">
+                <Link to={`/users/${elm._id}/addfriend`}>
+                  Add friend <i class="bi bi-person-plus-fill"></i>
+                </Link>
+              </p>
             </div>
-            <div className="col-6">
+            <div className="col-sm-12 col-md-6">
               <div className="skills-summary">
                 <div className="border-bottom">
                   <h5>

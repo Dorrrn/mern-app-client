@@ -1,42 +1,26 @@
 .UserProfilePage {
-  padding: 7rem;
+  padding: 7rem 1rem;
 }
 
 .users-details {
   background: #fff;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  width: 60%;
-  margin: 5vh auto;
-  text-align: left;
-  padding: 4rem;
+  padding: 2rem 3rem;
 }
 
 .users-details img {
   border-radius: 50%;
-  width: 150px;
-  margin-top: 2rem;
+  width: 30%;
+  margin-top: 1rem;
 }
 
 .users-quote {
   font-size: 1.1rem;
   font-weight: 500;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
-.email-button {
-  color: #c7a099;
-  background-color: transparent;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 20px;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-radius: 10px;
-  border: 1px solid #c7a099;
-  width: 50%;
-}
 .email-button a {
   color: #c7a099;
 }
