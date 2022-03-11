@@ -10,16 +10,17 @@ brown: #A4614A
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 @media (min-width: 1200px) {
     .container{
-        max-width: 970px;
+        max-width: 1024px;
     }
 }
 
 .App {
-  text-align: center;
   font-family: "Poppins", Verdana, Geneva, sans-serif;
   background-color: white;
   height: 100vh;
   color: #323232;
+  text-align:center
+
 }
 
 a,
@@ -27,9 +28,16 @@ a:hover {
   text-decoration: none;
 }
 
-.Link,
-Link:active {
+.Link, Link:active {
   color: #323232;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding-left: 5;
 }
 
 input {
@@ -51,6 +59,7 @@ input {
   letter-spacing: 2px;
   padding: 10px 20px;
   border-radius: 10px;
+  margin: 0.3rem
 }
 
 .button-prim a, .button-prim:active {
@@ -60,6 +69,8 @@ input {
 .button-prim:hover {
   background-color: #9a756e;
   border: 1px solid #9a756e;
+   color: white;
+
 }
 
 
@@ -85,3 +96,7 @@ input {
   border: 1px solid #9a756e;
 }
 
+.border-bottom {
+  border-bottom: 1px solid rgb(203, 199, 199);
+  padding: 0.5rem 0;
+}

@@ -7,16 +7,13 @@ pink: # F87270
 brown: #A4614A
 */
 
+.HomePage {
+  padding: 3rem 0;
+}
+
 .header-top {
-  height: 600px;
-  /* background-image: url("../../public/images/tandem-header.png");
-  background-size: cover;
-  background-repeat: no-repeat; */
-  padding: 8rem 0 7rem 0;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  height: 400px;
+  padding: 4rem 0;
   background-color: #fffcf0;
   box-shadow: 0 2px 5px rgba(91, 91, 91, 0.1);
 }
@@ -28,63 +25,4 @@ brown: #A4614A
 .headline {
   padding: 6rem 0 1rem 0;
   font-weight: 800;
-}
-
-.header-top-button {
-  color: white;
-  background-color: #c7a099;
-  vertical-align: middle;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 20px;
-  margin-left: 10px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-radius: 10px;
-  border: none;
-  margin-top: 2rem;
-}
-
-.header-top-button:hover {
-  color: white;
-  background-color: #F87270;
-}
-
-.card-height {
-  height: 500px;
-}
-
-.card-img-height {
-  height: 300px;
-}
-
-.homepage-button {
-  color: white;
-  background-color: #768bad;
-  vertical-align: middle;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 20px;
-  margin-left: 10px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-radius: 10px;
-  border: none;
-}
-
-.homepage-button-sec {
-  color: #768bad;
-  background-color: transparent;
-  vertical-align: middle;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 20px;
-  margin-left: 10px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-radius: 10px;
-  border: 1px solid #768bad;
 }

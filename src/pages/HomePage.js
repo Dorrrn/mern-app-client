@@ -10,29 +10,34 @@ export default function HomePage(props) {
 
   return (
     <div className="HomePage">
-      <header className="header-top">
-        <h1 className="headline">sports, languages, music, coding ...</h1>
-        <h4>learn and teach skills from each other with tandem</h4>
+      <div className="container-fluid ">
+        <div className="row">
+          <div className="col">
+            <header className="header-top justify-content-center">
+              <h1 className="headline">
+                learn and teach skills from each other
+              </h1>
+              <h5 className="d-none d-sm-block">
+                sports, languages, music, coding, ...
+              </h5>
+              <br />
 
-        {isLoggedIn && (
-          <Link to="/skills" className="header-top-button">
-            Add skills
-          </Link>
-        )}
-        {!isLoggedIn && (
-          <Link to="/signup" className="header-top-button">
-            Sign up now
-          </Link>
-        )}
-        <img
-          src="/images/tandem-visual.png"
-          alt="tandem-visual"
-          className="header-visual"
-        />
-      </header>
+              {isLoggedIn ? (
+                <Link to="/skills" className="button-prim">
+                  Add skills
+                </Link>
+              ) : (
+                <Link to="/signup" className="button-prim">
+                  Sign up now
+                </Link>
+              )}
+            </header>
+          </div>
+        </div>
+      </div>
 
       <section className="users-summary">
-        <h2>Find tandems to share your skills</h2>
+        <h3>Find tandems to share your skills</h3>
         <div className="container">
           <div className="row justify-content-center">
             {props.users ? (

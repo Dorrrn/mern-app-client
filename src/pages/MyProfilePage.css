@@ -36,11 +36,6 @@ brown: #A4614A
   padding-bottom: 1rem;
 }
 
-.border-bottom {
-  border-bottom: 1px solid rgb(203, 199, 199);
-  padding: 1rem 0;
-}
-
 .skills-summary {
   padding: 1rem 2rem;
 }
