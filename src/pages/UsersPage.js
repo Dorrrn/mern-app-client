@@ -26,17 +26,17 @@ export default function Users(props) {
 
   return (
     <div className="UsersPage">
-      <h3>Find users to share your skills</h3>
+      <h3 className="d-none d-sm-block">Find users to share your skills</h3>
       {isLoggedIn && (
         <>
-      <div className="searchbar">
-        <button onClick={getAllUsers} className="all-users-button">
-          See all users
-        </button>
-        <button onClick={getMatches} className="matches-button">
-          See matches
-        </button>
-      </div>
+          <div className="searchbar">
+            <button onClick={getAllUsers} className="button-sec">
+              See all users
+            </button>
+            <button onClick={getMatches} className="button-prim">
+              See matches
+            </button>
+          </div>
         </>
       )}
 
