@@ -21,42 +21,7 @@
   padding: 1rem 0;
 }
 
-.email-button a {
-  color: #c7a099;
-}
-.email-button:hover, 
-.email-button a:hover {
-  color: #F87270;
-}
-
-.add-friend-button {
-  color: white;
-  background-color: #c7a099;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 20px;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-radius: 10px;
-  border: 1px solid #c7a099;
-  width: 50%;
-}
-
-.add-friend-button:hover {
-  background-color: #F87270;
-  border: 1px solid #F87270;
-   color: white;;
-}
-
-.skills-summary ul {
-  padding-left: 5;
-}
-
-.UserProfilePage li {
-  list-style: none;
-}
-
 .skills-summary ul li:before {
-  content: "- ";
+  content: "";
 }
+

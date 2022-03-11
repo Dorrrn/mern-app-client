@@ -24,28 +24,29 @@ export default function UserProfilePage(props) {
       <>
         <div className="container">
           <div className="row users-details" key={elm._id}>
-            <div className="col-btn col-sm-12 text-sm-center col-md-6 text-md-left">
+            <div className="col-btn col-sm-12 col-md-6">
               <h3 className="border-bottom">Hi, I am {elm.username}</h3>
               <img src={elm.img} alt={elm.username} />
               <p className="users-quote">{elm.bio}</p>
-              <br />
-              <p className="button-sec">
-                <Mailto
-                  email={elm.email}
-                  subject={`Hey ${elm.username}`}
-                  body="Let's connect!"
-                >
-                  E-Mail <i class="bi bi-envelope"></i>
-                </Mailto>
-              </p>
 
-              <p className="button-prim btn-sm-block">
-                <Link to={`/users/${elm._id}/addfriend`}>
+              <Mailto
+                email={elm.email}
+                subject={`Hey ${elm.username}`}
+                body="Let's connect!"
+              >
+                <button className="button-sec" type="button">
+                  E-Mail <i class="bi bi-envelope"></i>
+                </button>
+              </Mailto>
+
+              <Link to={`/users/${elm._id}/addfriend`}>
+                <button className="button-prim">
                   Add friend <i class="bi bi-person-plus-fill"></i>
-                </Link>
-              </p>
+                </button>
+              </Link>
             </div>
-            <div className="col-sm-12 col-md-6">
+
+            <div className="col-sm-12 col-md-6 text-md-left">
               <div className="skills-summary">
                 <div className="border-bottom">
                   <h5>
@@ -73,7 +74,7 @@ export default function UserProfilePage(props) {
                         return <li>{skill.title}</li>;
                       })
                     ) : (
-                      <p> ...</p>
+                      <p>...</p>
                     )}
                   </ul>
                 </div>
