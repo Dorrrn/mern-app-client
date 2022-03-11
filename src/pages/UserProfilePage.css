@@ -19,7 +19,7 @@
 }
 
 .users-quote {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
   padding: 2rem 0;
 }
@@ -35,16 +35,15 @@
   letter-spacing: 2px;
   border-radius: 10px;
   border: 1px solid #c7a099;
-  width: 40%;
+  width: 50%;
 }
-
 .email-button a {
   color: #c7a099;
 }
-.email-button:hover, .email-button a:hover {
+.email-button:hover, 
+.email-button a:hover {
   color: #F87270;
 }
-
 
 .add-friend-button {
   color: white;
@@ -57,7 +56,7 @@
   letter-spacing: 2px;
   border-radius: 10px;
   border: 1px solid #c7a099;
-   width: 50%;
+  width: 50%;
 }
 
 .add-friend-button:hover {
@@ -65,7 +64,6 @@
   border: 1px solid #F87270;
    color: white;;
 }
-
 
 .skills-summary ul {
   padding-left: 5;
