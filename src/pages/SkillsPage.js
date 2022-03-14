@@ -134,8 +134,8 @@ export default function SkillsPage(props) {
       </div>
 
       <div className="container">
-        <div className="row">
-          <div className="col-7">
+        <div className="row justify-content-center">
+          <div className="col-sm-12 col-md-7">
             <h4 className="skill-category">
               Languages <i className="bi bi-chat-dots skills-icon"></i>
             </h4>
@@ -187,7 +187,7 @@ export default function SkillsPage(props) {
             </Link>
           </div>
 
-          <div className="col-5">
+          <div className="col-sm-10 col-md-5 position-md-fixed position-sm-relative">
             <div className="my-skills">
               {currentUserId ? (
                 renderMySkills(currentUserId)

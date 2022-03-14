@@ -29,17 +29,18 @@ brown: #A4614A
 
 .search-skills {
   font-size: 0.8rem; 
-  width: 20%;
+  width: 30%;
 }
 
 .my-skills {
   background: #fff;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: 1rem;
   block-size: fit-content;
-  width: 25%;
-  position: fixed;
+  margin-top: 1rem;
+  /* width: 85%; */
+  /* position: fixed; */
 }
 
 .delete-x {
@@ -53,7 +54,7 @@ brown: #A4614A
 }
 
 .skill-title {
-  text-align: right;
+  text-align: left;
   font-size: 0.8rem;
 }
 
