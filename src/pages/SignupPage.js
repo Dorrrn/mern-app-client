@@ -44,39 +44,49 @@ function SignupPage(props) {
 
       <form onSubmit={handleSignupSubmit}>
         <div className="container">
-          <div className="form-box row justify-content-md-center">
-            <div className="left-box">
-              <h1 className="form-headline">Sign Up</h1>
-              <br /> <br /> <br />
-              <input
-                type="text"
-                name="username"
-                value={username}
-                onChange={handleUsername}
-                placeholder="username"
-              />
-              <input
-                type="text"
-                name="email"
-                value={email}
-                onChange={handleEmail}
-                placeholder="e-mail"
-              />
-              <input
-                type="password"
-                name="password"
-                value={password}
-                onChange={handlePassword}
-                placeholder="set password (min. 8 characters)"
-              />
-              <button type="submit" className="button-form">
+          <div className="form-box row justify-content-center">
+            <div className="form-box-left col-md-12 col-lg-8 text-lg-start d-flex flex-column justify-content-evenly">
+              <h3>Sign Up</h3>
+
+              <label>
+                Username
+                <input
+                  type="text"
+                  name="username"
+                  value={username}
+                  onChange={handleUsername}
+                  placeholder="username"
+                />
+              </label>
+              <label>
+                E-Mail
+                <input
+                  type="text"
+                  name="email"
+                  value={email}
+                  onChange={handleEmail}
+                  placeholder="name@mail.com"
+                />
+              </label>
+
+              <label>
+                Password
+                <input
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={handlePassword}
+                  placeholder="min. 8 characters"
+                />
+              </label>
+              <button type="submit" className="col-md-12 col-lg-7 button-prim">
                 Register
               </button>
             </div>
 
-            <div className="right-box">
-              <span className="signinwith">Already have an account? </span>
-              <Link className="button-form-sec" to="/login">
+            <div className="form-box-right col-md-12 col-lg-4 d-flex flex-column justify-content-center text-center">
+              <h6>Already have an account? </h6>
+              <Link className="more-link" to="/login">
                 Login <i className="bi bi-arrow-right-square"></i>
               </Link>
             </div>
