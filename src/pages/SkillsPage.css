@@ -1,22 +1,9 @@
-/* colors
-ivory: #FFFCF0
-green: #808661
-blush: #C7A099
-black: #323232
-pink: # F87270
-brown: #A4614A
-*/
-
 .SkillsPage {
   padding: 7rem 0;
 }
 
-.SkillsPage h5 {
-  font-weight: 800;
-}
-
 .skills-page-header{
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 
 }
 .my-skills-summary ul {
@@ -25,6 +12,7 @@ brown: #A4614A
 
 .SkillsPage li {
   list-style: none;
+  font-size: 0.9rem;
 }
 
 .search-skills {
@@ -39,8 +27,6 @@ brown: #A4614A
   padding: 1rem;
   block-size: fit-content;
   margin-top: 1rem;
-  /* width: 85%; */
-  /* position: fixed; */
 }
 
 .delete-x {
@@ -55,7 +41,8 @@ brown: #A4614A
 
 .skill-title {
   text-align: left;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  height: 1.8rem;
 }
 
 .skills-icon {
@@ -67,8 +54,8 @@ brown: #A4614A
   color: #abb490;
   background-color: transparent;
   text-decoration: none;
-  font-size: 0.5rem;
-  padding: 4px;
+  font-size: 0.6rem;
+  padding: 4px 6px;
   text-transform: uppercase;
   letter-spacing: 1px;
   border-radius: 5px;
@@ -84,8 +71,8 @@ brown: #A4614A
   color: #C7A099;
   background-color: transparent;
   text-decoration: none;
-  font-size: 0.5rem;
-  padding: 4px;
+  font-size: 0.6rem;
+  padding: 4px 6px;
   text-transform: uppercase;
   letter-spacing: 1px;
   border-radius: 5px;
@@ -99,15 +86,4 @@ brown: #A4614A
 
 .skill-category {
   margin-bottom: 1rem;
-}
-
-.create-new-link {
-  color: #F87270;
-  background-color: transparent;
-  vertical-align: middle;
-  text-decoration: none;
-  font-weight: 1000;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }

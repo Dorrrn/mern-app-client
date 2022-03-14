@@ -52,7 +52,7 @@ export default function SkillsPage(props) {
         <h5>My skills</h5>
         <div className="my-skills-summary">
           <div>
-            <h5 className="border-bottom">I want to learn</h5>
+            <h6 className="border-bottom">I want to learn</h6>
             <ul>
               {elm.wantsToLearn?.map((skill) => {
                 return (
@@ -68,7 +68,7 @@ export default function SkillsPage(props) {
           </div>
         </div>
         <div className="my-skills-summary">
-          <h5 className="border-bottom">I can teach</h5>
+          <h6 className="border-bottom">I can teach</h6>
           <ul>
             {elm.wantsToTeach?.map((skill) => {
               return (
@@ -135,7 +135,7 @@ export default function SkillsPage(props) {
 
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-sm-12 col-md-7">
+          <div className="col-md-12 col-lg-7">
             <h4 className="skill-category">
               Languages <i className="bi bi-chat-dots skills-icon"></i>
             </h4>
@@ -182,12 +182,12 @@ export default function SkillsPage(props) {
               <p>no skills found...</p>
             )}
             <hr />
-            <Link to="/skills/create" className="create-new-link">
+            <Link to="/skills/create" className="more-link">
               Create new skill <i className="bi bi-arrow-right-square"></i>
             </Link>
           </div>
 
-          <div className="col-sm-10 col-md-5 position-md-fixed position-sm-relative">
+          <div className="col-md-10 col-lg-5 position-md-fixed position-sm-relative">
             <div className="my-skills">
               {currentUserId ? (
                 renderMySkills(currentUserId)

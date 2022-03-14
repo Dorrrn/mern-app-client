@@ -135,6 +135,10 @@ label {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
+.more-link:hover {
+  color: #F87270
+}
 .border-bottom {
   border-bottom: 1px solid rgb(203, 199, 199);
   padding: 0.5rem 0;
