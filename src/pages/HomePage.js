@@ -46,7 +46,7 @@ export default function HomePage(props) {
             )}
       
 
-        <Link to="/users" className="see-more-link">
+        <Link to="/users" className="more-link">
           See more tandems <i className="bi bi-arrow-right-square"></i>
         </Link>
         <br />

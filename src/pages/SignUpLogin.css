@@ -1,123 +1,21 @@
-/* colors
-ivory: #FFFCF0
-green: #808661
-blush: #C7A099
-black: #323232
-pink: # F87270
-brown: #A4614A
-*/
-
 .LoginPage,
 .SignupPage {
-  padding: 7rem 5rem;
+  padding: 7rem 0;
 }
 
 .form-box {
-  position: relative;
-  margin: 5vh auto;
-  height: 50vh;
-  width: 40vw;
+  margin: 2vh auto;
+  height: auto;
+  width: 70%;
   background: #fff;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
-.left-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 50px;
+.form-box-left {
+  padding: 2rem 3rem;
 }
-
-.form-headline {
-  margin: 0 0 20px 0;
-  font-weight: 300;
-  font-size: 2rem;
-  float: left;
-}
-
-.LoginPage input,
-.SignupPage input {
-  display: block;
-  box-sizing: border-box;
-  margin-bottom: 2vh;
-  padding: 4px;
-  width: 15vw;
-  height: 5vh;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid #aaa;
-  font-weight: 400;
-  font-size: 0.8rem;
-  text-align: left;
-}
-
-.right-box {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 60px;
-  width: 18vw;
-  height: 50vh;
-
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
-  text-align: center;
-  background-color: #fdf5d4;
-}
-
-.right-box-login {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 60px;
-  width: 18vw;
-  height: 50vh;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
-  text-align: center;
-  background-color: #fdf5d4;
-}
-
-.right-box .signinwith,
-.right-box-login .signinwith {
-  display: flex;
-  margin-bottom: 40px;
-  font-size: 2rem;
-  color: #9a7169;
-  text-align: center;
-}
-
-.button-form {
-  color: white;
-  background-color: #c7a099;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 20px;
-  margin: 0 auto;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-radius: 10px;
-  border: none;
-  float: left;
-}
-
-.button-form:hover {
-   color: white;
-  background-color: #F87270;
-}
-
-.button-form-sec {
-  color: #c7a099;
-  background-color: transparent;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 20px;
-  margin: 0 auto;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-radius: 10px;
-  border: none;
+.form-box-right {
+  background-color: #fffcf0;
+  padding: 2rem 0;
 }

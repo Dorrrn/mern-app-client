@@ -19,7 +19,7 @@ brown: #A4614A
   background-color: white;
   height: 100vh;
   color: #323232;
-  text-align:center
+  text-align: center; 
 }
 
 a,
@@ -45,6 +45,13 @@ input {
   padding: 0.4rem;
   background-color: #fffcf0;
   font-size: 0.8rem;
+  width: 100%;
+
+}
+
+label {
+  padding: 1rem 0;
+  width: 100%;
 }
 
 .button-prim {
@@ -121,6 +128,13 @@ input {
   margin-top: 1.5rem;
 }
 
+.more-link {
+  color: #9a756e;
+ font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 .border-bottom {
   border-bottom: 1px solid rgb(203, 199, 199);
   padding: 0.5rem 0;

@@ -4,12 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import "./SignUpLogin.css";
 
-function LoginPage(props) {
+function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
   const navigate = useNavigate();
-  const { storeToken, authenticateUser } = useContext(AuthContext); //extract storeToken from AuthContext
+  const { storeToken, authenticateUser } = useContext(AuthContext);
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -41,34 +41,42 @@ function LoginPage(props) {
 
       <form onSubmit={handleLoginSubmit}>
         <div className="container">
-          <div className="form-box row justify-content-md-center">
-            <div className="left-box">
-              <h1 className="form-headline">Login</h1>
-              <br /> <br /> <br />
-              <input
-                type="text"
-                name="email"
-                required={true}
-                value={email}
-                onChange={handleEmail}
-                placeholder="e-mail"
-              />
-              <input
-                type="password"
-                name="password"
-                required={true}
-                value={password}
-                onChange={handlePassword}
-                placeholder="password"
-              />
-              <button type="submit" className="button-form">
+          <div className="form-box row justify-content-center">
+            <div className="form-box-left col-md-12 col-lg-8 text-lg-start d-flex flex-column justify-content-evenly">
+              <h3>Login</h3>
+
+              <label>
+                E-Mail
+                <input
+                  type="text"
+                  name="email"
+                  required={true}
+                  value={email}
+                  onChange={handleEmail}
+                  placeholder="name@mail.com"
+                />
+              </label>
+
+              <label>
+                Password
+                <input
+                  type="password"
+                  name="password"
+                  required={true}
+                  value={password}
+                  onChange={handlePassword}
+                  placeholder="password"
+                />
+              </label>
+
+              <button type="submit" className="col-md-12 col-lg-7 button-prim">
                 Login
               </button>
             </div>
 
-            <div className="right-box-login">
-              <span className="signinwith">Not registered yet? </span>
-              <Link className="button-form-sec" to="/signup">
+            <div className="form-box-right col-md-12 col-lg-4 d-flex flex-column justify-content-center text-center">
+              <h6>Not registered yet?</h6>
+              <Link className="more-link" to="/signup">
                 Sign up <i className="bi bi-arrow-right-square"></i>
               </Link>
             </div>
