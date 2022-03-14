@@ -6,7 +6,7 @@
   position: relative;
   height: 430px;
   margin: 2rem auto;
-  padding: 1.2rem;
+  padding: 2rem;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -16,7 +16,7 @@
 .user-card-img img {
   border-radius: 50%;
   padding: 1rem;
-  width: 170px;
+  width: 150px;
 }
 
 .username {
@@ -30,37 +30,8 @@
 }
 
 .user-skills {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 0.6rem;
 }
 
-.user-card-button {
-  color: #c7a099;
-  background-color: transparent;
-  text-decoration: none;
-  font-weight: 1000;
-  padding: 10px 10px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-radius: 10px;
-  border: 2px solid #c7a099;
-  width: 40%;
-  margin: 1rem auto;
-}
 
-.user-card-button:hover {
-  color: #f87270;
-  border: 2px solid #f87270;
-}
-
-.see-more-link {
-  color: #c7a099;
-  background-color: transparent;
-  vertical-align: middle;
-  text-decoration: none;
-  font-weight: 1000;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}

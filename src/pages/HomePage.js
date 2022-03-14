@@ -38,15 +38,13 @@ export default function HomePage(props) {
 
       <section className="users-summary">
         <h3>Find tandems to share your skills</h3>
-        <div className="container">
-          <div className="row justify-content-center">
+      
             {props.users ? (
               <UserCards users={props.users} sliceStart="0" sliceEnd="3" />
             ) : (
               <p>No users found....</p>
             )}
-          </div>
-        </div>
+      
 
         <Link to="/users" className="see-more-link">
           See more tandems <i className="bi bi-arrow-right-square"></i>

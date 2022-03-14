@@ -40,23 +40,19 @@ export default function Users(props) {
         </>
       )}
 
-      <div className="container">
-        <div className="row justify-content-center">
-          {foundUsers ? (
-            <UserCards
-              users={foundUsers}
-              sliceStart="0"
-              sliceEnd={foundUsers.length}
-            />
-          ) : (
-            <UserCards
-              users={props.users}
-              sliceStart="0"
-              sliceEnd={props.users.length}
-            />
-          )}
-        </div>
-      </div>
+      {foundUsers ? (
+        <UserCards
+          users={foundUsers}
+          sliceStart="0"
+          sliceEnd={foundUsers.length}
+        />
+      ) : (
+        <UserCards
+          users={props.users}
+          sliceStart="0"
+          sliceEnd={props.users.length}
+        />
+      )}
     </div>
   );
 }

@@ -15,8 +15,8 @@ export default function UserCards(props) {
         .map((elm) => {
           return (
             <>
-              <div className="col-md-4" key={elm._id}>
-                <div className="user-card">
+              <div className="col-sm-12 col-md-6 col-lg-4" key={elm._id}>
+                <div className="user-card justify-content-center d-flex flex-column">
                   <div className="user-card-img">
                     {elm.img ? (
                       <img src={elm.img} alt={elm.username} />
@@ -46,7 +46,10 @@ export default function UserCards(props) {
                         return <p className="user-skills">{skill.title}</p>;
                       })}
                     </div>
-                    <Link to={`/users/${elm._id}`} className="user-card-button">
+                  </div>
+
+                  <div className="mt-auto">
+                    <Link to={`/users/${elm._id}`} className="button-sec">
                       See profile
                     </Link>
                   </div>
