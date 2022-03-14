@@ -1,15 +1,15 @@
 .EditProfilePage {
-  padding: 10rem;
+  padding: 7rem 0;
+
 }
 
 .edit-profile-form {
-  padding: 3rem;
-  width: 60%;
-  height: auto;
-  margin: 1rem auto;
+  padding: 2rem;
+  width: 80%;
   background: #fff;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  margin: 1vw auto;
 }
 
 .EditProfilePage h2 {
@@ -31,20 +31,4 @@
 .EditProfilePage textarea {
   width: 100%;
   text-align: center;
-}
-
-.button-edit-profile {
-  color: white;
-  background-color: #C7A099;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 20px;
-  margin: 2rem auto 0 auto;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-radius: 10px;
-  border: none;
-
-  
 }

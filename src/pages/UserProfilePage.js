@@ -24,7 +24,7 @@ export default function UserProfilePage(props) {
       <>
         <div className="container">
           <div className="row users-details" key={elm._id}>
-            <div className="col-btn col-sm-12 col-md-6">
+            <div className="col col-sm-12 col-md-6">
               <h3 className="border-bottom">Hi, I am {elm.username}</h3>
               <img src={elm.img} alt={elm.username} />
               <p className="users-quote">{elm.bio}</p>
@@ -34,7 +34,7 @@ export default function UserProfilePage(props) {
                 subject={`Hey ${elm.username}`}
                 body="Let's connect!"
               >
-                <button className="button-sec" type="button">
+                <button className="button-sec btn-sm-block" type="button">
                   E-Mail <i class="bi bi-envelope"></i>
                 </button>
               </Mailto>

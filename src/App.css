@@ -20,7 +20,6 @@ brown: #A4614A
   height: 100vh;
   color: #323232;
   text-align:center
-
 }
 
 a,
@@ -70,9 +69,7 @@ input {
   background-color: #9a756e;
   border: 1px solid #9a756e;
    color: white;
-
 }
-
 
 .button-sec {
   color: #c7a099;
@@ -96,7 +93,36 @@ input {
   border: 1px solid #9a756e;
 }
 
+.button-prim-pink {
+  color: white;
+  border: 1px solid #F87270;
+  background-color: #F87270;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 0.3rem
+}
+
+.button-prim-pink a, .button-prim-pink:active {
+  color: white;
+}
+
+.button-prim-pink:hover {
+  background-color: #F87270;
+  border: 1px solid #F87270;
+   color: white;
+}
+
+.button-margin-top {
+  margin-top: 1.5rem;
+}
+
 .border-bottom {
   border-bottom: 1px solid rgb(203, 199, 199);
   padding: 0.5rem 0;
 }
+

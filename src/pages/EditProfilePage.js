@@ -66,76 +66,79 @@ export default function EditProfilePage(props) {
   };
 
   return (
-    <div className="EditProfilePage">
-      <form onSubmit={handleSubmit} className="edit-profile-form">
-        <h2>Edit your profile</h2>
+    <div className="EditProfilePage justify-content-center">
+      <div className="container">
+        <form
+          onSubmit={handleSubmit}
+          className="row justify-content-center edit-profile-form"
+        >
+          <h3>Edit your profile</h3>
+          <div className="col-md-12 col-lg-6 d-flex flex-column justify-content-evenly">
+            {errorMessage && <p className="error">{errorMessage}</p>}
 
-        {errorMessage && <p className="error">{errorMessage}</p>}
+            <label>
+              Username
+              <input
+                type="text"
+                name="username"
+                value={inputs.username}
+                onChange={handleInputChange}
+              />
+            </label>
 
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-6 d-flex align-items-center flex-column justify-content-evenly">
-              <label>
-                username
-                <input
-                  type="text"
-                  name="username"
-                  value={inputs.username}
-                  onChange={handleInputChange}
-                />
-              </label>
+            <label>
+              E-Mail
+              <input
+                type="email"
+                name="email"
+                value={inputs.email}
+                onChange={handleInputChange}
+              />
+            </label>
 
-              <label>
-                email
-                <input
-                  type="email"
-                  name="email"
-                  value={inputs.email}
-                  onChange={handleInputChange}
-                />
-              </label>
-
-              <label>
-                password
-                <input
-                  type="password"
-                  name="password"
-                  value={inputs.password}
-                  onChange={handleInputChange}
-                />
-              </label>
-            </div>
-
-            <div className="col-6 d-flex align-items-center flex-column justify-content-evenly">
-              <label>
-                what's your motiviation?
-                <textarea
-                  type="text"
-                  name="bio"
-                  rows="5"
-                  maxLength="150"
-                  value={inputs.bio}
-                  onChange={handleInputChange}
-                />
-              </label>
-
-              <label>
-                image (url)
-                <input
-                  type="text"
-                  name="img"
-                  value={inputs.img}
-                  onChange={handleInputChange}
-                />
-              </label>
-            </div>
+            <label>
+              Password
+              <input
+                type="password"
+                name="password"
+                value={inputs.password}
+                onChange={handleInputChange}
+              />
+            </label>
           </div>
 
-          <button type="submit" className="button-edit-profile">
+          <div className="col-md-12 col-lg-6  d-flex flex-column justify-content-evenly">
+            <label>
+              What's your motiviation?
+              <textarea
+                type="text"
+                name="bio"
+                rows="5"
+                maxLength="150"
+                value={inputs.bio}
+                onChange={handleInputChange}
+              />
+            </label>
+
+            <label>
+              Image (URL)
+              <input
+                type="text"
+                name="img"
+                value={inputs.img}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            className="col-md-12 col-lg-4 button-prim button-margin-top"
+          >
             update profile
           </button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 }
