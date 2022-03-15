@@ -35,13 +35,13 @@ export default function UserProfilePage(props) {
                 body="Let's connect!"
               >
                 <button className="button-sec btn-sm-block" type="button">
-                  E-Mail <i class="bi bi-envelope"></i>
+                  E-Mail <i className="bi bi-envelope"></i>
                 </button>
               </Mailto>
 
               <Link to={`/users/${elm._id}/addfriend`}>
                 <button className="button-prim">
-                  Add friend <i class="bi bi-person-plus-fill"></i>
+                  Add friend <i className="bi bi-person-plus-fill"></i>
                 </button>
               </Link>
             </div>
@@ -81,7 +81,8 @@ export default function UserProfilePage(props) {
               </div>
               <div className="skills-summary">
                 <h5>
-                  <i class="bi bi-people"></i> Friends: {elm.friends?.length}
+                  <i className="bi bi-people"></i> Friends:{" "}
+                  {elm.friends?.length}
                 </h5>
               </div>
             </div>
