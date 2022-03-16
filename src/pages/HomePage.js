@@ -15,10 +15,10 @@ export default function HomePage(props) {
           <div className="col">
             <header className="header-top justify-content-center">
               <h1 className="headline">
-                learn and teach skills from each other
+                Learn and teach skills from each other
               </h1>
               <h5 className="d-none d-sm-block">
-                sports, languages, music, coding, ...
+                Sports, languages, music, coding, ...
               </h5>
               <br />
 

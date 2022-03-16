@@ -46,7 +46,7 @@ function SignupPage(props) {
         <div className="container">
           <div className="form-box row justify-content-center">
             <div className="form-box-left col-md-12 col-lg-8 text-lg-start d-flex flex-column justify-content-evenly">
-              <h3>Sign Up</h3>
+              <h4>SIGN UP</h4>
 
               <label>
                 Username

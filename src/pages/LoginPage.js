@@ -43,7 +43,7 @@ function LoginPage() {
         <div className="container">
           <div className="form-box row justify-content-center">
             <div className="form-box-left col-md-12 col-lg-8 text-lg-start d-flex flex-column justify-content-evenly">
-              <h3>Login</h3>
+              <h4>LOGIN</h4>
 
               <label>
                 E-Mail

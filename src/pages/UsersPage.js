@@ -26,7 +26,7 @@ export default function Users(props) {
 
   return (
     <div className="UsersPage">
-      <h3>Find users to share your skills</h3>
+      <h3>Find tandems to share your skills</h3>
       {isLoggedIn && (
         <>
           <div className="searchbar">
