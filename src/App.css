@@ -22,6 +22,15 @@ brown: #A4614A
   text-align: center; 
 }
 
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
 a,
 a:hover {
   text-decoration: none;

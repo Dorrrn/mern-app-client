@@ -47,124 +47,135 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Routes>
-        <Route
-          path="/"
-          element={<HomePage users={users} fetchUsers={fetchUsers} />}
-        />
-        <Route
-          path="/signup"
-          element={
-            <IsAnon>
-              <SignupPage />
-            </IsAnon>
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <IsAnon>
-              <LoginPage />
-            </IsAnon>
-          }
-        />
-        <Route
-          path="/users"
-          element={<UsersPage users={users} fetchUsers={fetchUsers} />}
-        />
+      <div id="page-container">
+        <Header />
 
-        <Route
-          path="/users/:userId"
-          element={
-           <IsPrivate>
-           <UserProfilePage users={users} />
-           </IsPrivate>
-           }
-        />
-        <Route
-          path="/users/:friendId/addfriend"
-          element={
-            <IsPrivate>
-              <AddFriend fetchUsers={fetchUsers} />
-            </IsPrivate>
-          }
-        />
-        <Route
-          path="/profile"
-          element={
-            <IsPrivate>
-              <MyProfilePage users={users} />
-            </IsPrivate>
-          }
-        />
-        <Route
-          path="/profile/update"
-          element={
-            <IsPrivate>
-              <EditProfilePage fetchUsers={fetchUsers} users={users} />
-            </IsPrivate>
-          }
-        />
-        <Route
-          path="/skills"
-          element={
-            <IsPrivate>
-              <SkillsPage users={users} />
-            </IsPrivate>
-          }
-        />
-        <Route
-          path="/skills/:skillId/wantstolearn"
-          element={
-            <IsPrivate>
-              <AddWantsToLearn fetchUsers={fetchUsers} />
-            </IsPrivate>
-          }
-        />
-        <Route
-          path="/skills/:skillId/wantstoteach"
-          element={
-            <IsPrivate>
-              <AddWantsToTeach fetchUsers={fetchUsers} />
-            </IsPrivate>
-          }
-        />
-        <Route
-          path="/skills/:skillId/removewantstolearn"
-          element={
-            <IsPrivate>
-              <RemoveWantsToLearn fetchUsers={fetchUsers} />
-            </IsPrivate>
-          }
-        />
+        <Routes>
+          <Route
+            path="/"
+            element={<HomePage users={users} fetchUsers={fetchUsers} />}
+          />
 
-        <Route
-          path="/skills/:skillId/removewantstoteach"
-          element={
-            <IsPrivate>
-              <RemoveWantsToTeach fetchUsers={fetchUsers} />
-            </IsPrivate>
-          }
-        />
+          <Route
+            path="/signup"
+            element={
+              <IsAnon>
+                <SignupPage />
+              </IsAnon>
+            }
+          />
 
-        <Route
-          path="/skills/create"
-          element={
-            <IsPrivate>
-              <CreateSkill fetchUsers={fetchUsers} />
-            </IsPrivate>
-          }
-        />
+          <Route
+            path="/login"
+            element={
+              <IsAnon>
+                <LoginPage />
+              </IsAnon>
+            }
+          />
 
-        <Route
-          path="/matches"
-          element={<Matches users={users} fetchUsers={fetchUsers} />}
-        />
+          <Route
+            path="/users"
+            element={<UsersPage users={users} fetchUsers={fetchUsers} />}
+          />
 
-      </Routes>
+          <Route
+            path="/users/:userId"
+            element={
+              <IsPrivate>
+                <UserProfilePage users={users} />
+              </IsPrivate>
+            }
+          />
 
-      <Footer />
+          <Route
+            path="/users/:friendId/addfriend"
+            element={
+              <IsPrivate>
+                <AddFriend fetchUsers={fetchUsers} />
+              </IsPrivate>
+            }
+          />
+
+          <Route
+            path="/profile"
+            element={
+              <IsPrivate>
+                <MyProfilePage users={users} />
+              </IsPrivate>
+            }
+          />
+
+          <Route
+            path="/profile/update"
+            element={
+              <IsPrivate>
+                <EditProfilePage fetchUsers={fetchUsers} users={users} />
+              </IsPrivate>
+            }
+          />
+
+          <Route
+            path="/skills"
+            element={
+              <IsPrivate>
+                <SkillsPage users={users} />
+              </IsPrivate>
+            }
+          />
+          <Route
+            path="/skills/:skillId/wantstolearn"
+            element={
+              <IsPrivate>
+                <AddWantsToLearn fetchUsers={fetchUsers} />
+              </IsPrivate>
+            }
+          />
+
+          <Route
+            path="/skills/:skillId/wantstoteach"
+            element={
+              <IsPrivate>
+                <AddWantsToTeach fetchUsers={fetchUsers} />
+              </IsPrivate>
+            }
+          />
+
+          <Route
+            path="/skills/:skillId/removewantstolearn"
+            element={
+              <IsPrivate>
+                <RemoveWantsToLearn fetchUsers={fetchUsers} />
+              </IsPrivate>
+            }
+          />
+
+          <Route
+            path="/skills/:skillId/removewantstoteach"
+            element={
+              <IsPrivate>
+                <RemoveWantsToTeach fetchUsers={fetchUsers} />
+              </IsPrivate>
+            }
+          />
+
+          <Route
+            path="/skills/create"
+            element={
+              <IsPrivate>
+                <CreateSkill fetchUsers={fetchUsers} />
+              </IsPrivate>
+            }
+          />
+
+          <Route
+            path="/matches"
+            element={<Matches users={users} fetchUsers={fetchUsers} />}
+          />
+        </Routes>
+
+        <Footer />
+      </div>
     </div>
   );
 }

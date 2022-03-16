@@ -8,23 +8,29 @@ pink: # F87270
 brown: #A4614A
 */
 
-.Header {
+/* .Header {
   background-color: #d1cdaf;
-  width: 100vw;
-  padding: 0.5rem 5rem;
+  padding: 0.5rem 0;
   position: fixed;
   top: 0;
   z-index: 10;
+} */
+
+#bs-override .header {
+  background-color: #d1cdaf;
+  padding: 0.5rem 6rem;
+  position: fixed;
+   /* top: 0; */
+  z-index: 10;
+  width: 100%;
 }
 
-.nav-link-left a {
+#bs-override .navbar-brand {
+  font-weight: 800;
   color: #808661;
 }
-.nav-link-left a:hover {
-  color: #3f4230;
-}
 
-.header-link {
+#bs-override .header-link {
   color: #808661;
   vertical-align: middle;
   text-decoration: none;
@@ -36,7 +42,7 @@ brown: #A4614A
   letter-spacing: 2px;
 }
 
-.header-button {
+#bs-override .header-button {
   color: white;
   background-color: #808661;
   vertical-align: middle;
@@ -51,13 +57,13 @@ brown: #A4614A
   border: 2px solid #808661;
 }
 
-.header-button:hover {
+#bs-override .header-button:hover {
   background-color: #3f4230;
   border: 2px solid #3f4230;
   color: white;
 }
 
-.header-button-sec {
+#bs-override .header-button-sec {
   color: #808661;
   background-color: transparent;
   vertical-align: middle;
@@ -69,28 +75,28 @@ brown: #A4614A
   text-transform: uppercase;
   letter-spacing: 2px;
   border-radius: 10px;
-  border: 2px solid #808661;
+  border: 1px solid #808661;
 }
 
-.header-button-sec:hover {
-   color: #3f4230;
-   border: 2px solid #3f4230;
-   font-weight: 800;
-
+#bs-override .header-button-sec:hover {
+  color: #3f4230;
+  border: 1px solid #3f4230;
+  font-weight: 800;
 }
 
-.user-name{
+.user-name {
   font-size: 0.8rem;
-  color: #3f4230
+  color: #3f4230;
+   padding: 0.6rem 0;
 }
 
 .Footer {
   background-color: #808661;
   color: white;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100vw;
-  padding: 0.5rem 4rem;
+  padding: 1rem 5rem;
   text-align: left;
   z-index: 10;
 }
