@@ -1,3 +1,6 @@
+.UserCards {
+  margin: 0 3rem;
+}
 .users-summary {
   padding: 5rem 0;
 }
@@ -33,5 +36,10 @@
   font-size: 0.9rem;
   line-height: 0.6rem;
 }
+
+#skills-icon {
+  font-size: 0.8rem;
+}
+
 
 

@@ -13,6 +13,7 @@ brown: #A4614A
 
 .header-top {
   height: 400px;
+  width: 100%;
   padding: 4rem 0;
   background-color: #fffcf0;
   box-shadow: 0 2px 5px rgba(91, 91, 91, 0.1);
@@ -23,6 +24,8 @@ brown: #A4614A
 }
 
 .headline {
-  padding: 6rem 0 1rem 0;
+  padding: 6rem 3rem 1rem 3rem;
   font-weight: 800;
+  
 }
+

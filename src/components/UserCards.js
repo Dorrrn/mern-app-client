@@ -15,7 +15,7 @@ export default function UserCards(props) {
         .map((elm) => {
           return (
             <>
-              <div className="col-sm-12 col-md-6 col-lg-4" key={elm._id}>
+              <div className="col-sm-10 col-md-6 col-lg-4" key={elm._id}>
                 <div className="user-card justify-content-center d-flex flex-column">
                   <div className="user-card-img">
                     {elm.img ? (
@@ -31,7 +31,11 @@ export default function UserCards(props) {
                   <div className="row">
                     <div className="col-6">
                       <p className="user-skills-title">
-                        <i className="bi bi-bookmark-check"></i> teach
+                        <i
+                          className="bi bi-bookmark-check"
+                          id="skills-icon"
+                        ></i>{" "}
+                        teach
                       </p>
                       {elm.wantsToTeach?.slice(0, 3).map((skill) => {
                         return <p className="user-skills">{skill.title}</p>;
@@ -40,7 +44,8 @@ export default function UserCards(props) {
 
                     <div className="col-6">
                       <p className="user-skills-title">
-                        <i className="bi bi-bookmark-x"></i> learn
+                        <i className="bi bi-bookmark-x" id="skills-icon"></i>{" "}
+                        learn
                       </p>
                       {elm.wantsToLearn?.slice(0, 3).map((skill) => {
                         return <p className="user-skills">{skill.title}</p>;

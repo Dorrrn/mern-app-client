@@ -10,7 +10,7 @@ export default function HomePage(props) {
 
   return (
     <div className="HomePage">
-      <div className="container-fluid ">
+      <div className="container-fluid">
         <div className="row">
           <div className="col">
             <header className="header-top justify-content-center">

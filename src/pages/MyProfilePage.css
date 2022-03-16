@@ -1,14 +1,6 @@
-/* colors
-ivory: #FFFCF0
-green: #808661
-blush: #C7A099
-black: #323232
-pink: # F87270
-brown: #A4614A
-*/
 
 .MyProfilePage {
-  padding: 4rem;
+  padding: 4rem 1rem;
 }
 
 .profile-details {
