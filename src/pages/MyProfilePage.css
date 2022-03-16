@@ -15,75 +15,61 @@ brown: #A4614A
   background: #fff;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  width: 80%;
-  margin: 5vh auto;
-  text-align: left;
-  padding: 2rem;
+  width: 90%;
+  margin: 4vh auto;
+  padding: 2rem 1rem;
 }
 
-.profile-details img {
+.my-details {
+  margin: 1rem 1rem 3rem 1rem;
+}
+
+.my-details img {
   border-radius: 50%;
-  width: 100%;
-}
-
-.circle img {
+  margin: 1rem 0;
   border: 3px solid #c7a099;
+  width: 30%;
 }
 
 .user-quote {
   font-size: 1rem;
-  font-weight: 500;
   padding-bottom: 1rem;
 }
 
 .skills-summary {
-  padding: 1rem 2rem;
-}
-
-.skills-summary ul {
-  padding-left: 5;
+ margin: 1rem 1rem 2rem 1rem;
 }
 
 .MyProfilePage li {
   list-style: none;
 }
 
-.skills-summary ul li:before {
-  content: "- ";
+.skills-summary ul {
+  padding-left: 0;
 }
 
 .my-friends {
-  padding: 2rem 3rem;
+  padding: 4rem 1rem 0 1rem;
 }
 
 .my-friends img {
   border-radius: 50%;
-  width: 100%;
+  width: 60%;
 }
 
-.update-button {
-  color: #c7a099;
-  background-color: transparent;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 5px 10px;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-radius: 7px;
-  border: 1px solid #c7a099;
+.friend-name{
+  margin-top: 1.5rem;
+  line-height: 0.5rem;
 }
 
-.profile-button {
-  color: #c7a099;
-  background-color: transparent;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 20px;
+.link-to-profile {
+  color: #9a756e;
+ font-weight: 600;
   font-size: 0.8rem;
-  text-transform: uppercase;
   letter-spacing: 2px;
-  border-radius: 10px;
-  border: 1px solid #c7a099;
-  margin-left: 2rem;
+  text-transform: uppercase;
+}
+
+.link-to-profile:hover {
+  color: #F87270
 }

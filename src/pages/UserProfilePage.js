@@ -24,7 +24,7 @@ export default function UserProfilePage(props) {
       <>
         <div className="container">
           <div className="row users-details" key={elm._id}>
-            <div className="col col-sm-12 col-md-6">
+            <div className="col-sm-12 col-md-6">
               <h3 className="border-bottom">Hi, I am {elm.username}</h3>
               <img src={elm.img} alt={elm.username} />
               <p className="users-quote">{elm.bio}</p>

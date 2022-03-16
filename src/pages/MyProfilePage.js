@@ -18,50 +18,42 @@ export default function MyProfilePage(props) {
     return (
       <>
         <div className="container">
-          <div
-            className="profile-details row justify-content-center"
-            key={elm._id}
-          >
-            <div className="col-6">
-              <div className="container">
-                <div className="row border-bottom">
-                  <h3 className="border-bottom">Hi {elm.username}</h3>
-                  <div className="col-4 circle">
-                    {elm.img ? (
-                      <img src={elm.img} alt={elm.username} />
-                    ) : (
-                      <img
-                        src="https://via.placeholder.com/50"
-                        alt="userimage"
-                      />
-                    )}
-                  </div>
-                  <div className="col-8">
-                    <p className="user-quote">
-                      <i className="bi bi-chat-right-quote"> {elm.bio}</i>
-                    </p>
-                    <p>{elm.email}</p>
-                    <Link to="/profile/update" className="update-button">
-                      update
-                    </Link>
-                  </div>
+          <div className="row profile-details" key={elm._id}>
+            <div className="col col-sm-12 col-md-7">
+              <div className="my-details">
+                <h3 className="border-bottom">Hi {elm.username}</h3>
+                {elm.img ? (
+                  <img src={elm.img} alt={elm.username} />
+                ) : (
+                  <img src="https://via.placeholder.com/50" alt="userimage" />
+                )}
+                <p>{elm.email}</p>
+                <div className="user-quote">
+                  <p>
+                  " {elm.bio} "
+                  </p>
                 </div>
+                <Link to="/profile/update" className="button-sec">
+                  update
+                </Link>
               </div>
-              <div className="skills-summary">
-                <div className="border-bottom">
+
+                
+              <h4 className="border-bottom">My skills</h4>
+              <div className="skills-summary border-bottom">
                   <h5>
-                    <i className="bi bi-bookmark-heart"></i> I want to learn ...
+                    <i className="bi bi-bookmark-heart"></i> I want to learn
                   </h5>
                   <ul>
                     {elm.wantsToLearn?.map((skill) => {
                       return <li>{skill.title}</li>;
                     })}
                   </ul>
-                </div>
+                
               </div>
               <div className="skills-summary">
                 <h5>
-                  <i className="bi bi-bookmark-check"></i> I can teach ...
+                  <i className="bi bi-bookmark-check"></i> I can teach
                 </h5>
                 <ul>
                   {elm.wantsToTeach?.map((skill) => {
@@ -70,24 +62,24 @@ export default function MyProfilePage(props) {
                 </ul>
               </div>
 
-              <Link to="/skills" className="profile-button">
+              <Link to="/skills" className="button-prim">
                 Edit my skills
               </Link>
             </div>
 
-            <div className="col-6 my-friends">
-              <h5>My friends</h5>
+            <div className="col-sm-12 col-md-5 my-friends">
+              <h4 className="text-center border-bottom">My friends</h4>
               <ul>
                 {elm.friends?.map((friend) => {
                   return (
                     <li className="friend-summary border-bottom">
                       <div className="row">
-                        <div className="col-5">
+                        <div className="col-6">
                           <img src={friend.img} alt={friend.username} />
                         </div>
 
-                        <div className="col-7">
-                          <p>{friend.username}</p>
+                        <div className="col-6 text-start">
+                          <p className="friend-name">{friend.username}</p>
                           <Link
                             to={`/users/${friend._id}`}
                             className="link-to-profile"
