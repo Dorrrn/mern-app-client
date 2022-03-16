@@ -50,17 +50,17 @@ ul {
 
 input {
   border: none;
-  border-bottom: 1px solid rgb(188, 188, 188);
-  padding: 0.4rem;
+  border-bottom: 1px solid rgb(206, 205, 205);
+  padding: 0.7rem;
   background-color: #fffcf0;
   font-size: 0.8rem;
   width: 100%;
-
 }
 
 label {
   padding: 1rem 0;
   width: 100%;
+  font-size: 0.8rem;
 }
 
 .button-prim {

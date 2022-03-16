@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import "./Header.css";
 
@@ -8,7 +9,6 @@ export default function Header() {
 
   return (
     <div className="Header">
-    
       {!isLoggedIn && (
         <Navbar collapseOnSelect expand="md" className="header">
           <Navbar.Brand href="/" className="brand-logo">
@@ -17,9 +17,9 @@ export default function Header() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/users" className="header-link">
+              <Link to="/users" className="header-link">
                 all users
-              </Nav.Link>
+              </Link>
             </Nav>
 
             <Nav className="mr-auto">
@@ -55,9 +55,9 @@ export default function Header() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/users" className="header-link">
+              <Link to="/users" className="header-link">
                 all users
-              </Nav.Link>
+              </Link>
               <Nav.Link href="/skills" className="header-link">
                 add skills
               </Nav.Link>
