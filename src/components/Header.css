@@ -97,6 +97,6 @@ brown: #A4614A
   bottom: 0;
   width: 100vw;
   padding: 1rem 5rem;
-  text-align: left;
+  text-align: center;
   z-index: 10;
 }

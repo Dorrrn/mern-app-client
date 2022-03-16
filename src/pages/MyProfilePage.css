@@ -40,6 +40,10 @@ brown: #A4614A
  margin: 1rem 1rem 2rem 1rem;
 }
 
+.skill-icon {
+  font-size: 1rem;
+}
+
 .MyProfilePage li {
   list-style: none;
 }
@@ -68,6 +72,7 @@ brown: #A4614A
   font-size: 0.8rem;
   letter-spacing: 2px;
   text-transform: uppercase;
+
 }
 
 .link-to-profile:hover {

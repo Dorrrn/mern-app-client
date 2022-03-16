@@ -29,31 +29,29 @@ export default function MyProfilePage(props) {
                 )}
                 <p>{elm.email}</p>
                 <div className="user-quote">
-                  <p>
-                  " {elm.bio} "
-                  </p>
+                  <p>" {elm.bio} "</p>
                 </div>
                 <Link to="/profile/update" className="button-sec">
                   update
                 </Link>
               </div>
 
-                
               <h4 className="border-bottom">My skills</h4>
               <div className="skills-summary border-bottom">
-                  <h5>
-                    <i className="bi bi-bookmark-heart"></i> I want to learn
-                  </h5>
-                  <ul>
-                    {elm.wantsToLearn?.map((skill) => {
-                      return <li>{skill.title}</li>;
-                    })}
-                  </ul>
-                
+                <h5>
+                  <i className="bi bi-bookmark-heart skill-icon"></i> I want to
+                  learn
+                </h5>
+                <ul>
+                  {elm.wantsToLearn?.map((skill) => {
+                    return <li>{skill.title}</li>;
+                  })}
+                </ul>
               </div>
               <div className="skills-summary">
                 <h5>
-                  <i className="bi bi-bookmark-check"></i> I can teach
+                  <i className="bi bi-bookmark-check skill-icon"></i> I can
+                  teach
                 </h5>
                 <ul>
                   {elm.wantsToTeach?.map((skill) => {
@@ -68,25 +66,24 @@ export default function MyProfilePage(props) {
             </div>
 
             <div className="col-sm-12 col-md-5 my-friends">
-              <h4 className="text-center border-bottom">My friends</h4>
+              <h4 className="border-bottom">My friends</h4>
               <ul>
                 {elm.friends?.map((friend) => {
                   return (
                     <li className="friend-summary border-bottom">
-                      <div className="row">
-                        <div className="col-6">
+                      <div className="row justify-content-center align-items-center">
+                        <div className="col-6 text-end">
                           <img src={friend.img} alt={friend.username} />
                         </div>
 
                         <div className="col-6 text-start">
-                          <p className="friend-name">{friend.username}</p>
                           <Link
                             to={`/users/${friend._id}`}
                             className="link-to-profile"
                           >
                             <p>
                               <i className="bi bi-arrow-right-square"> </i>
-                              profile
+                              {friend.username}
                             </p>
                           </Link>
                         </div>

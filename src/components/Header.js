@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <div className="Header">
       {!isLoggedIn && (
-        <Navbar collapseOnSelect expand="md" className="header">
+        <Navbar collapseOnSelect expand="lg" className="header">
           <Navbar.Brand href="/" className="brand-logo">
             tandem
           </Navbar.Brand>
