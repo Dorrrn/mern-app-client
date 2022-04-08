@@ -1,6 +1,7 @@
 
 # About
 tandem is a web app, enabling users to connect, in order to learn and teach skills from each other.
+tandem is my first MERN app, created after 8 weeks of learning coding during ironhack bootcamp. 
 
 # Demo
 https://app-tandem.netlify.app/
